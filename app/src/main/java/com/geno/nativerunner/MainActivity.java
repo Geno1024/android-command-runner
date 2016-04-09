@@ -41,6 +41,7 @@ public class MainActivity extends Activity
 		total.addView(busybox, LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
 		total.addView(external, LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
 		setContentView(total);
+		addCommand(internal, "uname", "");
 		addCommand(busybox, "ls", "busybox");
 	}
 	

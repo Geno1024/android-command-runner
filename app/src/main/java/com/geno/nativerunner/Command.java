@@ -37,9 +37,7 @@ public class Command extends Activity
 					out.setText("");
 					try
 					{
-						Process p = Runtime.getRuntime().exec(command + " " + cmd.getText().toString() + " " + getCmd(param));
-						InputStream is = p.getInputStream();
-						BufferedReader br = new BufferedReader(new InputStreamReader(is));
+						BufferedReader br = new BufferedReader(new InputStreamReader(Runtime.getRuntime().exec(command + " " + cmd.getText().toString() + " " + getCmd(param)).getInputStream()));
 						String l;
 						while ((l = br.readLine()) != null)
 						{
@@ -57,6 +55,9 @@ public class Command extends Activity
 		String[] param;
 		switch(cmd)
 		{
+			case " uname":
+				param = new String[]{"-s", "-n", "-r", "-v", "-m", "-a"};
+				break;
 			case "busybox ls":
 				param = new String[]{"-1", "-A", "-a", "-C", "-x", "-d", "-L", "-H", "-R", "-F", "-p", "-l", "-i", "-n", "-s", "-e", "-h", "-r", "-S", "-X", "-v", "-c", "-t", "-u"};
 				break;
