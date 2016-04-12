@@ -42,16 +42,17 @@
 	<ScrollView
 		android:layout_height="wrap_content"
 		android:layout_width="match_parent"
+		android:minHeight="240dp"
 		android:layout_below="@id/testRelativeLayout1"
 		android:layout_alignParentBottom="true">
 
 		<HorizontalScrollView
 			android:layout_height="wrap_content"
-			android:layout_width="wrap_content">
+			android:layout_width="match_parent">
 
 			<TextView
 				android:layout_height="match_parent"
-				android:layout_width="match_parent"
+				android:layout_width="wrap_content"
 				android:id="@+id/output"
 				android:typeface="monospace"
 				android:selectable="true"/>
