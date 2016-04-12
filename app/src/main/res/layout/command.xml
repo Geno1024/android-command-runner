@@ -13,7 +13,7 @@
 			android:layout_height="wrap_content"
 			android:textAppearance="?android:attr/textAppearanceLarge"
 			android:layout_width="match_parent"
-			android:text="Large Text"
+			android:typeface="monospace"
 			android:id="@+id/cmdName"/>
 
 		<EditText

@@ -20,7 +20,7 @@ public class Command extends Activity
 	{
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.command);
-		command = getIntent().getStringExtra("command");
+		command = getIntent().getStringExtra("command").trim();
 		title = (TextView) findViewById(R.id.cmdName);
 		cmd = (EditText) findViewById(R.id.input);
 		param = (GridLayout) findViewById(R.id.params);
@@ -55,7 +55,10 @@ public class Command extends Activity
 		String[] param;
 		switch(cmd)
 		{
-			case " uname":
+			case "acpi":
+				param = new String[]{"-a", "-b", "-c", "-t", "-V"};
+				break;
+			case "uname":
 				param = new String[]{"-s", "-n", "-r", "-v", "-m", "-a"};
 				break;
 			case "busybox ls":
