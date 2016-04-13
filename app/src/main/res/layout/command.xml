@@ -23,12 +23,12 @@
 			android:layout_below="@id/cmdName"
 			android:id="@+id/input"/>
 
-		<GridLayout
+		<LinearLayout
 			android:layout_height="wrap_content"
 			android:layout_width="match_parent"
 			android:layout_below="@id/input"
 			android:id="@+id/params"
-			android:columnCount="4"/>
+			android:orientation="vertical"/>
 
 		<Button
 			android:layout_height="wrap_content"

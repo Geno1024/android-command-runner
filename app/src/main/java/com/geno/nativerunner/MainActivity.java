@@ -6,7 +6,6 @@ import android.view.*;
 import android.widget.*;
 import android.content.*;
 import android.view.View.*;
-import java.io.*;
 
 public class MainActivity extends Activity 
 {
@@ -56,7 +55,7 @@ public class MainActivity extends Activity
 				@Override
 				public void onClick(View p1)
 				{
-					startActivity(new Intent(MainActivity.this, Command.class).putExtra("command", cmdclazz + " " + command));
+					startActivity(new Intent(MainActivity.this, CommandActivity.class).putExtra("command", cmdclazz + " " + command));
 				}
 			});
 		b.setWidth(ViewGroup.LayoutParams.MATCH_PARENT);
