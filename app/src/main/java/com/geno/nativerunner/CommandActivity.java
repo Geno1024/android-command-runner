@@ -39,8 +39,8 @@ public class CommandActivity extends Activity
 					out.setText("");
 					try
 					{
-						Log.d(TAG, command + " " + cmd.getText().toString() + " " + getCmd());
-						BufferedReader br = new BufferedReader(new InputStreamReader(Runtime.getRuntime().exec(command + " " + cmd.getText().toString() + " " + getCmd()).getInputStream()));
+						Log.d(TAG, command + " " + getCmd() + " " + cmd.getText().toString());
+						BufferedReader br = new BufferedReader(new InputStreamReader(Runtime.getRuntime().exec(command + " " + getCmd() + " " + cmd.getText().toString()).getInputStream()));
 						String l;
 						while ((l = br.readLine()) != null)
 						{
@@ -58,14 +58,13 @@ public class CommandActivity extends Activity
 		Command c;
 		switch(cmd)
 		{
-			case "acpi":
-				c = CommandBox.ACPI;
-				break;
-			case "uname":
-				c = CommandBox.UNAME;
-				break;
-			default:
-				c = CommandBox.NULL;
+			case "acpi":			c = CommandBox.ACPI; 			break;
+			case "applypatch":		c = CommandBox.APPLYPATCH;		break;
+			case "atrace":			c = CommandBox.ATRACE;			break;
+			case "basename":		c = CommandBox.BASENAME;		break;
+			case "cp":				c = CommandBox.CP;				break;
+			case "uname":			c = CommandBox.UNAME;			break;
+			default:				c = CommandBox.NULL;
 		}
 		for (CommandParam p : c.getParams())
 		{

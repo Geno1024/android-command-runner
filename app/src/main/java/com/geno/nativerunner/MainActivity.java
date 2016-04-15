@@ -9,14 +9,16 @@ import android.view.View.*;
 
 public class MainActivity extends Activity 
 {
+	public LinearLayout internal, busybox, external;
+	public String cmdclazz;
 	@Override
 	protected void onCreate(Bundle savedInstanceState)
 	{
         super.onCreate(savedInstanceState);
 		LinearLayout total = new LinearLayout(this);
-		LinearLayout internal = new LinearLayout(this);
-		LinearLayout busybox = new LinearLayout(this);
-		LinearLayout external = new LinearLayout(this);
+		internal = new LinearLayout(this);
+		busybox = new LinearLayout(this);
+		external = new LinearLayout(this);
 		total.setOrientation(LinearLayout.VERTICAL);
 		internal.setOrientation(LinearLayout.VERTICAL);
 		busybox.setOrientation(LinearLayout.VERTICAL);
@@ -40,13 +42,19 @@ public class MainActivity extends Activity
 		total.addView(busybox, LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
 		total.addView(external, LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
 		setContentView(total);
-		addCommand(internal, "acpi", "");
-		addCommand(internal, "uname", "");
-		addCommand(busybox, "ls", "busybox");
+		addCommand(internal, "acpi");
+		addCommand(internal, "applypatch");
+		addCommand(internal, "atrace");
+		addCommand(internal, "basename");
+		addCommand(internal, "cp");
+		addCommand(internal, "uname");
+		addCommand(busybox, "ls");
 	}
 	
-	public void addCommand(ViewGroup toAdd, final String command, final String cmdclazz)
+	public void addCommand(ViewGroup toAdd, final String command)
 	{
+		cmdclazz = "";
+		if (toAdd == busybox) cmdclazz = "busybox ";
 		Button b = new Button(this);
 		b.setText(command);
 		b.setAllCaps(false);
@@ -55,7 +63,7 @@ public class MainActivity extends Activity
 				@Override
 				public void onClick(View p1)
 				{
-					startActivity(new Intent(MainActivity.this, CommandActivity.class).putExtra("command", cmdclazz + " " + command));
+					startActivity(new Intent(MainActivity.this, CommandActivity.class).putExtra("command", cmdclazz + command));
 				}
 			});
 		b.setWidth(ViewGroup.LayoutParams.MATCH_PARENT);
