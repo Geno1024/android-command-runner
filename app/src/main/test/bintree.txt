@@ -12,10 +12,10 @@ appwidget								too much params
 atmel_hover_tune.sh					unknown
 atrace----------------------------------------------------------------------------------------------
 audiod										need root
-basename
-bcc
-blkid
-blockdev
+basename--------------------------------------------------------------------------------------------
+bcc										too much parans
+blkid										need root
+blockdev--------------------------------------------------------------------------------------------
 bmgr
 bootanimation
 brctl

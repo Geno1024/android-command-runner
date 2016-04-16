@@ -30,6 +30,19 @@ public final class CommandBox
 
 	public static final Command BASENAME = new Command("basename", "Return non-directory portion of a pathname removing suffix");
 
+	public static final Command BLOCKDEV = new Command("blockdev", "Call ioctl(s) on each listed block device",
+			new CommandParam("--setro", "Set read only"),
+			new CommandParam("--setrw", "Set read write"),
+			new CommandParam("--getro", "Get read only"),
+			new CommandParam("--getss", "Get sector size"),
+			new CommandParam("--getbsz", "Get block size"),
+			new CommandParam("--setbsz", "Set block size", true),
+			new CommandParam("--getsz", "Get device size in 512-byte sectors"),
+			new CommandParam("--getsize", "Get device size in sectors (deprecated)"),
+			new CommandParam("--getsize64", "Get device size in bytes"),
+			new CommandParam("--flushbufs", "Flush buffers"),
+			new CommandParam("--rereadpt", "Reread partition table"));
+
 	public static final Command CP = new Command("cp", "Copy files from SOURCE to DEST. If more than one SOUNCE, DEST must be a directory",
 			new CommandParam("-F", "delete any existing destination file first (--remove-destination)"),
 			new CommandParam("-H", "Follow symlinks listed on command line"),

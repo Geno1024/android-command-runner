@@ -10,7 +10,6 @@ import android.view.View.*;
 public class MainActivity extends Activity 
 {
 	public LinearLayout internal, busybox, external;
-	public String cmdclazz;
 	@Override
 	protected void onCreate(Bundle savedInstanceState)
 	{
@@ -46,15 +45,14 @@ public class MainActivity extends Activity
 		addCommand(internal, "applypatch");
 		addCommand(internal, "atrace");
 		addCommand(internal, "basename");
+		addCommand(internal, "blockdev");
 		addCommand(internal, "cp");
 		addCommand(internal, "uname");
 		addCommand(busybox, "ls");
 	}
 	
-	public void addCommand(ViewGroup toAdd, final String command)
+	public void addCommand(final ViewGroup toAdd, final String command)
 	{
-		cmdclazz = "";
-		if (toAdd == busybox) cmdclazz = "busybox ";
 		Button b = new Button(this);
 		b.setText(command);
 		b.setAllCaps(false);
@@ -63,6 +61,9 @@ public class MainActivity extends Activity
 				@Override
 				public void onClick(View p1)
 				{
+					String cmdclazz;
+					if (toAdd == busybox) cmdclazz = "busybox ";
+					else cmdclazz = "";
 					startActivity(new Intent(MainActivity.this, CommandActivity.class).putExtra("command", cmdclazz + command));
 				}
 			});

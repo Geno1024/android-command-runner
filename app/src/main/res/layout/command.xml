@@ -23,19 +23,24 @@
 			android:layout_below="@id/cmdName"
 			android:id="@+id/input"/>
 
-		<LinearLayout
-			android:layout_height="wrap_content"
-			android:layout_width="match_parent"
+		<ScrollView
+			android:layout_width="wrap_content"
+			android:layout_height="200dp"
 			android:layout_below="@id/input"
-			android:id="@+id/params"
-			android:orientation="vertical"/>
+			android:id="@+id/paramsScrollView">
+			<LinearLayout
+				android:layout_height="wrap_content"
+				android:layout_width="match_parent"
+				android:id="@+id/params"
+				android:orientation="vertical"/>
+		</ScrollView>
 
 		<Button
 			android:layout_height="wrap_content"
 			android:layout_width="wrap_content"
 			android:text="Execute!"
 			android:id="@+id/exec"
-			android:layout_below="@id/params"/>
+			android:layout_below="@id/paramsScrollView"/>
 
 	</RelativeLayout>
 
@@ -50,12 +55,17 @@
 			android:layout_height="wrap_content"
 			android:layout_width="match_parent">
 
-			<TextView
+			<!--<TextView
 				android:layout_height="match_parent"
 				android:layout_width="wrap_content"
 				android:id="@+id/output"
 				android:typeface="monospace"
-				android:selectable="true"/>
+				android:selectable="true"/>-->
+			<LinearLayout
+				android:layout_width="wrap_content"
+				android:layout_height="match_parent"
+				android:id="@+id/output"
+				android:orientation="vertical"/>
 
 		</HorizontalScrollView>
 

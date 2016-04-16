@@ -1,7 +1,12 @@
 package com.geno.nativerunner;
 
 import android.app.*;
+import android.graphics.Color;
+import android.graphics.Typeface;
 import android.os.Bundle;
+import android.text.SpannableString;
+import android.text.Spanned;
+import android.text.style.ForegroundColorSpan;
 import android.util.Log;
 import android.widget.*;
 import android.view.View.*;
@@ -16,7 +21,7 @@ public class CommandActivity extends Activity
 	public EditText cmd;
 	public LinearLayout param;
 	public Button exec;
-	public TextView out;
+	public LinearLayout out;
 	@Override
 	protected void onCreate(Bundle savedInstanceState)
 	{
@@ -27,7 +32,7 @@ public class CommandActivity extends Activity
 		cmd = (EditText) findViewById(R.id.input);
 		param = (LinearLayout) findViewById(R.id.params);
 		exec = (Button) findViewById(R.id.exec);
-		out = (TextView) findViewById(R.id.output);
+		out = (LinearLayout) findViewById(R.id.output);
 		setTitle(command);
 		title.setText(command);
 		addParam(param, command);
@@ -36,15 +41,31 @@ public class CommandActivity extends Activity
 				@Override
 				public void onClick(View p1)
 				{
-					out.setText("");
+					out.removeAllViews();
 					try
 					{
 						Log.d(TAG, command + " " + getCmd() + " " + cmd.getText().toString());
-						BufferedReader br = new BufferedReader(new InputStreamReader(Runtime.getRuntime().exec(command + " " + getCmd() + " " + cmd.getText().toString()).getInputStream()));
+						Process p = Runtime.getRuntime().exec(command + " " + getCmd() + " " + cmd.getText().toString());
+						BufferedReader bri = new BufferedReader(new InputStreamReader(p.getInputStream()));
+						BufferedReader bre = new BufferedReader(new InputStreamReader(p.getErrorStream()));
 						String l;
-						while ((l = br.readLine()) != null)
+						while ((l = bre.readLine()) != null)
 						{
-							out.setText(out.getText() + l + "\n");
+							TextView t = new TextView(CommandActivity.this);
+							t.setText(l);
+							t.setTextColor(Color.RED);
+							t.setTypeface(Typeface.MONOSPACE);
+							t.setTextIsSelectable(true);
+							out.addView(t);
+						}
+						while ((l = bri.readLine()) != null)
+						{
+							TextView t = new TextView(CommandActivity.this);
+							t.setText(l);
+							t.setTextColor(Color.BLACK);
+							t.setTypeface(Typeface.MONOSPACE);
+							t.setTextIsSelectable(true);
+							out.addView(t);
 						}
 					}
 					catch (IOException e)
@@ -62,6 +83,7 @@ public class CommandActivity extends Activity
 			case "applypatch":		c = CommandBox.APPLYPATCH;		break;
 			case "atrace":			c = CommandBox.ATRACE;			break;
 			case "basename":		c = CommandBox.BASENAME;		break;
+			case "blockdev":		c = CommandBox.BLOCKDEV;		break;
 			case "cp":				c = CommandBox.CP;				break;
 			case "uname":			c = CommandBox.UNAME;			break;
 			default:				c = CommandBox.NULL;

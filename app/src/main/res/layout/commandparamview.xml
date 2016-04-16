@@ -5,13 +5,14 @@
 	<ToggleButton
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
-		android:id="@+id/paramSwitch"/>
+		android:id="@+id/paramSwitch"
+		android:textAllCaps="false"/>
 	<TextView
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
 		android:id="@+id/detailText"/>
 	<EditText
-		android:layout_width="wrap_content"
+		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
 		android:id="@+id/more"
 		android:visibility="gone"/>
