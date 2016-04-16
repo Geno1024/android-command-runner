@@ -12,6 +12,8 @@ import android.widget.*;
 import android.view.View.*;
 import android.view.*;
 import java.io.*;
+import java.util.ArrayList;
+import java.util.Locale;
 
 public class CommandActivity extends Activity
 {
@@ -21,7 +23,8 @@ public class CommandActivity extends Activity
 	public EditText cmd;
 	public LinearLayout param;
 	public Button exec;
-	public LinearLayout out;
+	public /*TextView*/ LinearLayout out;
+	//public ArrayList<Integer> errorSize;
 	@Override
 	protected void onCreate(Bundle savedInstanceState)
 	{
@@ -32,7 +35,7 @@ public class CommandActivity extends Activity
 		cmd = (EditText) findViewById(R.id.input);
 		param = (LinearLayout) findViewById(R.id.params);
 		exec = (Button) findViewById(R.id.exec);
-		out = (LinearLayout) findViewById(R.id.output);
+		out = (/*TextView*/ LinearLayout) findViewById(R.id.output);
 		setTitle(command);
 		title.setText(command);
 		addParam(param, command);
@@ -41,23 +44,21 @@ public class CommandActivity extends Activity
 				@Override
 				public void onClick(View p1)
 				{
+					//out.setText("");
 					out.removeAllViews();
 					try
 					{
 						Log.d(TAG, command + " " + getCmd() + " " + cmd.getText().toString());
 						Process p = Runtime.getRuntime().exec(command + " " + getCmd() + " " + cmd.getText().toString());
+						int exitVal = p.waitFor();
 						BufferedReader bri = new BufferedReader(new InputStreamReader(p.getInputStream()));
 						BufferedReader bre = new BufferedReader(new InputStreamReader(p.getErrorStream()));
 						String l;
-						while ((l = bre.readLine()) != null)
+						/*String li = "", le = "";
+						while ((li = bri.readLine()) != null || (le = bre.readLine()) != null)
 						{
-							TextView t = new TextView(CommandActivity.this);
-							t.setText(l);
-							t.setTextColor(Color.RED);
-							t.setTypeface(Typeface.MONOSPACE);
-							t.setTextIsSelectable(true);
-							out.addView(t);
-						}
+							if
+						}*/
 						while ((l = bri.readLine()) != null)
 						{
 							TextView t = new TextView(CommandActivity.this);
@@ -67,8 +68,18 @@ public class CommandActivity extends Activity
 							t.setTextIsSelectable(true);
 							out.addView(t);
 						}
+						while ((l = bre.readLine()) != null)
+						{
+							TextView t = new TextView(CommandActivity.this);
+							t.setText(l);
+							t.setTextColor(Color.RED);
+							t.setTypeface(Typeface.MONOSPACE);
+							t.setTextIsSelectable(true);
+							out.addView(t);
+						}
+						setTitle(String.format(Locale.getDefault(), "Process exited with status %d", exitVal));
 					}
-					catch (IOException e)
+					catch (Exception e)
 					{e.printStackTrace();}
 				}
 			});
