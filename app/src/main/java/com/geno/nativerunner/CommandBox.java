@@ -172,7 +172,58 @@ public final class CommandBox
 
 	public static final Command CHROOT = new Command("chroot", "Run command within a new root directory. If no command, run /bin/sh.");
 
-	public static final Command CP = new Command("cp", "Copy files from SOURCE to DEST. If more than one SOUNCE, DEST must be a directory",
+	public static final Command CKSUM = new Command("cksum", "For each file, output crc32 checksum value, length and name of file.\n" +
+															 "If no files listed, copy from stdin.  Filename \"-\" is a synonym for stdin.",
+			new CommandParam("-H", "Hexadecimal checksum (defaults to decimal)"),
+			new CommandParam("-L", "Little endian (defaults to big endian)"),
+			new CommandParam("-P", "Pre-inversion"),
+			new CommandParam("-I", "Skip post-inversion"),
+			new CommandParam("-N", "Do not include length in CRC calculation"));
+
+	public static final Command CLEAR = new Command("clear", "");
+
+	public static final Command CMP = new Command("cmp", "Compare the contents of two files.",
+			new CommandParam("-l", "show all differing bytes"),
+			new CommandParam("-s", "silent"));
+
+	public static final Command COMM = new Command("comm", "Reads FILE1 and FILE2, which should be ordered, and produces three text\n" +
+														   "columns as output: lines only in FILE1; lines only in FILE2; and lines\n" +
+														   "in both files. Filename \"-\" is a synonym for stdin.",
+			new CommandParam("-1", "suppress the output column of lines unique to FILE1"),
+			new CommandParam("-2", "suppress the output column of lines unique to FILE2"),
+			new CommandParam("-3", "suppress the output column of lines duplicated in FILE1 and FILE2"));
+
+	public static final Command CONTENT = new Command("content", "",
+			new CommandParam("insert --uri", "<URI> a content provider URI.\n" +
+									   "  <BINDING> binds a typed value to a column and is formatted:\n" +
+									   "  <COLUMN_NAME>:<TYPE>:<COLUMN_VALUE> where:\n" +
+									   "  <TYPE> specifies data type such as:\n" +
+									   "  b - boolean, s - string, i - integer, l - long, f - float, d - double\n" +
+									   "  Note: Omit the value for passing an empty string, e.g column:s:\n" +
+									   "  Example:\n" +
+									   "  # Add \"new_setting\" secure setting with value \"new_value\".\n" +
+									   "  adb shell content insert --uri content://settings/secure --bind name:s:new_setting --bind value:s:new_value\n"),
+			new CommandParam("update --uri", "<WHERE> is a SQL style where clause in quotes (You have to escape single quotes - see example below).\n" +
+											 "  Example:\n" +
+											 "  # Change \"new_setting\" secure setting to \"newer_value\".\n" +
+											 "  adb shell content update --uri content://settings/secure --bind value:s:newer_value --where \"name='new_setting'\""),
+			new CommandParam("delete --uri", "Example:\n" +
+											 "  # Remove \"new_setting\" secure setting.\n" +
+											 "  adb shell content delete --uri content://settings/secure --where \"name='new_setting'\""),
+			new CommandParam("query --uri", "<PROJECTION> is a list of colon separated column names and is formatted:\n" +
+											"  <COLUMN_NAME>[:<COLUMN_NAME>...]\n" +
+											"  <SORT_ORDER> is the order in which rows in the result should be sorted.\n" +
+											"  Example:\n" +
+											"  # Select \"name\" and \"value\" columns from secure settings where \"name\" is equal to \"new_setting\" and sort the result by name in ascending order.\n" +
+											"  adb shell content query --uri content://settings/secure --projection name:value --where \"name='new_setting'\" --sort \"name ASC\""),
+			new CommandParam("call --uri", "<METHOD> is the name of a provider-defined method\n" +
+										   "  <ARG> is an optional string argument\n" +
+										   "  <BINDING> is like --bind above, typed data of the form <KEY>:{b,s,i,l,f,d}:<VAL>"),
+			new CommandParam("read --uri", "Example:\n" +
+										   "  # cat default ringtone to a file, then pull to host\n" +
+										   "  adb shell 'content read --uri content://settings/system/ringtone > /mnt/sdcard/tmp.ogg' && adb pull /mnt/sdcard/tmp.ogg"));
+
+	public static final Command CP = new Command("cp", "Copy files from SOURCE to DEST. If more than one SOURCE, DEST must be a directory",
 			new CommandParam("-F", "delete any existing destination file first (--remove-destination)"),
 			new CommandParam("-H", "Follow symlinks listed on command line"),
 			new CommandParam("-L", "Follow all symlinks"),
@@ -188,6 +239,380 @@ public final class CommandBox
 			new CommandParam("-r", "synonym for -R"),
 			new CommandParam("-s", "symlink instead of copy"),
 			new CommandParam("-v", "verbose"));
+
+	public static final Command CPIO = new Command("cpio", "copy files into and out of a \"newc\" format cpio archive",
+			new CommandParam("-F", "use archive FILE instead of stdin/stdout", true),
+			new CommandParam("-p", "copy-pass mode, copy stdin file list to directory DEST", true),
+			new CommandParam("-i", "extract from archive into file system (stdin=archive)"),
+			new CommandParam("-o", "create archive (stdin=list of files, stdout=archive)"),
+			new CommandParam("-t", "test files (list only, stdin=archive, stdout=list of files)"),
+			new CommandParam("-v", "verbose (list files during create/extract)"));
+
+	public static final Command CPLAY = new Command("cplay", "",
+			new CommandParam("-c", "card number"),
+			new CommandParam("-d", "device node"),
+			new CommandParam("-b", "buffer size"),
+			new CommandParam("-f", "fragments"),
+			new CommandParam("-v", "verbose mode"),
+			new CommandParam("-p", "pcm input"),
+			new CommandParam("-h", "Prints this help list"));
+
+	public static final Command CURL = new Command("curl", "",
+			new CommandParam("-q", "Disable .curlrc (must be first parameter)"),
+			new CommandParam("--anyauth", "Pick \"any\" authentication method (H)"),
+			new CommandParam("-a", "--append, Append to target file when uploading (F/SFTP)"),
+			new CommandParam("--basic", "Use HTTP Basic Authentication (H)"),
+			new CommandParam("--cacert", "CA certificate to verify peer against (SSL)", true),
+			new CommandParam("--capath", "CA directory to verify peer against (SSL)", true),
+			new CommandParam("-E", "--cert CERT[:PASSWD], Client certificate file and password (SSL)"),
+			new CommandParam("--cert-status", "Verify the status of the server certificate (SSL)"),
+			new CommandParam("--cert-type", "Certificate file type (DER/PEM/ENG) (SSL)", true),
+			new CommandParam("--ciphers", "SSL ciphers to use (SSL)", true),
+			new CommandParam("--compressed", "Request compressed response (using deflate or gzip)"),
+			new CommandParam("-K", "--config FILE, Read config from FILE", true),
+			new CommandParam("--connect-timeout", "Maximum time allowed for connection", true),
+			new CommandParam("-C", "--continue-at OFFSET, Resumed transfer OFFSET", true),
+			new CommandParam("-b", "--cookie STRING/FILE, Read cookies from STRING/FILE (H)"),
+			new CommandParam("-c", "--cookie-jar FILE, Write cookies to FILE after operation (H)", true),
+			new CommandParam("--create-dirs", "Create necessary local directory hierarchy"),
+			new CommandParam("--crlf", "Convert LF to CRLF in upload"),
+			new CommandParam("--crlfile", "Get a CRL list in PEM format from the given file", true),
+			new CommandParam("-d", "--data DATA, HTTP POST data (H)", true),
+			new CommandParam("--data-raw", "HTTP POST data, '@' allowed (H)", true),
+			new CommandParam("--data-ascii", "HTTP POST ASCII data (H)", true),
+			new CommandParam("--data-binary", "HTTP POST binary data (H)", true),
+			new CommandParam("--data-urlencode", "HTTP POST data url encoded (H)", true),
+			new CommandParam("--delegation", "GSS-API delegation permission", true),
+			new CommandParam("--digest", "Use HTTP Digest Authentication (H)"),
+			new CommandParam("--disable-eprt", "Inhibit using EPRT or LPRT (F)"),
+			new CommandParam("--disable-epsv", "Inhibit using EPSV (F)"),
+			new CommandParam("--dns-servers", "DNS server addrs to use: 1.1.1.1;2.2.2.2"),
+			new CommandParam("--dns-interface", "Interface to use for DNS requests"),
+			new CommandParam("--dns-ipv4-addr", "IPv4 address to use for DNS requests, dot notation"),
+			new CommandParam("--dns-ipv6-addr", "IPv6 address to use for DNS requests, dot notation"),
+			new CommandParam("-D", "--dump-header FILE, Write the headers to FILE", true),
+			new CommandParam("--egd-file", "EGD socket path for random data (SSL)", true),
+			new CommandParam("--engine", "Crypto engine (use \"--engine list\" for list) (SSL)", true),
+			new CommandParam("-f", "--fail, Fail silently (no output at all) on HTTP errors (H)"),
+			new CommandParam("--false-start", "Enable TLS False Start."),
+			new CommandParam("-F", "--form CONTENT, Specify HTTP multipart POST data (H)", true),
+			new CommandParam("--form-string", "Specify HTTP multipart POST data (H)", true),
+			new CommandParam("--ftp-account", "Account data string (F)"),
+			new CommandParam("--ftp-alternative-to-user", "String to replace \"USER [name]\" (F)", true),
+			new CommandParam("--ftp-create-dirs", "Create the remote dirs if not present (F)"),
+			new CommandParam("--ftp-method [MULTICWD/NOCWD/SINGLECWD]", "Control CWD usage (F)"),
+			new CommandParam("--ftp-pasv", "Use PASV/EPSV instead of PORT (F)"),
+			new CommandParam("-P", "--ftp-port ADR, Use PORT with given address instead of PASV (F)", true),
+			new CommandParam("--ftp-skip-pasv-ip", "Skip the IP address for PASV (F)"),
+			new CommandParam("--ftp-pret", "Send PRET before PASV (for drftpd) (F)"),
+			new CommandParam("--ftp-ssl-ccc", "Send CCC after authenticating (F)"),
+			new CommandParam("--ftp-ssl-ccc-mode ACTIVE/PASSIVE", "Set CCC mode (F)"),
+			new CommandParam("--ftp-ssl-control", "Require SSL/TLS for FTP login, clear for transfer (F)"),
+			new CommandParam("-G", "--get, Send the -d data with a HTTP GET (H)"),
+			new CommandParam("-g", "--globoff, Disable URL sequences and ranges using {} and []"),
+			new CommandParam("-H", "--header LINE, Pass custom header LINE to server (H)", true),
+			new CommandParam("-I", "--head, Show document info only"),
+			new CommandParam("-h", "--help, This help text"),
+			new CommandParam("--hostpubmd5 MD5", "Hex-encoded MD5 string of the host public key. (SSH)"),
+			new CommandParam("-0", "--http1.0, Use HTTP 1.0 (H)"),
+			new CommandParam("--http1.1", "Use HTTP 1.1 (H)"),
+			new CommandParam("--http2", "Use HTTP 2 (H)"),
+			new CommandParam("--ignore-content-length", "Ignore the HTTP Content-Length header"),
+			new CommandParam("-i", "--include, Include protocol headers in the output (H/F)"),
+			new CommandParam("-k", "--insecure, Allow connections to SSL sites without certs (H)"),
+			new CommandParam("--interface", "Use network INTERFACE (or address)", true),
+			new CommandParam("-4", "--ipv4, Resolve name to IPv4 address"),
+			new CommandParam("-6", "--ipv6, Resolve name to IPv6 address"),
+			new CommandParam("-j", "--junk-session-cookies, Ignore session cookies read from file (H)"),
+			new CommandParam("--keepalive-time", "Wait SECONDS between keepalive probes", true),
+			new CommandParam("--key", "Private key file name (SSL/SSH)", true),
+			new CommandParam("--key-type", "Private key file type (DER/PEM/ENG) (SSL)", true),
+			new CommandParam("--krb", "Enable Kerberos with security LEVEL (F)", true),
+			new CommandParam("--libcurl", "Dump libcurl equivalent code of this command line", true),
+			new CommandParam("--limit-rate", "Limit transfer speed to RATE", true),
+			new CommandParam("-l", "--list-only, List only mode (F/POP3)"),
+			new CommandParam("--local-port", "Force use of RANGE for local port numbers", true),
+			new CommandParam("-L", "--location, Follow redirects (H)"),
+			new CommandParam("--location-trusted ", " Like '--location', and send auth to other hosts (H)"),
+			new CommandParam("--login-options", "Server login options (IMAP, POP3, SMTP)", true),
+			new CommandParam("-M", "--manual, Display the full manual"),
+			new CommandParam("--mail-from", "Mail from this address (SMTP)", true),
+			new CommandParam("--mail-rcpt", "Mail to this/these addresses (SMTP)", true),
+			new CommandParam("--mail-auth", "Originator address of the original email (SMTP)", true),
+			new CommandParam("--max-filesize", "Maximum file size to download (H/F)", true),
+			new CommandParam("--max-redirs", "Maximum number of redirects allowed (H)", true),
+			new CommandParam("-m", "--max-time SECONDS, Maximum time allowed for the transfer", true),
+			new CommandParam("--metalink", "Process given URLs as metalink XML file"),
+			new CommandParam("--negotiate", "Use HTTP Negotiate (SPNEGO) authentication (H)"),
+			new CommandParam("-n", "--netrc, Must read .netrc for user name and password"),
+			new CommandParam("--netrc-optional", "Use either .netrc or URL; overrides -n"),
+			new CommandParam("--netrc-file", "Specify FILE for netrc", true),
+			new CommandParam(" -:", "--next, Allows the following URL to use a separate set of options"),
+			new CommandParam("--no-alpn", "Disable the ALPN TLS extension (H)"),
+			new CommandParam("-N", "--no-buffer, Disable buffering of the output stream"),
+			new CommandParam("--no-keepalive", "Disable keepalive use on the connection"),
+			new CommandParam("--no-npn", "Disable the NPN TLS extension (H)"),
+			new CommandParam("--no-sessionid", "Disable SSL session-ID reusing (SSL)"),
+			new CommandParam("--noproxy", "List of hosts which do not use proxy"),
+			new CommandParam("--ntlm", "Use HTTP NTLM authentication (H)"),
+			new CommandParam("--oauth2-bearer", "OAuth 2 Bearer Token (IMAP, POP3, SMTP)", true),
+			new CommandParam("-o", "--output FILE, Write to FILE instead of stdout", true),
+			new CommandParam("--pass", "Pass phrase for the private key (SSL/SSH)", true),
+			new CommandParam("--path-as-is", "Do not squash .. sequences in URL path"),
+			new CommandParam("--pinnedpubkey", "Public key (PEM/DER) to verify peer against (OpenSSL/GnuTLS/NSS/wolfSSL/CyaSSL/GSKit only)", true),
+			new CommandParam("--post301", "Do not switch to GET after following a 301 redirect (H)"),
+			new CommandParam("--post302", "Do not switch to GET after following a 302 redirect (H)"),
+			new CommandParam("--post303", "Do not switch to GET after following a 303 redirect (H)"),
+			new CommandParam(" -#", "--progress-bar, Display transfer progress as a progress bar"),
+			new CommandParam("--proto", "Enable/disable PROTOCOLS", true),
+			new CommandParam("--proto-redir", "Enable/disable PROTOCOLS on redirect", true),
+			new CommandParam("-x", "--proxy [PROTOCOL://]HOST[:PORT], Use proxy on given port"),
+			new CommandParam("--proxy-anyauth", "Pick \"any\" proxy authentication method (H)"),
+			new CommandParam("--proxy-basic", "Use Basic authentication on the proxy (H)"),
+			new CommandParam("--proxy-digest", "Use Digest authentication on the proxy (H)"),
+			new CommandParam("--proxy-negotiate", "Use HTTP Negotiate (SPNEGO) authentication on the proxy (H)"),
+			new CommandParam("--proxy-ntlm", "Use NTLM authentication on the proxy (H)"),
+			new CommandParam("-U, ]", "--proxy-user USER[:PASSWORD, Proxy user and password"),
+			new CommandParam("--proxy1.0 HOST[:PORT]", "Use HTTP/1.0 proxy on given port"),
+			new CommandParam("-p", "--proxytunnel, Operate through a HTTP proxy tunnel (using CONNECT)"),
+			new CommandParam("--pubkey", "Public key file name (SSH)", true),
+			new CommandParam("-Q", "--quote CMD, Send command(s) to server before transfer (F/SFTP)", true),
+			new CommandParam("--random-file", "File for reading random data from (SSL)", true),
+			new CommandParam("-r", "--range RANGE, Retrieve only the bytes within RANGE", true),
+			new CommandParam("--raw", "Do HTTP \"raw\"; no transfer decoding (H)"),
+			new CommandParam("-e", "--referer, Referer URL (H)"),
+			new CommandParam("-J", "--remote-header-name, Use the header-provided filename (H)"),
+			new CommandParam("-O", "--remote-name, Write output to a file named as the remote file"),
+			new CommandParam("--remote-name-all", "Use the remote file name for all URLs"),
+			new CommandParam("-R", "--remote-time, Set the remote file's time on the local output"),
+			new CommandParam("-X", "--request COMMAND, Specify request command to use", true),
+			new CommandParam("--resolve HOST:PORT:ADDRESS", "Force resolve of HOST:PORT to ADDRESS"),
+			new CommandParam("--retry", "Retry request NUM times if transient problems occur", true),
+			new CommandParam("--retry-delay", "Wait SECONDS between retries", true),
+			new CommandParam("--retry-max-time", "Retry only within this period", true),
+			new CommandParam("--sasl-ir", "Enable initial response in SASL authentication"),
+			new CommandParam("-S", "--show-error, Show error. With -s, make curl show errors when they occur"),
+			new CommandParam("-s", "--silent, Silent mode (don't output anything)"),
+			new CommandParam("--socks4 HOST[:PORT]", "SOCKS4 proxy on given host + port"),
+			new CommandParam("--socks4a HOST[:PORT] ", " SOCKS4a proxy on given host + port"),
+			new CommandParam("--socks5 HOST[:PORT]", "SOCKS5 proxy on given host + port"),
+			new CommandParam("--socks5-hostname HOST[:PORT]", "SOCKS5 proxy, pass host name to proxy"),
+			new CommandParam("-Y", "--speed-limit RATE, Stop transfers below RATE for 'speed-time' secs", true),
+			new CommandParam("-y", "--speed-time SECONDS, Trigger 'speed-limit' abort after SECONDS (default: 30)", true),
+			new CommandParam("--ssl", "Try SSL/TLS (FTP, IMAP, POP3, SMTP)"),
+			new CommandParam("--ssl-reqd", "Require SSL/TLS (FTP, IMAP, POP3, SMTP)"),
+			new CommandParam("-2", "--sslv2, Use SSLv2 (SSL)"),
+			new CommandParam("-3", "--sslv3, Use SSLv3 (SSL)"),
+			new CommandParam("--ssl-allow-beast", "Allow security flaw to improve interop (SSL)"),
+			new CommandParam("--stderr", "Where to redirect stderr (use \"-\" for stdout)", true),
+			new CommandParam("--tcp-nodelay", "Use the TCP_NODELAY option"),
+			new CommandParam("-t", "--telnet-option OPT=VAL, Set telnet option"),
+			new CommandParam("--tftp-blksize", "Set TFTP BLKSIZE option (must be >512)", true),
+			new CommandParam("-z", "--time-cond TIME, Transfer based on a time condition", true),
+			new CommandParam("-1", "--tlsv1, Use => TLSv1 (SSL)"),
+			new CommandParam("--tlsv1.0", "Use TLSv1.0 (SSL)"),
+			new CommandParam("--tlsv1.1", "Use TLSv1.1 (SSL)"),
+			new CommandParam("--tlsv1.2", "Use TLSv1.2 (SSL)"),
+			new CommandParam("--trace", "Write a debug trace to FILE", true),
+			new CommandParam("--trace-ascii", "Like --trace, but without hex output", true),
+			new CommandParam("--trace-time", "Add time stamps to trace/verbose output"),
+			new CommandParam("--tr-encoding", "Request compressed transfer encoding (H)"),
+			new CommandParam("-T", "--upload-file FILE, Transfer FILE to destination", true),
+			new CommandParam("--url", "URL to work with", true),
+			new CommandParam("-B", "--use-ascii, Use ASCII/text transfer"),
+			new CommandParam("-u", "--user USER[:PASSWORD], user and password"),
+			new CommandParam("--tlsuser", "username", true),
+			new CommandParam("--tlspassword", "TLS password", true),
+			new CommandParam("--tlsauthtype", "TLS authentication type (default: SRP)", true),
+			new CommandParam("--unix-socket", "Connect through this Unix domain socket", true),
+			new CommandParam("-A", "--user-agent STRING, Send User-Agent STRING to server (H)", true),
+			new CommandParam("-v", "--verbose, Make the operation more talkative"),
+			new CommandParam("-V", "--version, Show version number and quit"),
+			new CommandParam("-w", "--write-out FORMAT, Use output FORMAT after completion", true),
+			new CommandParam("--xattr", "Store metadata in extended file attributes"));
+
+	public static final Command CUT = new Command("cut", "Print selected parts of lines from each FILE to standard output.",
+			new CommandParam("-b", "select only these bytes from LIST.", true),
+			new CommandParam("-c", "select only these characters from LIST.", true),
+			new CommandParam("-f", "select only these fields.", true),
+			new CommandParam("-d", "use DELIM instead of TAB for field delimiter.", true),
+			new CommandParam("-s", "do not print lines not containing delimiters."),
+			new CommandParam("-n", "don't split multibyte characters (Ignored)."));
+
+	public static final Command DALVIKVM = new Command("dalvikvm", "",
+			new CommandParam("-classpath classpath", "(-cp classpath)", true),
+			new CommandParam("-Dproperty=", "value", true),
+			new CommandParam("-verbose:", "('gc', 'jit', 'jni', or 'class')", true),
+			new CommandParam("-showversion"),
+			new CommandParam("-help"),
+			new CommandParam("-agentlib:jdwp=", "options", true),
+			new CommandParam("-Xrunjdwp:", "<options>", true),
+			new CommandParam("-Xbootclasspath:", "bootclasspath", true),
+			new CommandParam("-Xcheck:", "tag (e.g. 'jni')", true),
+			new CommandParam("-XmsN ", "min heap, must be multiple of 1K, >= 1MB", true),
+			new CommandParam("-XmxN ", "max heap, must be multiple of 1K, >= 2MB", true),
+			new CommandParam("-XssN ", "stack size", true),
+			new CommandParam("-Xint"),
+			new CommandParam("-Xzygote"),
+			new CommandParam("-Xjnitrace:", "substring (eg NativeClass or nativeMethod)", true),
+			new CommandParam("-Xstacktracefile:", "<filename>", true),
+			new CommandParam("-Xgc:", "[no]preverify", true),
+			new CommandParam("-Xgc:", "[no]postverify", true),
+			new CommandParam("-XX:HeapGrowthLimit=", "", true),
+			new CommandParam("-XX:HeapMinFree=", "", true),
+			new CommandParam("-XX:HeapMaxFree=", "", true),
+			new CommandParam("-XX:NonMovingSpaceCapacity=", "", true),
+			new CommandParam("-XX:HeapTargetUtilization=", "doublevalue", true),
+			new CommandParam("-XX:ForegroundHeapGrowthMultiplier=", "doublevalue", true),
+			new CommandParam("-XX:LowMemoryMode"),
+			new CommandParam("-Xprofile:", "{threadcpuclock,wallclock,dualclock}", true),
+			new CommandParam("-Xjitcodecachesize:", "N", true),
+			new CommandParam("-Xjitthreshold:", "integervalue", true),
+			new CommandParam("-Xgc:", "[no]preverify_rosalloc", true),
+			new CommandParam("-Xgc:", "[no]postsweepingverify_rosalloc", true),
+			new CommandParam("-Xgc:", "[no]postverify_rosalloc", true),
+			new CommandParam("-Xgc:", "[no]presweepingverify", true),
+			new CommandParam("-Ximage:", "filename", true),
+			new CommandParam("-Xbootclasspath-locations:", "bootclasspath (override the dex locations of the -Xbootclasspath files)", true),
+			new CommandParam("-XX:+DisableExplicitGC"),
+			new CommandParam("-XX:ParallelGCThreads=", "integervalue", true),
+			new CommandParam("-XX:ConcGCThreads=", "integervalue", true),
+			new CommandParam("-XX:MaxSpinsBeforeThinLockInflation=", "integervalue", true),
+			new CommandParam("-XX:LongPauseLogThreshold=", "integervalue", true),
+			new CommandParam("-XX:LongGCLogThreshold=", "integervalue", true),
+			new CommandParam("-XX:DumpGCPerformanceOnShutdown"),
+			new CommandParam("-XX:DumpJITInfoOnShutdown"),
+			new CommandParam("-XX:IgnoreMaxFootprint"),
+			new CommandParam("-XX:UseTLAB"),
+			new CommandParam("-XX:BackgroundGC=", "none", true),
+			new CommandParam("-XX:LargeObjectSpace=", "{disabled,map,freelist}", true),
+			new CommandParam("-XX:LargeObjectThreshold=", "N", true),
+			new CommandParam("-Xmethod-trace"),
+			new CommandParam("-Xmethod-trace-file:", "filename", true),
+			new CommandParam("-Xmethod-trace-file-size:", "integervalue", true),
+			new CommandParam("-Xenable-profiler"),
+			new CommandParam("-Xprofile-filename:", "filename", true),
+			new CommandParam("-Xprofile-period:", "integervalue", true),
+			new CommandParam("-Xprofile-duration:", "integervalue", true),
+			new CommandParam("-Xprofile-interval:", "integervalue", true),
+			new CommandParam("-Xprofile-backoff:", "doublevalue", true),
+			new CommandParam("-Xprofile-start-immediately"),
+			new CommandParam("-Xprofile-top-k-threshold:", "doublevalue", true),
+			new CommandParam("-Xprofile-top-k-change-threshold:", "doublevalue", true),
+			new CommandParam("-Xprofile-type:", "{method,stack}", true),
+			new CommandParam("-Xprofile-max-stack-depth:", "integervalue", true),
+			new CommandParam("-Xcompiler:", "filename", true),
+			new CommandParam("-Xcompiler-option", "dex2oat-option", true),
+			new CommandParam("-Ximage-compiler-option", "dex2oat-option", true),
+			new CommandParam("-Xpatchoat:", "filename", true),
+			new CommandParam("-Xusejit:", "booleanvalue", true),
+			new CommandParam("-X", "[no]relocate", true),
+			new CommandParam("-X", "[no]dex2oat (Whether to invoke dex2oat on the application)", true),
+			new CommandParam("-X", "[no]image-dex2oat (Whether to create and use a boot image)", true),
+			new CommandParam("-Xno-dex-file-fallback", "(Don't fall back to dex files without oat files)"),
+			new CommandParam("-ea", "[:<package name>... |:<class name>]", true),
+			new CommandParam("-da", "[:<package name>... |:<class name>] (-enableassertions, -disableassertions)", true),
+			new CommandParam("-esa"),
+			new CommandParam("-dsa", "(-enablesystemassertions, -disablesystemassertions)", true),
+			new CommandParam("-Xverify:", "{none,remote,all}", true),
+			new CommandParam("-Xrs"),
+			new CommandParam("-Xint:", "portable, fast, jit", true),
+			new CommandParam("-Xdexopt:", "{none,verified,all,full}", true),
+			new CommandParam("-Xnoquithandler"),
+			new CommandParam("-Xjniopts:", "{warnonly,forcecopy}", true),
+			new CommandParam("-Xjnigreflimit:", "integervalue", true),
+			new CommandParam("-Xgc:", "[no]precise", true),
+			new CommandParam("-Xgc:", "[no]verifycardtable", true),
+			new CommandParam("-X", "[no]genregmap", true),
+			new CommandParam("-Xverifyopt:", "[no]checkmon", true),
+			new CommandParam("-Xcheckdexsum"),
+			new CommandParam("-Xincludeselectedop"),
+			new CommandParam("-Xjitop:", "hexopvalue[-endvalue][,hexopvalue[-endvalue]]*", true),
+			new CommandParam("-Xincludeselectedmethod"),
+			new CommandParam("-Xjitblocking"),
+			new CommandParam("-Xjitmethod:", "signature[,signature]* (eg Ljava/lang/String\\;replace)", true),
+			new CommandParam("-Xjitclass:", "classname[,classname]*", true),
+			new CommandParam("-Xjitoffset:", "offset[,offset]", true),
+			new CommandParam("-Xjitconfig:", "filename", true),
+			new CommandParam("-Xjitcheckcg"),
+			new CommandParam("-Xjitverbose"),
+			new CommandParam("-Xjitprofile"),
+			new CommandParam("-Xjitdisableopt"),
+			new CommandParam("-Xjitsuspendpoll"),
+			new CommandParam("-XX:mainThreadStackSize=", "N", true));
+
+	public static final Command DALVIKVM32 = new Command("dalvikvm32", DALVIKVM.getDetail(), DALVIKVM.getParams());
+
+	public static final Command DATE = new Command("date", "Set/get the current date/time. With no SET shows the current date.\n" +
+														   "Default SET format is \"MMDDhhmm[[CC]YY][.ss]\", that's (2 digits each)\n" +
+														   "month, day, hour (0-23), and minute. Optionally century, year, and second.\n",
+			new CommandParam("-d", "Show DATE instead of current time (convert date format)"),
+			new CommandParam("-r", "Use modification time of FILE instead of current date"),
+			new CommandParam("-s", "+FORMAT for SET or -d (instead of MMDDhhmm[[CC]YY][.ss])" +
+								   "+FORMAT specifies display format string using these escapes:\n" +
+								   "\n" +
+								   "%% literal %             %n newline              %t tab\n" +
+								   "%S seconds (00-60)       %M minute (00-59)       %m month (01-12)\n" +
+								   "%H hour (0-23)           %I hour (01-12)         %p AM/PM\n" +
+								   "%y short year (00-99)    %Y year                 %C century\n" +
+								   "%a short weekday name    %A weekday name         %u day of week (1-7, 1=mon)\n" +
+								   "%b short month name      %B month name           %Z timezone name\n" +
+								   "%j day of year (001-366) %d day of month (01-31) %e day of month ( 1-31)\n" +
+								   "\n" +
+								   "%U Week of year (0-53 start sunday)   %W Week of year (0-53 start monday)\n" +
+								   "%V Week of year (1-53 start monday, week < 4 days not part of this year)\n" +
+								   "\n" +
+								   "%D = \"%m/%d/%y\"    %r = \"%I : %M : %S %p\"   %T = \"%H:%M:%S\"   %h = \"%b\"\n" +
+								   "%x locale date     %X locale time           %c locale date/time", true),
+			new CommandParam("-u", "Use UTC instead of current timezone"));
+
+	public static final Command DF = new Command("df", "");
+
+	public static final Command DIRNAME = new Command("dirname", "Show directory portion of path");
+
+	public static final Command DMESG = new Command("dmesg", "Print or control the kernel ring buffer",
+			new CommandParam("-c", "Clear the ring buffer after printing"),
+			new CommandParam("-n", "Set kernel logging LEVEL (1-9)"),
+			new CommandParam("-r", "Raw output (with <level markers>)"),
+			new CommandParam("-s", "Show the last SIZE many bytes"),
+			new CommandParam("-t", "Don't print kernel's timestamps"));
+
+	public static final Command DOS2UNIX = new Command("dos2unix", "Convert newline format from dos \"\\r\\n\" to unix \"\\n\".\n" +
+																   "If no files listed copy from stdin, \"-\" is a synonym for stdin.");
+
+	public static final Command DPM = new Command("dpm", "",
+			new CommandParam("set-active-admin", "Sets the given component as active admin for an existing user.", true),
+			new CommandParam("set-device-owner", "Sets the given component as active admin, and its package as device owner.", true),
+			new CommandParam("set-profile-owner", "Sets the given component as active admin and profile  owner for an existing user.", true));
+
+	public static final Command DU = new Command("du", "",
+			new CommandParam("-H"),
+			new CommandParam("-L"),
+			new CommandParam("-P"),
+			new CommandParam("-a"),
+			new CommandParam("-d", "depth", true),
+			new CommandParam("-s"),
+			new CommandParam("-c"),
+			new CommandParam("-g"),
+			new CommandParam("-h"),
+			new CommandParam("-i"),
+			new CommandParam("-k"),
+			new CommandParam("-m"),
+			new CommandParam("-n"),
+			new CommandParam("-r"),
+			new CommandParam("-x"));
+
+	public static final Command DUMPE2FS = new Command("dumpe2fs", "",
+			new CommandParam("-b"),
+			new CommandParam("-f"),
+			new CommandParam("-h"),
+			new CommandParam("-i"),
+			new CommandParam("-x"),
+			new CommandParam("-V"),
+			new CommandParam("-o superblock=", "<num>", true),
+			new CommandParam("-o blocksize=", "<num>", true));
+
+	public static final Command DUMPSYS = new Command("dumpsys", "");
 
 	public static final Command UNAME = new Command("uname", "Print system information.",
 			new CommandParam("-s", "System name"),

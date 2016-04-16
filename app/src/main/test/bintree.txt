@@ -34,47 +34,47 @@ chgrp					F
 chmod					F
 chown					F
 chroot					F
-cksum
-clatd
-clear
-cmp
-cnd
-comm
-content
+cksum					F
+clatd					  P
+clear					F
+cmp						F
+cnd						  P
+comm					F
+content					F		T S
 cp						F
-cpio
-cplay
-curl
-cut
-dalvikvm
-dalvikvm32
-date
-dd
-debuggerd
-dex2oat
-df
-dhcpcd
-diag_callback_client
-diag_dci_sample
-diag_klog
-diag_mdlog
-diag_socket_log
-diag_uart_log
-dirname
-displayfeature
-dmesg
-dnsmasq
-dos2unix
-dpm
-dpmd
-drmdiagapp
-drmserver
-du
-dumpe2fs
-dumpstate
-dumpsys
-dun-server
-e2fsck
+cpio					F
+cplay					F
+curl					F		T S
+cut						F
+dalvikvm				F		T S
+dalvikvm32				F
+date					F
+dd							U
+debuggerd				  P
+dex2oat						U
+df						F
+dhcpcd					  P
+diag_callback_client				H
+diag_dci_sample						H
+diag_klog							H
+diag_mdlog							H
+diag_socket_log						H
+diag_uart_log						H
+dirname					F
+displayfeature						H
+dmesg					F
+dnsmasq					  P
+dos2unix				F
+dpm						F		  S
+dpmd					  P
+drmdiagapp							H
+drmserver				  P
+du						F
+dumpe2fs				F
+dumpstate				  P
+dumpsys					F
+dun-server				  P
+e2fsck					  P
 ebtables
 echo
 efsks
