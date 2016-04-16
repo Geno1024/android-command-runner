@@ -6,7 +6,7 @@
     </shared>
   </component>
   <component name="AndroidLogFilters">
-    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="No Filters" />
+    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b30d719e-85fe-4c00-b456-0a9dbfc065f2" name="Default" comment="">
@@ -14,6 +14,7 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/geno/nativerunner/CommandBox.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/geno/nativerunner/CommandBox.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/geno/nativerunner/MainActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/geno/nativerunner/MainActivity.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/test/bintree.txt" afterPath="$PROJECT_DIR$/app/src/main/test/bintree.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/test/busybox.txt" afterPath="$PROJECT_DIR$/app/src/main/test/busybox.txt" />
     </list>
     <ignored path="android-command-runner.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -46,7 +47,7 @@
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/geno/nativerunner/CommandBox.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="757" column="68" selection-start-line="757" selection-start-column="68" selection-end-line="757" selection-end-column="68" />
+              <caret line="834" column="95" selection-start-line="834" selection-start-column="95" selection-end-line="834" selection-end-column="95" />
               <folding>
                 <element signature="e#32#59#0" expanded="true" />
               </folding>
@@ -54,25 +55,35 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="bintree.txt" pinned="false" current-in-tab="false">
+      <file leaf-file-name="bintree.txt" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/test/bintree.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="96" column="25" selection-start-line="96" selection-start-column="25" selection-end-line="96" selection-end-column="25" />
+            <state vertical-scroll-proportion="0.81514084">
+              <caret line="333" column="27" selection-start-line="333" selection-start-column="27" selection-end-line="333" selection-end-column="27" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/geno/nativerunner/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7394366">
-              <caret line="95" column="36" selection-start-line="95" selection-start-column="36" selection-end-line="95" selection-end-column="36" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="106" column="30" selection-start-line="106" selection-start-column="30" selection-end-line="106" selection-end-column="30" />
               <folding>
-                <element signature="e#3582#3883#0" expanded="true" />
-                <element signature="e#3882#3883#0" expanded="true" />
+                <element signature="e#8926#9227#0" expanded="true" />
+                <element signature="e#9226#9227#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="busybox.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/test/busybox.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -1705,14 +1716,16 @@
         <option value="$PROJECT_DIR$/app/src/main/res/layout/command.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/geno/nativerunner/CommandActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/commandparamview.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/test/busybox.txt" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/geno/nativerunner/CommandBox.java" />
-        <option value="$PROJECT_DIR$/app/src/main/test/bintree.txt" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/geno/nativerunner/MainActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/test/new.txt" />
+        <option value="$PROJECT_DIR$/app/src/main/test/bintree.txt" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1985" />
+    <option name="x" value="65" />
     <option name="y" value="24" />
     <option name="width" value="1855" />
     <option name="height" value="1056" />
@@ -1952,7 +1965,7 @@
     <property name="android.sdk.path" value="$PROJECT_DIR$/../../../../000655BA0003C40C/Android/SDKForUbuntu" />
     <property name="settings.editor.selected.configurable" value="instant.run" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
-    <property name="device.picker.selection" value="172.22.130.112:5555" />
+    <property name="device.picker.selection" value="172.21.47.15:5555" />
   </component>
   <component name="RunManager" selected="Android Application.app">
     <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android Application">
@@ -2242,8 +2255,8 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1985" y="24" width="1855" height="1056" extended-state="6" />
-    <editor active="true" />
+    <frame x="65" y="24" width="1855" height="1056" extended-state="6" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -2265,7 +2278,7 @@
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24986088" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24986088" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
@@ -2298,8 +2311,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="41" column="92" selection-start-line="41" selection-start-column="92" selection-end-line="41" selection-end-column="92" />
           <folding>
-            <element signature="e#1281#2684#0" expanded="true" />
-            <element signature="e#2683#2684#0" expanded="true" />
+            <element signature="e#1281#2684#0" expanded="false" />
+            <element signature="e#2683#2684#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -2327,8 +2340,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="43" column="39" selection-start-line="43" selection-start-column="39" selection-end-line="43" selection-end-column="39" />
           <folding>
-            <element signature="e#3582#3883#0" expanded="true" />
-            <element signature="e#3882#3883#0" expanded="true" />
+            <element signature="e#8926#9227#0" expanded="true" />
+            <element signature="e#9226#9227#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2338,8 +2351,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="70" column="9" selection-start-line="70" selection-start-column="9" selection-end-line="70" selection-end-column="9" />
           <folding>
-            <element signature="e#1281#2684#0" expanded="true" />
-            <element signature="e#2683#2684#0" expanded="true" />
+            <element signature="e#1281#2684#0" expanded="false" />
+            <element signature="e#2683#2684#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -2413,8 +2426,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="31" column="34" selection-start-line="31" selection-start-column="34" selection-end-line="31" selection-end-column="34" />
           <folding>
-            <element signature="e#3582#3883#0" expanded="true" />
-            <element signature="e#3882#3883#0" expanded="true" />
+            <element signature="e#8926#9227#0" expanded="true" />
+            <element signature="e#9226#9227#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2424,8 +2437,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#1281#2684#0" expanded="true" />
-            <element signature="e#2683#2684#0" expanded="true" />
+            <element signature="e#1281#2684#0" expanded="false" />
+            <element signature="e#2683#2684#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -2499,8 +2512,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="31" column="34" selection-start-line="31" selection-start-column="34" selection-end-line="31" selection-end-column="34" />
           <folding>
-            <element signature="e#3582#3883#0" expanded="true" />
-            <element signature="e#3882#3883#0" expanded="true" />
+            <element signature="e#8926#9227#0" expanded="true" />
+            <element signature="e#9226#9227#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2510,8 +2523,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#1281#2684#0" expanded="true" />
-            <element signature="e#2683#2684#0" expanded="true" />
+            <element signature="e#1281#2684#0" expanded="false" />
+            <element signature="e#2683#2684#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -2585,8 +2598,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="31" column="34" selection-start-line="31" selection-start-column="34" selection-end-line="31" selection-end-column="34" />
           <folding>
-            <element signature="e#3582#3883#0" expanded="true" />
-            <element signature="e#3882#3883#0" expanded="true" />
+            <element signature="e#8926#9227#0" expanded="true" />
+            <element signature="e#9226#9227#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2724,8 +2737,27 @@
         <state vertical-scroll-proportion="0.3714789">
           <caret line="93" column="40" selection-start-line="93" selection-start-column="40" selection-end-line="93" selection-end-column="40" />
           <folding>
-            <element signature="e#1281#2684#0" expanded="true" />
-            <element signature="e#2683#2684#0" expanded="true" />
+            <element signature="e#1281#2684#0" expanded="false" />
+            <element signature="e#2683#2684#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/test/busybox.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/geno/nativerunner/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="106" column="30" selection-start-line="106" selection-start-column="30" selection-end-line="106" selection-end-column="30" />
+          <folding>
+            <element signature="e#8926#9227#0" expanded="true" />
+            <element signature="e#9226#9227#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2733,7 +2765,7 @@
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/geno/nativerunner/CommandBox.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="757" column="68" selection-start-line="757" selection-start-column="68" selection-end-line="757" selection-end-column="68" />
+          <caret line="834" column="95" selection-start-line="834" selection-start-column="95" selection-end-line="834" selection-end-column="95" />
           <folding>
             <element signature="e#32#59#0" expanded="true" />
           </folding>
@@ -2742,20 +2774,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/test/bintree.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="96" column="25" selection-start-line="96" selection-start-column="25" selection-end-line="96" selection-end-column="25" />
+        <state vertical-scroll-proportion="0.81514084">
+          <caret line="333" column="27" selection-start-line="333" selection-start-column="27" selection-end-line="333" selection-end-column="27" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/geno/nativerunner/MainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7394366">
-          <caret line="95" column="36" selection-start-line="95" selection-start-column="36" selection-end-line="95" selection-end-column="36" />
-          <folding>
-            <element signature="e#3582#3883#0" expanded="true" />
-            <element signature="e#3882#3883#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>

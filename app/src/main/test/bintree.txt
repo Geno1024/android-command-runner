@@ -78,14 +78,14 @@ e2fsck					  P
 ebtables				F		T S
 echo					F
 efsks					F
-egrep						U
+egrep						U			L
 env						F
 expand					F
 expr					F
 fallocate				F
 false					F
 fdpp								H
-fgrep						U
+fgrep						U			L
 find					F
 fm_qsoc_patches			F
 fmconfig				F
@@ -95,33 +95,33 @@ free					F
 fsck.f2fs				  P
 fsck_msdos				  P
 ftmdaemon				F
-garden_app
-gatekeeperd
-getenforce
-getevent
-getprop
-gpsone_daemon
-grep
-groups
-gzip
-hal_proxy_daemon
-hci_qcomm_init
-head
-hid
-hostapd
-hostapd_cli
-hostname
-hvdcp
-hwclock
-id
-idmap
-ifconfig
-iftop
-ime
-ims_rtp_daemon
-imscmservice
-imsdatadaemon
-imsqmidaemon
+garden_app				  P
+gatekeeperd				  P
+getenforce				F
+getevent				F
+getprop					F
+gpsone_daemon			  P
+grep						U			L
+groups					F
+gzip						U
+hal_proxy_daemon					H
+hci_qcomm_init						H
+head					F
+hid						F
+hostapd					  P
+hostapd_cli				  P
+hostname				F
+hvdcp					  P
+hwclock					  P
+id						F
+idmap							T S		L
+ifconfig				F
+iftop					F
+ime						F
+ims_rtp_daemon			  P
+imscmservice			  P
+imsdatadaemon			  P
+imsqmidaemon			  P
 inotifyd
 input
 insmod
@@ -132,24 +132,24 @@ ionice
 ip
 ip6tables
 iptables
-irsc_util
-irtest
-iw
-iwconfig
-iwlist
-iwpriv
+irsc_util							H
+irtest								H
+iw									H
+iwconfig							H
+iwlist								H
+iwpriv								H
 keystore
 kill
-ks
+ks						  P
 ld.mc
 linker
-lmkd
+lmkd								H
 ln
 load_policy
-loc_launcher
+loc_launcher			  P
 log
 logcat
-logd
+logd								H
 logname
 logwrapper
 losetup
@@ -160,19 +160,19 @@ lsof
 lsusb
 make_ext4fs
 make_f2fs
-mcd
+mcd									H
 md5sum
-mdnsd
+mdnsd								H
 media
-mediaserver
+mediaserver							H
 mkdir
 mke2fs
 mknod
 mkswap
 mktemp
-mm-pp-daemon
+mm-pp-daemon						H
 mm-qcamera-app
-mm-qcamera-daemon
+mm-qcamera-daemon					H
 mm-qjpeg-dec-test
 mm-qjpeg-enc-test
 mm-qomx-idec-test
@@ -182,20 +182,20 @@ mm-venc-omx-test720p
 mm-vidc-omx-test
 mm-video-driver-test
 mm-video-encdrv-test
-mmbn-daemon
+mmbn-daemon							H
 modinfo
-monkey
+monkey							T S
 more
 mount
 mountpoint
-mpdecision
-mtpd
+mpdecision							H
+mtpd								H
 mv
 n_smux
 nandread
-ndc
-netd
-netmgrd
+ndc									H
+netd								H
+netmgrd								H
 netstat
 newfs_msdos
 nice
@@ -215,8 +215,8 @@ ping6
 pkill
 pm
 pmap
-port-bridge
-pppd
+port-bridge							H
+pppd								H
 printenv
 printf
 prlimit
@@ -225,48 +225,48 @@ ps
 ptt_socket_app
 pwd
 qcks
-qcom-system-daemon
-qmuxd
-qseecom_sample_client
-qseecomd
-racoon
+qcom-system-daemon					H
+qmuxd								H
+qseecom_sample_client	  P
+qseecomd							H
+racoon								H
 radish
 readlink
 realpath
 reboot
 renice
 requestsync
-resize2fs
+resize2fs							H
 restorecon
-rfs_access
-rild
+rfs_access							H
+rild								H
 rm
 rmdir
 rmmod
 rmnetcli
-rmt_storage
+rmt_storage							H
 route
 run-as
 runcon
 schedtest
 screencap
 screenrecord
-sdcard
+sdcard								H
 secdiscard
 sed
 sendevent
-sensors.qcom
+sensors.qcom						H
 sensorservice
 seq
 service
-servicemanager
+servicemanager						H
 set_sensorprop.sh
 setenforce
 setprop
 setsid
 settings
 setup_fs
-sgdisk
+sgdisk								H
 sh
 sha1sum
 sleep
@@ -279,8 +279,8 @@ start
 stat
 stop
 strings
-subsystem_ramdump
-surfaceflinger
+subsystem_ramdump					H
+surfaceflinger						H
 svc
 swapoff
 swapon
@@ -294,9 +294,9 @@ tc
 tee
 telecom
 test-nusensors
-test_diag
+test_diag							H
 time
-time_daemon
+time_daemon							H
 timeout
 tinycap
 tinymix
@@ -309,27 +309,27 @@ toybox
 tr
 true
 truncate
-tzdatacheck
+tzdatacheck							H
 uiautomator
 umount
 uname					F
-uncrypt
+uncrypt								H
 uniq
 unix2dos
 uptime
 usleep
-vdc
+vdc									H
 vmstat
-vold
+vold								H
 watchprops
 wc
-wcnss_service
+wcnss_service						H
 wdsdaemon
 which
 whoami
 wm
-wpa_supplicant
+wpa_supplicant						H
 xargs
-xtwifi-client
-xtwifi-inet-agent
+xtwifi-client			  P
+xtwifi-inet-agent		  P
 yes

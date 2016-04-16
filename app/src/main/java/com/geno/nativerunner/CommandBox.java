@@ -668,9 +668,9 @@ public final class CommandBox
 
 	public static final Command EXPAND = new Command("expand", "Expand tabs to spaces according to tabstops.",
 			new CommandParam("-t", "TABLIST\n" +
-								   "Specify tab stops, either a single number instead of the default 8,\n" +
-								   "or a comma separated list of increasing numbers representing tabstop\n" +
-								   "positions (absolute, not increments) with each additional tab beyound\n" +
+								   "Specify tab stops, either a single number instead of the default 8," +
+								   "or a comma separated list of increasing numbers representing tabstop" +
+								   "positions (absolute, not increments) with each additional tab beyound" +
 								   "that becoming one space.\n", true));
 
 	public static final Command EXPR = new Command("expr", "Evaluate expression and print result. For example, \"expr 1 + 2\".\n" +
@@ -679,22 +679,22 @@ public final class CommandBox
 														   "\n" +
 														   "  ( )    :    * / %    + -    != <= < >= > =    &    |\n" +
 														   "\n" +
-														   "Each constant and operator must be a separate command line argument.\n" +
-														   "All operators are infix, meaning they expect a constant (or expression\n" +
-														   "that resolves to a constant) on each side of the operator. Operators of\n" +
-														   "the same priority (within each group above) are evaluated left to right.\n" +
-														   "Parentheses may be used (as separate arguments) to elevate the priority\n" +
+														   "Each constant and operator must be a separate command line argument." +
+														   "All operators are infix, meaning they expect a constant (or expression" +
+														   "that resolves to a constant) on each side of the operator. Operators of" +
+														   "the same priority (within each group above) are evaluated left to right." +
+														   "Parentheses may be used (as separate arguments) to elevate the priority" +
 														   "of expressions.\n" +
 														   "\n" +
 														   "Calling expr from a command shell requires a lot of \\( or '*' escaping\n" +
 														   "to avoid interpreting shell control characters.\n" +
 														   "\n" +
-														   "The & and | operators are logical (not bitwise) and may operate on\n" +
-														   "strings (a blank string is \"false\"). Comparison operators may also\n" +
+														   "The & and | operators are logical (not bitwise) and may operate on" +
+														   "strings (a blank string is \"false\"). Comparison operators may also" +
 														   "operate on strings (alphabetical sort).\n" +
 														   "\n" +
-														   "Constants may be strings or integers. Comparison, logical, and regex\n" +
-														   "operators may operate on strings (a blank string is \"false\"), other\n" +
+														   "Constants may be strings or integers. Comparison, logical, and regex" +
+														   "operators may operate on strings (a blank string is \"false\"), other" +
 														   "operators require integers.\n");
 
 	public static final Command FALLOCATE = new Command("fallocate", "Tell the filesystem to allocate space for a file.",
@@ -727,7 +727,7 @@ public final class CommandBox
 														   "-exec    Run command with path     -execdir   Run command in file's dir\n" +
 														   "-ok      Ask before exec           -okdir     Ask before execdir\n" +
 														   "\n" +
-														   "Commands substitute \"{}\" with matched file. End with \";\" to run each file,\n" +
+														   "Commands substitute \"{}\" with matched file. End with \";\" to run each file," +
 														   "or \"+\" (next argument after \"{}\") to collect and run with multiple files.",
 			new CommandParam("-H", "Follow command line symlinks"),
 			new CommandParam("-L", "Follow all symlinks"));
@@ -756,6 +756,83 @@ public final class CommandBox
 			new CommandParam("-d", "show more debug messages (-dd for even more)"),
 			new CommandParam("-b", "--board-type, Board Type"),
 			new CommandParam("--help", "display this help and exit"));
+
+	public static final Command GETENFORCE = new Command("getenforce", "Shows whether SELinux is disabled, enforcing, or permissive.");
+
+	public static final Command GETEVENT = new Command("getevent", "",
+			new CommandParam("-t", "show time stamps"),
+			new CommandParam("-n", "don't print newlines"),
+			new CommandParam("-s", "print switch states for given bits"),
+			new CommandParam("-S", "print all switch states"),
+			new CommandParam("-v", "verbosity mask (errs=1, dev=2, name=4, info=8, vers=16, pos. events=32, props=64)"),
+			new CommandParam("-d", "show HID descriptor, if available"),
+			new CommandParam("-p", "show possible events (errs, dev, name, pos. events)"),
+			new CommandParam("-i", "show all device info and possible events"),
+			new CommandParam("-l", "label event types and names in plain text"),
+			new CommandParam("-q", "quiet (clear verbosity mask)"),
+			new CommandParam("-c", "print given number of events then exit"),
+			new CommandParam("-r", "print rate events are received"));
+
+	public static final Command GETPROP = new Command("getprop", "Gets an Android system property, or lists them all.");
+
+	public static final Command GROUPS = new Command("groups", "Print the groups a user is in.");
+
+	public static final Command HEAD = new Command("head", "Copy first lines from files to stdout. If no files listed, copy from" +
+														   "stdin. Filename \"-\" is a synonym for stdin.",
+			new CommandParam("-n", "Number of lines to copy.", true));
+
+	public static final Command HID = new Command("hid", "");
+
+	public static final Command HOSTNAME = new Command("hostname", "Get/Set the current hostname");
+
+	public static final Command IFCONFIG = new Command("ifconfig", "Display or configure network interface." +
+																   "With no arguments, display active interfaces. First argument is interface" +
+																   "to operate on, one argument by itself displays that interface.\n" +
+																   "\n" +
+																   "Additional arguments are actions to perform on the interface:\n" +
+																   "\n" +
+																   "ADDRESS[/NETMASK] - set IPv4 address (1.2.3.4/5)\n" +
+																   "default - unset ipv4 address\n" +
+																   "add|del ADDRESS[/PREFIXLEN] - add/remove IPv6 address (1111::8888/128)\n" +
+																   "up - enable interface\n" +
+																   "down - disable interface\n" +
+																   "\n" +
+																   "netmask|broadcast|pointopoint ADDRESS - set more IPv4 characteristics\n" +
+																   "hw ether|infiniband ADDRESS - set LAN hardware address (AA:BB:CC...)\n" +
+																   "txqueuelen LEN - number of buffered packets before output blocks\n" +
+																   "mtu LEN - size of outgoing packets (Maximum Transmission Unit)\n" +
+																   "\n" +
+																   "Flags you can set on an interface (or -remove by prefixing with -):\n" +
+																   "arp - don't use Address Resolution Protocol to map LAN routes\n" +
+																   "promisc - don't discard packets that aren't to this LAN hardware address\n" +
+																   "multicast - force interface into multicast mode if the driver doesn't\n" +
+																   "allmulti - promisc for multicast packets\n" +
+																   "\n" +
+																   "Obsolete fields included for historical purposes:\n" +
+																   "irq|io_addr|mem_start ADDR - micromanage obsolete hardware\n" +
+																   "outfill|keepalive INTEGER - SLIP analog dialup line quality monitoring\n" +
+																   "metric INTEGER - added to Linux 0.9.10 with comment \"never used\", still true\n",
+			new CommandParam("-a", "Show all interfaces, not just active ones"));
+
+	public static final Command ID = new Command("id", "Print user and group ID.",
+			new CommandParam("-G", "Show only the group IDs"),
+			new CommandParam("-Z Show only SELinux context", ""),
+			new CommandParam("-g", "Show only the effective group ID"),
+			new CommandParam("-n", "print names instead of numeric IDs (to be used with -Ggu)"),
+			new CommandParam("-r", "Show real ID instead of effective ID"),
+			new CommandParam("-u", "Show only the effective user ID"));
+
+	public static final Command IFTOP = new Command("iftop", "",
+			new CommandParam("-r", "repeats", true),
+			new CommandParam("-d", "delay", true));
+
+	public static final Command IME = new Command("ime", "",
+			new CommandParam("list", "-a | -s, The list command prints all enabled input methods.  Use" +
+									 "the -a option to see all input methods.  Use" +
+									 "the -s option to see only a single summary line of each.", true),
+			new CommandParam("enable", "ID, The enable command allows the given input method ID to be used.", true),
+			new CommandParam("disable", "ID, The disable command disallows the given input method ID from use.", true),
+			new CommandParam("set", "ID, The set command switches to the given input method ID.", true));
 
 	public static final Command UNAME = new Command("uname", "Print system information.",
 			new CommandParam("-s", "System name"),
