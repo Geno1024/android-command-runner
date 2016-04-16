@@ -75,26 +75,26 @@ dumpstate				  P
 dumpsys					F
 dun-server				  P
 e2fsck					  P
-ebtables
-echo
-efsks
-egrep
-env
-expand
-expr
-fallocate
-false
-fdpp
-fgrep
-find
-fm_qsoc_patches
-fmconfig
-fmfactorytest
-fmfactorytestserver
-free
-fsck.f2fs
-fsck_msdos
-ftmdaemon
+ebtables				F		T S
+echo					F
+efsks					F
+egrep						U
+env						F
+expand					F
+expr					F
+fallocate				F
+false					F
+fdpp								H
+fgrep						U
+find					F
+fm_qsoc_patches			F
+fmconfig				F
+fmfactorytest				U
+fmfactorytestserver		  P
+free					F
+fsck.f2fs				  P
+fsck_msdos				  P
+ftmdaemon				F
 garden_app
 gatekeeperd
 getenforce

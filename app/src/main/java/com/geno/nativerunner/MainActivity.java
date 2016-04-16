@@ -84,6 +84,16 @@ public class MainActivity extends Activity
 						"du",
 						"dumpe2fs",
 						"dumpsys",
+						"ebtables",
+						"echo",
+						"efsks",
+						"expand",
+						"expr",
+						"fallocate",
+						"false",
+						"fmconfig", // Useful for an interactive command?
+						"free",
+						"ftmdaemon",
 						"uname",
 				};
 		busyboxCommands = new String[]
@@ -108,7 +118,8 @@ public class MainActivity extends Activity
 	public void addCommand(final ViewGroup toAdd, final String command)
 	{
 		Button b = new Button(this);
-		b.setText(command);
+		try {b.setText(command + ": " + ((Command) Class.forName("com.geno.nativerunner.CommandBox").getField(command.toUpperCase()).get("")).getParams().length);}
+		catch (Exception e){b.setText(command);}
 		b.setAllCaps(false);
 		b.setOnClickListener(new OnClickListener()
 			{

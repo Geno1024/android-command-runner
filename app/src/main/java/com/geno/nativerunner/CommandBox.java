@@ -614,6 +614,149 @@ public final class CommandBox
 
 	public static final Command DUMPSYS = new Command("dumpsys", "");
 
+	public static final Command EBTABLES = new Command("ebtables", "Options:\n" +
+																   "--proto  -p [!] proto         : protocol hexadecimal, by name or LENGTH\n" +
+																   "--src    -s [!] address[/mask]: source mac address\n" +
+																   "--dst    -d [!] address[/mask]: destination mac address\n" +
+																   "--in-if  -i [!] name[+]       : network input interface name\n" +
+																   "--out-if -o [!] name[+]       : network output interface name\n" +
+																   "--logical-in  [!] name[+]     : logical bridge input interface name\n" +
+																   "--logical-out [!] name[+]     : logical bridge output interface name\n" +
+																   "--set-counters -c chain\n" +
+																   "          pcnt bcnt           : set the counters of the to be added rule\n" +
+																   "--modprobe -M program         : try to insert modules using this program\n" +
+																   "--concurrent                  : use a file lock to support concurrent scripts\n" +
+																   "--version -V                  : print package version\n" +
+																   "\n" +
+																   "Environment variable:\n" +
+																   "EBTABLES_ATOMIC_FILE          : if set <FILE> (see above) will equal its value\n" +
+																   "\n" +
+																   "Standard targets: DROP, ACCEPT, RETURN or CONTINUE;\n" +
+																   "The target can also be a user defined chain.\n" +
+																   "\n" +
+																   "Supported chains for the filter table:\n" +
+																   "INPUT FORWARD OUTPUT \n",
+			new CommandParam("-A", "--append chain, append to chain", true),
+			new CommandParam("-D", "--delete chain, delete matching rule from chain\n" +
+								   "--delete chain rulenum, delete rule at position rulenum from chain", true),
+			new CommandParam("-C", "--change-counters chain [rulenum] pcnt bcnt, change counters of existing rule", true),
+			new CommandParam("-I", "--insert chain rulenum, insert rule at position rulenum in chain", true),
+			new CommandParam("-L", "--list [chain], list the rules in a chain or in all chains", true),
+			new CommandParam("-F", "--flush [chain], delete all rules in chain or in all chains", true),
+			new CommandParam("--init-table", "replace the kernel table with the initial table"),
+			new CommandParam("-Z", "--zero [chain], put counters on zero in chain or in all chains", true),
+			new CommandParam("-P", "--policy chain target, change policy on chain to target", true),
+			new CommandParam("-N", "--new-chain chain, create a user defined chain", true),
+			new CommandParam("-E", "--rename-chain old new, rename a chain", true),
+			new CommandParam("-X", "--delete-chain [chain], delete a user defined chain", true),
+			new CommandParam("--atomic-commit", "update the kernel w/t table contained in <FILE>"),
+			new CommandParam("--atomic-init", "put the initial kernel table into <FILE>"),
+			new CommandParam("--atomic-save", "put the current kernel table into <FILE>"),
+			new CommandParam("--atomic-file", "set <FILE> to file", true));
+
+	public static final Command ECHO = new Command("echo", "");
+
+	public static final Command EFSKS = new Command("efsks", "Example usage: \n" +
+															 "        sudo ./efsks -p /dev/ttyUSB0 -1 /dev/block/mmcblk0p10/ -2 /dev/block/mmcblk0p11/ -3 /dev/block/mmcblk0p12/ \n" +
+															 "        sudo ./efsks -p /dev/ttyUSB0 -t 120 -w ./",
+			new CommandParam("-p", "--port ttyport, Device name for USB driver, i.e. /dev/ttyUSB0", true),
+			new CommandParam("-t", "--timeout value, in seconds, how long TTY device should wait", true),
+			new CommandParam("-w", "--where path, Where files from MDM are temporarily stored", true));
+
+	public static final Command ENV = new Command("env", "Set the environment for command invocation.",
+			new CommandParam("-i", "Clear existing environment"));
+
+	public static final Command EXPAND = new Command("expand", "Expand tabs to spaces according to tabstops.",
+			new CommandParam("-t", "TABLIST\n" +
+								   "Specify tab stops, either a single number instead of the default 8,\n" +
+								   "or a comma separated list of increasing numbers representing tabstop\n" +
+								   "positions (absolute, not increments) with each additional tab beyound\n" +
+								   "that becoming one space.\n", true));
+
+	public static final Command EXPR = new Command("expr", "Evaluate expression and print result. For example, \"expr 1 + 2\".\n" +
+														   "\n" +
+														   "The supported operators are (grouped from highest to lowest priority):\n" +
+														   "\n" +
+														   "  ( )    :    * / %    + -    != <= < >= > =    &    |\n" +
+														   "\n" +
+														   "Each constant and operator must be a separate command line argument.\n" +
+														   "All operators are infix, meaning they expect a constant (or expression\n" +
+														   "that resolves to a constant) on each side of the operator. Operators of\n" +
+														   "the same priority (within each group above) are evaluated left to right.\n" +
+														   "Parentheses may be used (as separate arguments) to elevate the priority\n" +
+														   "of expressions.\n" +
+														   "\n" +
+														   "Calling expr from a command shell requires a lot of \\( or '*' escaping\n" +
+														   "to avoid interpreting shell control characters.\n" +
+														   "\n" +
+														   "The & and | operators are logical (not bitwise) and may operate on\n" +
+														   "strings (a blank string is \"false\"). Comparison operators may also\n" +
+														   "operate on strings (alphabetical sort).\n" +
+														   "\n" +
+														   "Constants may be strings or integers. Comparison, logical, and regex\n" +
+														   "operators may operate on strings (a blank string is \"false\"), other\n" +
+														   "operators require integers.\n");
+
+	public static final Command FALLOCATE = new Command("fallocate", "Tell the filesystem to allocate space for a file.",
+			new CommandParam("-l", "size", true));
+
+	public static final Command FALSE = new Command("false", "");
+
+	public static final Command FIND = new Command("find", "Search directories for matching files.\n" +
+														   "Default: search \".\" match all -print all matches.\n" +
+														   "Match filters:\n" +
+														   "-name  PATTERN filename with wildcards   -iname      case insensitive -name\n" +
+														   "-path  PATTERN path name with wildcards  -ipath      case insensitive -path\n" +
+														   "-user  UNAME   belongs to user UNAME     -nouser     user not in /etc/passwd\n" +
+														   "-group GROUP   belongs to group GROUP    -nogroup    group not in /etc/group\n" +
+														   "-perm  [-]MODE permissons (-=at least)   -prune      ignore contents of dir\n" +
+														   "-size  N[c]    512 byte blocks (c=bytes) -xdev       stay in this filesystem\n" +
+														   "-links N       hardlink count            -atime N    accessed N days ago\n" +
+														   "-ctime N       created N days ago        -mtime N    modified N days ago\n" +
+														   "-newer FILE    newer mtime than FILE     -mindepth # at least # dirs down\n" +
+														   "-depth         ignore contents of dir    -maxdepth # at most # dirs down\n" +
+														   "-type [bcdflps] (block, char, dir, file, symlink, pipe, socket)\n" +
+						/*This should be optimized.*/	   "\n" +
+														   "Numbers N may be prefixed by a - (less than) or + (greater than):\n" +
+														   "\n" +
+														   "Combine matches with:\n" +
+														   "!, -a, -o, ( )    not, and, or, group expressions\n" +
+														   "\n" +
+														   "Actions:\n" +
+														   "-print   Print match with newline  -print0    Print match with null\n" +
+														   "-exec    Run command with path     -execdir   Run command in file's dir\n" +
+														   "-ok      Ask before exec           -okdir     Ask before execdir\n" +
+														   "\n" +
+														   "Commands substitute \"{}\" with matched file. End with \";\" to run each file,\n" +
+														   "or \"+\" (next argument after \"{}\") to collect and run with multiple files.",
+			new CommandParam("-H", "Follow command line symlinks"),
+			new CommandParam("-L", "Follow all symlinks"));
+
+	public static final Command FM_QSOC_PATCHES = new Command("fm_qsoc_patches", "fm_qsoc_patches <ChipVersion> <0, 1, 2 for normal/wa_enable/wa_disable> [true/false for Analogmode]");
+
+	public static final Command FMCONFIG = new Command("fmconfig", "FM V4L2 device configuration application",
+			new CommandParam("enable", "Open and intialize FM Radio device"),
+			new CommandParam("disable", "CLose FM Radio device"),
+			new CommandParam("setfreq", "Set Frequency ex. setfreq 93500", true),
+			new CommandParam("getconfig", "Get Current Configuration"),
+			new CommandParam("seek", "Seek <dir> ex. seek up", true),
+			new CommandParam("scan", "Scan for list of stations ex. scan up", true),
+			new CommandParam("searchlist", "Search a list of stations"),
+			new CommandParam("quit", "Quit application"));
+
+	public static final Command FREE = new Command("free", "Display the total, free and used amount of physical memory and swap space.",
+			new CommandParam("-b", "Output units (default)"),
+			new CommandParam("-k", "Output units"),
+			new CommandParam("-m", "Output units"),
+			new CommandParam("-g", "Output units"),
+			new CommandParam("-t", "Output units"));
+
+	public static final Command FTMDAEMON = new Command("ftmdaemon", "",
+			new CommandParam("-n", "--nodaemon, do not run as a daemon"),
+			new CommandParam("-d", "show more debug messages (-dd for even more)"),
+			new CommandParam("-b", "--board-type, Board Type"),
+			new CommandParam("--help", "display this help and exit"));
+
 	public static final Command UNAME = new Command("uname", "Print system information.",
 			new CommandParam("-s", "System name"),
 			new CommandParam("-n", "Network (domain) name"),
