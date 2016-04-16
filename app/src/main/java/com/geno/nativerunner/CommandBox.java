@@ -170,6 +170,8 @@ public final class CommandBox
 
 	public static final Command CHOWN = new Command("chown", CHGRP.getDetail(), CHGRP.getParams());
 
+	public static final Command CHROOT = new Command("chroot", "Run command within a new root directory. If no command, run /bin/sh.");
+
 	public static final Command CP = new Command("cp", "Copy files from SOURCE to DEST. If more than one SOUNCE, DEST must be a directory",
 			new CommandParam("-F", "delete any existing destination file first (--remove-destination)"),
 			new CommandParam("-H", "Follow symlinks listed on command line"),

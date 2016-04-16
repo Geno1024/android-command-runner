@@ -10,10 +10,12 @@ import android.view.View.*;
 public class MainActivity extends Activity 
 {
 	public LinearLayout internal, busybox, external;
+	public String[] internalCommands, busyboxCommands, externalCommands;
 	@Override
 	protected void onCreate(Bundle savedInstanceState)
 	{
         super.onCreate(savedInstanceState);
+		ScrollView totalContent = new ScrollView(this);
 		LinearLayout total = new LinearLayout(this);
 		internal = new LinearLayout(this);
 		busybox = new LinearLayout(this);
@@ -40,27 +42,47 @@ public class MainActivity extends Activity
 		total.addView(internal, LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
 		total.addView(busybox, LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
 		total.addView(external, LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
-		setContentView(total);
-		addCommand(internal, "acpi");
-		addCommand(internal, "applypatch");
-		addCommand(internal, "appops");
-		addCommand(internal, "appwidget");
-		addCommand(internal, "atrace");
-		addCommand(internal, "basename");
-		addCommand(internal, "blockdev");
-		addCommand(internal, "bmgr");
-		addCommand(internal, "brctl");
-		addCommand(internal, "btnvtool");
-		addCommand(internal, "bzcat");
-		addCommand(internal, "cal");
-		addCommand(internal, "cat");
-		addCommand(internal, "chcon");
-		addCommand(internal, "chgrp");
-		addCommand(internal, "chmod");
-		addCommand(internal, "chown");
-		addCommand(internal, "cp");
-		addCommand(internal, "uname");
-		addCommand(busybox, "ls");
+		totalContent.addView(total);
+		setContentView(totalContent);
+		internalCommands = new String[]
+				{
+						"acpi",
+						"applypatch",
+						"appops",
+						"appwidget",
+						"atrace",
+						"basename",
+						"blockdev",
+						"bmgr",
+						"brctl",
+						"btnvtool",
+						"bzcat",
+						"cal",
+						"cat",
+						"chcon",
+						"chgrp",
+						"chmod",
+						"chown",
+						"cp",
+						"uname",
+				};
+		busyboxCommands = new String[]
+				{
+						"ls",
+				};
+		externalCommands = new String[]
+				{
+
+				};
+		addCommands(internal, internalCommands);
+		addCommands(busybox, busyboxCommands);
+		addCommands(external, externalCommands);
+	}
+
+	public void addCommands(final ViewGroup toAdd, final String[] commands)
+	{
+		for (String command : commands)
+			addCommand(toAdd, command);
 	}
 	
 	public void addCommand(final ViewGroup toAdd, final String command)

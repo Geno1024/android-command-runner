@@ -33,7 +33,7 @@ chcon					F
 chgrp					F
 chmod					F
 chown					F
-chroot
+chroot					F
 cksum
 clatd
 clear
