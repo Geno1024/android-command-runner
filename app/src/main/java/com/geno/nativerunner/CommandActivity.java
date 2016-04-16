@@ -88,21 +88,10 @@ public class CommandActivity extends Activity
 	public void addParam(LinearLayout paramTable, String cmd)
 	{
 		Command c;
-		switch(cmd)
-		{
-			case "acpi":			c = CommandBox.ACPI; 			break;
-			case "applypatch":		c = CommandBox.APPLYPATCH;		break;
-			case "atrace":			c = CommandBox.ATRACE;			break;
-			case "basename":		c = CommandBox.BASENAME;		break;
-			case "blockdev":		c = CommandBox.BLOCKDEV;		break;
-			case "cp":				c = CommandBox.CP;				break;
-			case "uname":			c = CommandBox.UNAME;			break;
-			default:				c = CommandBox.NULL;
-		}
+		try{c = (Command) Class.forName("com.geno.nativerunner.CommandBox").getField(cmd.toUpperCase()).get("");}
+		catch (Exception e){e.printStackTrace(); c = CommandBox.NULL;}
 		for (CommandParam p : c.getParams())
-		{
 			paramTable.addView(new CommandParamView(this, p));
-		}
 	}
 
 	public String getCmd()

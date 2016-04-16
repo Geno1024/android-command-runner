@@ -12,6 +12,11 @@
     <list default="true" id="b30d719e-85fe-4c00-b456-0a9dbfc065f2" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/geno/nativerunner/CommandActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/geno/nativerunner/CommandActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/geno/nativerunner/CommandBox.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/geno/nativerunner/CommandBox.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/geno/nativerunner/MainActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/geno/nativerunner/MainActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/command.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/command.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/commandparamview.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/commandparamview.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/test/bintree.txt" afterPath="$PROJECT_DIR$/app/src/main/test/bintree.txt" />
     </list>
     <ignored path="android-command-runner.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -40,11 +45,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="450">
-      <file leaf-file-name="CommandActivity.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="CommandActivity.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/geno/nativerunner/CommandActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.37279153">
-              <caret line="79" column="98" selection-start-line="79" selection-start-column="98" selection-end-line="79" selection-end-column="98" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="93" column="40" selection-start-line="93" selection-start-column="40" selection-end-line="93" selection-end-column="40" />
               <folding>
                 <element signature="e#1281#2684#0" expanded="true" />
                 <element signature="e#2683#2684#0" expanded="true" />
@@ -53,11 +58,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="command.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/command.xml">
+      <file leaf-file-name="commandparamview.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/commandparamview.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-1.625">
-              <caret line="57" column="16" selection-start-line="57" selection-start-column="16" selection-end-line="57" selection-end-column="16" />
+            <state vertical-scroll-proportion="-13.78125">
+              <caret line="42" column="17" selection-start-line="42" selection-start-column="17" selection-end-line="42" selection-end-column="17" />
               <folding />
             </state>
           </provider>
@@ -66,12 +71,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CommandBox.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="CommandBox.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/geno/nativerunner/CommandBox.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="43" column="67" selection-start-line="43" selection-start-column="67" selection-end-line="43" selection-end-column="67" />
-              <folding />
+            <state vertical-scroll-proportion="0.33450705">
+              <caret line="170" column="99" selection-start-line="170" selection-start-column="99" selection-end-line="170" selection-end-column="99" />
+              <folding>
+                <element signature="e#32#59#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -80,7 +87,7 @@
         <entry file="file://$PROJECT_DIR$/app/src/main/test/bintree.txt">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="18" column="4" selection-start-line="18" selection-start-column="4" selection-end-line="18" selection-end-column="4" />
+              <caret line="34" column="25" selection-start-line="34" selection-start-column="25" selection-end-line="34" selection-end-column="25" />
               <folding />
             </state>
           </provider>
@@ -90,10 +97,10 @@
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/geno/nativerunner/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="53" column="33" selection-start-line="53" selection-start-column="33" selection-end-line="53" selection-end-column="33" />
+              <caret line="59" column="35" selection-start-line="59" selection-start-column="35" selection-end-line="59" selection-end-column="35" />
               <folding>
-                <element signature="e#2292#2593#0" expanded="true" />
-                <element signature="e#2592#2593#0" expanded="true" />
+                <element signature="e#2691#2992#0" expanded="true" />
+                <element signature="e#2991#2992#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -1724,12 +1731,12 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/geno/nativerunner/CommandParam.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/geno/nativerunner/CommandParamView.java" />
         <option value="$PROJECT_DIR$/app/src/main/test/datagen.sh" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/geno/nativerunner/CommandBox.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/geno/nativerunner/MainActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/commandparamview.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/test/bintree.txt" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/command.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/geno/nativerunner/CommandActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/commandparamview.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/test/bintree.txt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/geno/nativerunner/MainActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/geno/nativerunner/CommandBox.java" />
       </list>
     </option>
   </component>
@@ -2270,10 +2277,10 @@
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32999444" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3277405" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3277405" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Android Model" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32997763" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32997763" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39932886" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
@@ -2310,14 +2317,6 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/geno/nativerunner/MainActivity.java</url>
-          <line>66</line>
-          <properties />
-          <option name="timeStamp" value="7" />
-        </line-breakpoint>
-      </breakpoints>
       <option name="time" value="8" />
     </breakpoint-manager>
     <watches-manager />
@@ -2338,7 +2337,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="12" column="103" selection-start-line="12" selection-start-column="103" selection-end-line="12" selection-end-column="103" />
-          <folding />
+          <folding>
+            <element signature="e#32#59#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -2355,8 +2356,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="43" column="39" selection-start-line="43" selection-start-column="39" selection-end-line="43" selection-end-column="39" />
           <folding>
-            <element signature="e#2292#2593#0" expanded="true" />
-            <element signature="e#2592#2593#0" expanded="true" />
+            <element signature="e#2691#2992#0" expanded="true" />
+            <element signature="e#2991#2992#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2397,7 +2398,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#32#59#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -2439,8 +2442,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="31" column="34" selection-start-line="31" selection-start-column="34" selection-end-line="31" selection-end-column="34" />
           <folding>
-            <element signature="e#2292#2593#0" expanded="true" />
-            <element signature="e#2592#2593#0" expanded="true" />
+            <element signature="e#2691#2992#0" expanded="true" />
+            <element signature="e#2991#2992#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2481,7 +2484,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="17" column="56" selection-start-line="17" selection-start-column="56" selection-end-line="17" selection-end-column="56" />
-          <folding />
+          <folding>
+            <element signature="e#32#59#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -2523,8 +2528,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="31" column="34" selection-start-line="31" selection-start-column="34" selection-end-line="31" selection-end-column="34" />
           <folding>
-            <element signature="e#2292#2593#0" expanded="true" />
-            <element signature="e#2592#2593#0" expanded="true" />
+            <element signature="e#2691#2992#0" expanded="true" />
+            <element signature="e#2991#2992#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2565,7 +2570,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="17" column="56" selection-start-line="17" selection-start-column="56" selection-end-line="17" selection-end-column="56" />
-          <folding />
+          <folding>
+            <element signature="e#32#59#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -2607,8 +2614,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="31" column="34" selection-start-line="31" selection-start-column="34" selection-end-line="31" selection-end-column="34" />
           <folding>
-            <element signature="e#2292#2593#0" expanded="true" />
-            <element signature="e#2592#2593#0" expanded="true" />
+            <element signature="e#2691#2992#0" expanded="true" />
+            <element signature="e#2991#2992#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2641,17 +2648,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/geno/nativerunner/CommandParam.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.037102472">
-          <caret line="28" column="28" selection-start-line="28" selection-start-column="28" selection-end-line="28" selection-end-column="28" />
-          <folding>
-            <element signature="e#395#396#0" expanded="true" />
-            <element signature="e#416#417#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/geno/nativerunner/Command.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.037102472">
@@ -2679,14 +2675,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/geno/nativerunner/CommandBox.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="43" column="67" selection-start-line="43" selection-start-column="67" selection-end-line="43" selection-end-column="67" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../../../../000655BA0003C40C/Android/SDKForUbuntu/sources/android-23/android/text/SpannableStringInternal.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.22261484">
@@ -2699,33 +2687,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.29681978">
           <caret line="25" column="27" selection-start-line="25" selection-start-column="27" selection-end-line="25" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/commandparamview.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33466136">
-          <caret line="8" column="34" selection-start-line="8" selection-start-column="34" selection-end-line="8" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/test/bintree.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="18" column="4" selection-start-line="18" selection-start-column="4" selection-end-line="18" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/geno/nativerunner/CommandParamView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8133803">
-          <caret line="35" column="48" selection-start-line="35" selection-start-column="48" selection-end-line="35" selection-end-column="48" />
           <folding />
         </state>
       </provider>
@@ -2748,8 +2709,49 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/command.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.625">
-          <caret line="57" column="16" selection-start-line="57" selection-start-column="16" selection-end-line="57" selection-end-column="16" />
+        <state vertical-scroll-proportion="0.62749004">
+          <caret line="64" column="50" selection-start-line="64" selection-start-column="38" selection-end-line="64" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/geno/nativerunner/CommandParam.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.59363955">
+          <caret line="28" column="28" selection-start-line="28" selection-start-column="28" selection-end-line="28" selection-end-column="28" />
+          <folding>
+            <element signature="e#395#396#0" expanded="true" />
+            <element signature="e#416#417#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/geno/nativerunner/CommandParamView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.704947">
+          <caret line="32" column="56" selection-start-line="32" selection-start-column="56" selection-end-line="32" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/geno/nativerunner/CommandActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="93" column="40" selection-start-line="93" selection-start-column="40" selection-end-line="93" selection-end-column="40" />
+          <folding>
+            <element signature="e#1281#2684#0" expanded="true" />
+            <element signature="e#2683#2684#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/commandparamview.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-13.78125">
+          <caret line="42" column="17" selection-start-line="42" selection-start-column="17" selection-end-line="42" selection-end-column="17" />
           <folding />
         </state>
       </provider>
@@ -2760,21 +2762,28 @@
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/geno/nativerunner/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="53" column="33" selection-start-line="53" selection-start-column="33" selection-end-line="53" selection-end-column="33" />
+          <caret line="59" column="35" selection-start-line="59" selection-start-column="35" selection-end-line="59" selection-end-column="35" />
           <folding>
-            <element signature="e#2292#2593#0" expanded="true" />
-            <element signature="e#2592#2593#0" expanded="true" />
+            <element signature="e#2691#2992#0" expanded="true" />
+            <element signature="e#2991#2992#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/geno/nativerunner/CommandActivity.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/test/bintree.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.37279153">
-          <caret line="79" column="98" selection-start-line="79" selection-start-column="98" selection-end-line="79" selection-end-column="98" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="34" column="25" selection-start-line="34" selection-start-column="25" selection-end-line="34" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/geno/nativerunner/CommandBox.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33450705">
+          <caret line="170" column="99" selection-start-line="170" selection-start-column="99" selection-end-line="170" selection-end-column="99" />
           <folding>
-            <element signature="e#1281#2684#0" expanded="true" />
-            <element signature="e#2683#2684#0" expanded="true" />
+            <element signature="e#32#59#0" expanded="true" />
           </folding>
         </state>
       </provider>

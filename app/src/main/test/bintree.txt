@@ -1,36 +1,38 @@
-ATFWD-daemon
-PktRspTest
-StoreKeybox
-acpi------------------------------------------------------------------------------------------------
-adsprpcd									need root
-am										too much params
-app_process							unknown
-app_process32						unknown
-applypatch								too much params
-appops							string param
-appwidget								too much params
-atmel_hover_tune.sh					unknown
-atrace----------------------------------------------------------------------------------------------
-audiod										need root
-basename--------------------------------------------------------------------------------------------
-bcc										too much parans
-blkid										need root
-blockdev--------------------------------------------------------------------------------------------
-bmgr
-bootanimation
-brctl
-btnvtool
-bu
-bugreport
-bzcat
-cal
-cat
-changepowermode.sh
-charger_monitor
-chcon
-chgrp
-chmod
-chown
+Command					F P U T S			Finish, Permission, Unknown, Too much params, String params
+
+ATFWD-daemon				U
+PktRspTest					U
+StoreKeybox					U
+acpi					F
+adsprpcd				  P
+am							  T S
+app_process					U
+app_process32				U
+applypatch				F
+appops					F		S
+appwidget				F		S
+atmel_hover_tune.sh			U
+atrace					F
+audiod					  P
+basename				F
+bcc							  T S
+blkid					  P
+blockdev				F
+bmgr					F	  T S
+bootanimation			  P
+brctl					F	  T S
+btnvtool				F
+bu							U
+bugreport					U
+bzcat					F
+cal						F
+cat						F
+changepowermode.sh		  P
+charger_monitor			  P
+chcon					F
+chgrp					F
+chmod					F
+chown					F
 chroot
 cksum
 clatd
@@ -39,7 +41,7 @@ cmp
 cnd
 comm
 content
-cp--------------------------------------------------------------------------------------------------
+cp						F
 cpio
 cplay
 curl
@@ -310,7 +312,7 @@ truncate
 tzdatacheck
 uiautomator
 umount
-uname-----------------------------------------------------------------------------------------------
+uname					F
 uncrypt
 uniq
 unix2dos

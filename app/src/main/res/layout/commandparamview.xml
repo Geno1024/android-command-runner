@@ -17,3 +17,27 @@
 		android:id="@+id/more"
 		android:visibility="gone"/>
 </LinearLayout>
+<!--<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+			  android:layout_width="match_parent"
+			  android:layout_height="match_parent"
+			  android:layout_marginTop="10dp">
+	<ToggleButton
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:id="@+id/paramSwitch"
+		android:textAllCaps="false"/>
+	<TextView
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:id="@+id/detailText"
+		android:layout_toRightOf="@id/paramSwitch"
+		android:layout_toEndOf="@id/paramSwitch"/>
+	<EditText
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:id="@+id/more"
+		android:visibility="gone"
+		android:layout_toRightOf="@id/paramSwitch"
+		android:layout_toEndOf="@id/paramSwitch"/>
+</RelativeLayout>-->
