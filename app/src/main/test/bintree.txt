@@ -122,43 +122,43 @@ ims_rtp_daemon			  P
 imscmservice			  P
 imsdatadaemon			  P
 imsqmidaemon			  P
-inotifyd
-input
-insmod
-install-recovery.sh
-installd
-ioctl
-ionice
-ip
-ip6tables
-iptables
+inotifyd				F
+input					F
+insmod					F
+install-recovery.sh		  P
+installd				  P
+ioctl					F
+ionice					F
+ip						F
+ip6tables				F
+iptables				F
 irsc_util							H
 irtest								H
 iw									H
 iwconfig							H
 iwlist								H
 iwpriv								H
-keystore
-kill
+keystore				  P
+kill					F
 ks						  P
-ld.mc
-linker
+ld.mc					F
+linker						U
 lmkd								H
-ln
-load_policy
+ln						F
+load_policy				F
 loc_launcher			  P
-log
-logcat
+log						F
+logcat					F
 logd								H
-logname
-logwrapper
-losetup
-lowi-server
-ls
-lsmod
-lsof
-lsusb
-make_ext4fs
+logname					F
+logwrapper				F
+losetup					F
+lowi-server				  P
+ls							U
+lsmod						U
+lsof						U
+lsusb						U
+make_ext4fs				F
 make_f2fs
 mcd									H
 md5sum

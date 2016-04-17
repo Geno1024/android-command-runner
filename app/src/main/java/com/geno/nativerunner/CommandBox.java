@@ -11,27 +11,27 @@ public final class CommandBox
 			new CommandParam("-V", "show everything"));
 
 	public static final Command APPLYPATCH = new Command("applypatch", "",
-			new CommandParam("-b", "", true),
-			new CommandParam("-c", "", true),
-			new CommandParam("-s", "", true),
+			new CommandParam("-b ", "", true),
+			new CommandParam("-c ", "", true),
+			new CommandParam("-s ", "", true),
 			new CommandParam("-l"));
 
 	public static final Command APPOPS = new Command("appops", "",
-			new CommandParam("set", "", true),
-			new CommandParam("get", "", true),
-			new CommandParam("reset", "", true));
+			new CommandParam("set ", "", true),
+			new CommandParam("get ", "", true),
+			new CommandParam("reset ", "", true));
 
 	public static final Command APPWIDGET = new Command("appwidget", "",
-			new CommandParam("grantbind --package", "", true),
-			new CommandParam("revokebind --package", "", true));
+			new CommandParam("grantbind --package ", "", true),
+			new CommandParam("revokebind --package ", "", true));
 
 	public static final Command ATRACE = new Command("atrace", "",
-			new CommandParam("-a", "enable app-level tracing for a comma separated list of cmdlines", true),
-			new CommandParam("-b", "use a trace buffer size of N KB", true),
+			new CommandParam("-a ", "enable app-level tracing for a comma separated list of cmdlines", true),
+			new CommandParam("-b ", "use a trace buffer size of N KB", true),
 			new CommandParam("-c", "trace into a circular buffer"),
-			new CommandParam("-k", "trace the listed kernel functions", true),
-			new CommandParam("-s", "sleep for N seconds before tracing [default 0]", true),
-			new CommandParam("-t", "trace for N seconds [default 5]", true),
+			new CommandParam("-k ", "trace the listed kernel functions", true),
+			new CommandParam("-s ", "sleep for N seconds before tracing [default 0]", true),
+			new CommandParam("-t ", "trace for N seconds [default 5]", true),
 			new CommandParam("-z", "compress the trace dump"),
 			new CommandParam("--async_start", "start circular trace and return immediatly"),
 			new CommandParam("--async_dump", "dump the current contents of circular trace buffer"),
@@ -46,7 +46,7 @@ public final class CommandBox
 			new CommandParam("--getro", "Get read only"),
 			new CommandParam("--getss", "Get sector size"),
 			new CommandParam("--getbsz", "Get block size"),
-			new CommandParam("--setbsz", "Set block size", true),
+			new CommandParam("--setbsz ", "Set block size", true),
 			new CommandParam("--getsz", "Get device size in 512-byte sectors"),
 			new CommandParam("--getsize", "Get device size in sectors (deprecated)"),
 			new CommandParam("--getsize64", "Get device size in bytes"),
@@ -54,10 +54,10 @@ public final class CommandBox
 			new CommandParam("--rereadpt", "Reread partition table"));
 
 	public static final Command BMGR = new Command("bmgr", "",
-			new CommandParam("backup", "The 'backup' command schedules a backup pass for the named package." +
+			new CommandParam("backup ", "The 'backup' command schedules a backup pass for the named package." +
 									   "Note that the backup pass will effectively be a no-op if the package" +
 									   "does not actually have changed data to store.", true),
-			new CommandParam("enable", "The 'enable' command enables or disables the entire backup mechanism." +
+			new CommandParam("enable ", "The 'enable' command enables or disables the entire backup mechanism." +
 									   "If the argument is 'true' it will be enabled, otherwise it will be" +
 									   "disabled.  When disabled, neither backup or restore operations will" +
 									   "be performed.", true),
@@ -69,9 +69,9 @@ public final class CommandBox
 												"is indicated with a '*' character."),
 			new CommandParam("list sets", "The 'list sets' command reports the token and name of each restore set" +
 										  "available to the device via the currently active transport."),
-			new CommandParam("transport", "The 'transport' command designates the named transport as the currently" +
+			new CommandParam("transport ", "The 'transport' command designates the named transport as the currently" +
 										  "active one.  This setting is persistent across reboots.", true),
-			new CommandParam("restore", "The 'restore' command when given just a restore token initiates a full-system" +
+			new CommandParam("restore ", "The 'restore' command when given just a restore token initiates a full-system" +
 										"restore operation from the currently active transport.  It will deliver" +
 										"the restore set designated by the TOKEN argument to each application" +
 										"that had contributed data to that restore set." +
@@ -88,30 +88,30 @@ public final class CommandBox
 			new CommandParam("run", "The 'run' command causes any scheduled backup operation to be initiated" +
 									"immediately, without the usual waiting period for batching together" +
 									"data changes."),
-			new CommandParam("wipe", "The 'wipe' command causes all backed-up data for the given package to be" +
+			new CommandParam("wipe ", "The 'wipe' command causes all backed-up data for the given package to be" +
 									 "erased from the given transport's storage.  The next backup operation" +
 									 "that the given application performs will rewrite its entire data set." +
 									 "Transport names to use here are those reported by 'list transports'.", true),
-			new CommandParam("fullbackup", "The 'fullbackup' command induces a full-data stream backup for one or more" +
+			new CommandParam("fullbackup ", "The 'fullbackup' command induces a full-data stream backup for one or more" +
 										   "packages.  The data is sent via the currently active transport.", true));
 
 	public static final Command BRCTL = new Command("brctl", "",
-			new CommandParam("addbr", "add bridge", true),
-			new CommandParam("delbr", "delete bridge", true),
-			new CommandParam("addif", "add interface to bridge", true),
-			new CommandParam("delif", "delete interface from bridge", true),
-			new CommandParam("hairpin", "turn hairpin on/off", true),
-			new CommandParam("setageing", "set ageing time", true),
-			new CommandParam("setbridgeprio", "set bridge priority", true),
-			new CommandParam("setfd", "set bridge forward delay", true),
-			new CommandParam("sethello", "set hello time", true),
-			new CommandParam("setmaxage", "set max message age", true),
-			new CommandParam("setpathcost", "set path cost", true),
-			new CommandParam("setportprio", "set port priority", true),
-			new CommandParam("show", "show a list of bridges", true),
-			new CommandParam("showmacs", "show a list of mac addrs", true),
-			new CommandParam("showstp", "show bridge stp info", true),
-			new CommandParam("stp", "turn stp on/off", true));
+			new CommandParam("addbr ", "add bridge", true),
+			new CommandParam("delbr ", "delete bridge", true),
+			new CommandParam("addif ", "add interface to bridge", true),
+			new CommandParam("delif ", "delete interface from bridge", true),
+			new CommandParam("hairpin ", "turn hairpin on/off", true),
+			new CommandParam("setageing ", "set ageing time", true),
+			new CommandParam("setbridgeprio ", "set bridge priority", true),
+			new CommandParam("setfd ", "set bridge forward delay", true),
+			new CommandParam("sethello ", "set hello time", true),
+			new CommandParam("setmaxage ", "set max message age", true),
+			new CommandParam("setpathcost ", "set path cost", true),
+			new CommandParam("setportprio ", "set port priority", true),
+			new CommandParam("show ", "show a list of bridges", true),
+			new CommandParam("showmacs ", "show a list of mac addrs", true),
+			new CommandParam("showstp ", "show bridge stp info", true),
+			new CommandParam("stp ", "turn stp on/off", true));
 
 	public static final Command BTNVTOOL = new Command("btnvtool", "BT NV Read/Write Tool",
 			new CommandParam("-b", "Bluetooth MAC address to use"),
@@ -194,7 +194,7 @@ public final class CommandBox
 			new CommandParam("-3", "suppress the output column of lines duplicated in FILE1 and FILE2"));
 
 	public static final Command CONTENT = new Command("content", "",
-			new CommandParam("insert --uri", "<URI> a content provider URI.\n" +
+			new CommandParam("insert --uri ", "<URI> a content provider URI.\n" +
 									   "  <BINDING> binds a typed value to a column and is formatted:\n" +
 									   "  <COLUMN_NAME>:<TYPE>:<COLUMN_VALUE> where:\n" +
 									   "  <TYPE> specifies data type such as:\n" +
@@ -203,23 +203,23 @@ public final class CommandBox
 									   "  Example:\n" +
 									   "  # Add \"new_setting\" secure setting with value \"new_value\".\n" +
 									   "  adb shell content insert --uri content://settings/secure --bind name:s:new_setting --bind value:s:new_value\n"),
-			new CommandParam("update --uri", "<WHERE> is a SQL style where clause in quotes (You have to escape single quotes - see example below).\n" +
+			new CommandParam("update --uri ", "<WHERE> is a SQL style where clause in quotes (You have to escape single quotes - see example below).\n" +
 											 "  Example:\n" +
 											 "  # Change \"new_setting\" secure setting to \"newer_value\".\n" +
 											 "  adb shell content update --uri content://settings/secure --bind value:s:newer_value --where \"name='new_setting'\""),
-			new CommandParam("delete --uri", "Example:\n" +
+			new CommandParam("delete --uri ", "Example:\n" +
 											 "  # Remove \"new_setting\" secure setting.\n" +
 											 "  adb shell content delete --uri content://settings/secure --where \"name='new_setting'\""),
-			new CommandParam("query --uri", "<PROJECTION> is a list of colon separated column names and is formatted:\n" +
+			new CommandParam("query --uri ", "<PROJECTION> is a list of colon separated column names and is formatted:\n" +
 											"  <COLUMN_NAME>[:<COLUMN_NAME>...]\n" +
 											"  <SORT_ORDER> is the order in which rows in the result should be sorted.\n" +
 											"  Example:\n" +
 											"  # Select \"name\" and \"value\" columns from secure settings where \"name\" is equal to \"new_setting\" and sort the result by name in ascending order.\n" +
 											"  adb shell content query --uri content://settings/secure --projection name:value --where \"name='new_setting'\" --sort \"name ASC\""),
-			new CommandParam("call --uri", "<METHOD> is the name of a provider-defined method\n" +
+			new CommandParam("call --uri ", "<METHOD> is the name of a provider-defined method\n" +
 										   "  <ARG> is an optional string argument\n" +
 										   "  <BINDING> is like --bind above, typed data of the form <KEY>:{b,s,i,l,f,d}:<VAL>"),
-			new CommandParam("read --uri", "Example:\n" +
+			new CommandParam("read --uri ", "Example:\n" +
 										   "  # cat default ringtone to a file, then pull to host\n" +
 										   "  adb shell 'content read --uri content://settings/system/ringtone > /mnt/sdcard/tmp.ogg' && adb pull /mnt/sdcard/tmp.ogg"));
 
@@ -241,8 +241,8 @@ public final class CommandBox
 			new CommandParam("-v", "verbose"));
 
 	public static final Command CPIO = new Command("cpio", "copy files into and out of a \"newc\" format cpio archive",
-			new CommandParam("-F", "use archive FILE instead of stdin/stdout", true),
-			new CommandParam("-p", "copy-pass mode, copy stdin file list to directory DEST", true),
+			new CommandParam("-F ", "use archive FILE instead of stdin/stdout", true),
+			new CommandParam("-p ", "copy-pass mode, copy stdin file list to directory DEST", true),
 			new CommandParam("-i", "extract from archive into file system (stdin=archive)"),
 			new CommandParam("-o", "create archive (stdin=list of files, stdout=archive)"),
 			new CommandParam("-t", "test files (list only, stdin=archive, stdout=list of files)"),
@@ -262,47 +262,47 @@ public final class CommandBox
 			new CommandParam("--anyauth", "Pick \"any\" authentication method (H)"),
 			new CommandParam("-a", "--append, Append to target file when uploading (F/SFTP)"),
 			new CommandParam("--basic", "Use HTTP Basic Authentication (H)"),
-			new CommandParam("--cacert", "CA certificate to verify peer against (SSL)", true),
-			new CommandParam("--capath", "CA directory to verify peer against (SSL)", true),
+			new CommandParam("--cacert ", "CA certificate to verify peer against (SSL)", true),
+			new CommandParam("--capath ", "CA directory to verify peer against (SSL)", true),
 			new CommandParam("-E", "--cert CERT[:PASSWD], Client certificate file and password (SSL)"),
 			new CommandParam("--cert-status", "Verify the status of the server certificate (SSL)"),
-			new CommandParam("--cert-type", "Certificate file type (DER/PEM/ENG) (SSL)", true),
-			new CommandParam("--ciphers", "SSL ciphers to use (SSL)", true),
+			new CommandParam("--cert-type ", "Certificate file type (DER/PEM/ENG) (SSL)", true),
+			new CommandParam("--ciphers ", "SSL ciphers to use (SSL)", true),
 			new CommandParam("--compressed", "Request compressed response (using deflate or gzip)"),
-			new CommandParam("-K", "--config FILE, Read config from FILE", true),
-			new CommandParam("--connect-timeout", "Maximum time allowed for connection", true),
-			new CommandParam("-C", "--continue-at OFFSET, Resumed transfer OFFSET", true),
-			new CommandParam("-b", "--cookie STRING/FILE, Read cookies from STRING/FILE (H)"),
-			new CommandParam("-c", "--cookie-jar FILE, Write cookies to FILE after operation (H)", true),
+			new CommandParam("-K ", "--config FILE, Read config from FILE", true),
+			new CommandParam("--connect-timeout ", "Maximum time allowed for connection", true),
+			new CommandParam("-C ", "--continue-at OFFSET, Resumed transfer OFFSET", true),
+			new CommandParam("-b ", "--cookie STRING/FILE, Read cookies from STRING/FILE (H)"),
+			new CommandParam("-c ", "--cookie-jar FILE, Write cookies to FILE after operation (H)", true),
 			new CommandParam("--create-dirs", "Create necessary local directory hierarchy"),
 			new CommandParam("--crlf", "Convert LF to CRLF in upload"),
-			new CommandParam("--crlfile", "Get a CRL list in PEM format from the given file", true),
-			new CommandParam("-d", "--data DATA, HTTP POST data (H)", true),
-			new CommandParam("--data-raw", "HTTP POST data, '@' allowed (H)", true),
-			new CommandParam("--data-ascii", "HTTP POST ASCII data (H)", true),
-			new CommandParam("--data-binary", "HTTP POST binary data (H)", true),
-			new CommandParam("--data-urlencode", "HTTP POST data url encoded (H)", true),
-			new CommandParam("--delegation", "GSS-API delegation permission", true),
+			new CommandParam("--crlfile ", "Get a CRL list in PEM format from the given file", true),
+			new CommandParam("-d ", "--data DATA, HTTP POST data (H)", true),
+			new CommandParam("--data-raw ", "HTTP POST data, '@' allowed (H)", true),
+			new CommandParam("--data-ascii ", "HTTP POST ASCII data (H)", true),
+			new CommandParam("--data-binary ", "HTTP POST binary data (H)", true),
+			new CommandParam("--data-urlencode ", "HTTP POST data url encoded (H)", true),
+			new CommandParam("--delegation ", "GSS-API delegation permission", true),
 			new CommandParam("--digest", "Use HTTP Digest Authentication (H)"),
 			new CommandParam("--disable-eprt", "Inhibit using EPRT or LPRT (F)"),
 			new CommandParam("--disable-epsv", "Inhibit using EPSV (F)"),
 			new CommandParam("--dns-servers", "DNS server addrs to use: 1.1.1.1;2.2.2.2"),
 			new CommandParam("--dns-interface", "Interface to use for DNS requests"),
 			new CommandParam("--dns-ipv4-addr", "IPv4 address to use for DNS requests, dot notation"),
-			new CommandParam("--dns-ipv6-addr", "IPv6 address to use for DNS requests, dot notation"),
-			new CommandParam("-D", "--dump-header FILE, Write the headers to FILE", true),
-			new CommandParam("--egd-file", "EGD socket path for random data (SSL)", true),
-			new CommandParam("--engine", "Crypto engine (use \"--engine list\" for list) (SSL)", true),
+			new CommandParam("--dns-ipv6-addr ", "IPv6 address to use for DNS requests, dot notation"),
+			new CommandParam("-D ", "--dump-header FILE, Write the headers to FILE", true),
+			new CommandParam("--egd-file ", "EGD socket path for random data (SSL)", true),
+			new CommandParam("--engine ", "Crypto engine (use \"--engine list\" for list) (SSL)", true),
 			new CommandParam("-f", "--fail, Fail silently (no output at all) on HTTP errors (H)"),
 			new CommandParam("--false-start", "Enable TLS False Start."),
-			new CommandParam("-F", "--form CONTENT, Specify HTTP multipart POST data (H)", true),
-			new CommandParam("--form-string", "Specify HTTP multipart POST data (H)", true),
+			new CommandParam("-F ", "--form CONTENT, Specify HTTP multipart POST data (H)", true),
+			new CommandParam("--form-string ", "Specify HTTP multipart POST data (H)", true),
 			new CommandParam("--ftp-account", "Account data string (F)"),
-			new CommandParam("--ftp-alternative-to-user", "String to replace \"USER [name]\" (F)", true),
+			new CommandParam("--ftp-alternative-to-user ", "String to replace \"USER [name]\" (F)", true),
 			new CommandParam("--ftp-create-dirs", "Create the remote dirs if not present (F)"),
 			new CommandParam("--ftp-method [MULTICWD/NOCWD/SINGLECWD]", "Control CWD usage (F)"),
 			new CommandParam("--ftp-pasv", "Use PASV/EPSV instead of PORT (F)"),
-			new CommandParam("-P", "--ftp-port ADR, Use PORT with given address instead of PASV (F)", true),
+			new CommandParam("-P ", "--ftp-port ADR, Use PORT with given address instead of PASV (F)", true),
 			new CommandParam("--ftp-skip-pasv-ip", "Skip the IP address for PASV (F)"),
 			new CommandParam("--ftp-pret", "Send PRET before PASV (for drftpd) (F)"),
 			new CommandParam("--ftp-ssl-ccc", "Send CCC after authenticating (F)"),
@@ -310,7 +310,7 @@ public final class CommandBox
 			new CommandParam("--ftp-ssl-control", "Require SSL/TLS for FTP login, clear for transfer (F)"),
 			new CommandParam("-G", "--get, Send the -d data with a HTTP GET (H)"),
 			new CommandParam("-g", "--globoff, Disable URL sequences and ranges using {} and []"),
-			new CommandParam("-H", "--header LINE, Pass custom header LINE to server (H)", true),
+			new CommandParam("-H ", "--header LINE, Pass custom header LINE to server (H)", true),
 			new CommandParam("-I", "--head, Show document info only"),
 			new CommandParam("-h", "--help, This help text"),
 			new CommandParam("--hostpubmd5 MD5", "Hex-encoded MD5 string of the host public key. (SSH)"),
@@ -320,33 +320,33 @@ public final class CommandBox
 			new CommandParam("--ignore-content-length", "Ignore the HTTP Content-Length header"),
 			new CommandParam("-i", "--include, Include protocol headers in the output (H/F)"),
 			new CommandParam("-k", "--insecure, Allow connections to SSL sites without certs (H)"),
-			new CommandParam("--interface", "Use network INTERFACE (or address)", true),
+			new CommandParam("--interface ", "Use network INTERFACE (or address)", true),
 			new CommandParam("-4", "--ipv4, Resolve name to IPv4 address"),
 			new CommandParam("-6", "--ipv6, Resolve name to IPv6 address"),
 			new CommandParam("-j", "--junk-session-cookies, Ignore session cookies read from file (H)"),
-			new CommandParam("--keepalive-time", "Wait SECONDS between keepalive probes", true),
-			new CommandParam("--key", "Private key file name (SSL/SSH)", true),
-			new CommandParam("--key-type", "Private key file type (DER/PEM/ENG) (SSL)", true),
-			new CommandParam("--krb", "Enable Kerberos with security LEVEL (F)", true),
-			new CommandParam("--libcurl", "Dump libcurl equivalent code of this command line", true),
-			new CommandParam("--limit-rate", "Limit transfer speed to RATE", true),
+			new CommandParam("--keepalive-time ", "Wait SECONDS between keepalive probes", true),
+			new CommandParam("--key ", "Private key file name (SSL/SSH)", true),
+			new CommandParam("--key-type ", "Private key file type (DER/PEM/ENG) (SSL)", true),
+			new CommandParam("--krb ", "Enable Kerberos with security LEVEL (F)", true),
+			new CommandParam("--libcurl ", "Dump libcurl equivalent code of this command line", true),
+			new CommandParam("--limit-rate ", "Limit transfer speed to RATE", true),
 			new CommandParam("-l", "--list-only, List only mode (F/POP3)"),
-			new CommandParam("--local-port", "Force use of RANGE for local port numbers", true),
+			new CommandParam("--local-port ", "Force use of RANGE for local port numbers", true),
 			new CommandParam("-L", "--location, Follow redirects (H)"),
 			new CommandParam("--location-trusted ", " Like '--location', and send auth to other hosts (H)"),
-			new CommandParam("--login-options", "Server login options (IMAP, POP3, SMTP)", true),
+			new CommandParam("--login-options ", "Server login options (IMAP, POP3, SMTP)", true),
 			new CommandParam("-M", "--manual, Display the full manual"),
-			new CommandParam("--mail-from", "Mail from this address (SMTP)", true),
-			new CommandParam("--mail-rcpt", "Mail to this/these addresses (SMTP)", true),
-			new CommandParam("--mail-auth", "Originator address of the original email (SMTP)", true),
-			new CommandParam("--max-filesize", "Maximum file size to download (H/F)", true),
-			new CommandParam("--max-redirs", "Maximum number of redirects allowed (H)", true),
-			new CommandParam("-m", "--max-time SECONDS, Maximum time allowed for the transfer", true),
+			new CommandParam("--mail-from ", "Mail from this address (SMTP)", true),
+			new CommandParam("--mail-rcpt ", "Mail to this/these addresses (SMTP)", true),
+			new CommandParam("--mail-auth ", "Originator address of the original email (SMTP)", true),
+			new CommandParam("--max-filesize ", "Maximum file size to download (H/F)", true),
+			new CommandParam("--max-redirs ", "Maximum number of redirects allowed (H)", true),
+			new CommandParam("-m ", "--max-time SECONDS, Maximum time allowed for the transfer", true),
 			new CommandParam("--metalink", "Process given URLs as metalink XML file"),
 			new CommandParam("--negotiate", "Use HTTP Negotiate (SPNEGO) authentication (H)"),
 			new CommandParam("-n", "--netrc, Must read .netrc for user name and password"),
 			new CommandParam("--netrc-optional", "Use either .netrc or URL; overrides -n"),
-			new CommandParam("--netrc-file", "Specify FILE for netrc", true),
+			new CommandParam("--netrc-file ", "Specify FILE for netrc", true),
 			new CommandParam(" -:", "--next, Allows the following URL to use a separate set of options"),
 			new CommandParam("--no-alpn", "Disable the ALPN TLS extension (H)"),
 			new CommandParam("-N", "--no-buffer, Disable buffering of the output stream"),
@@ -355,17 +355,17 @@ public final class CommandBox
 			new CommandParam("--no-sessionid", "Disable SSL session-ID reusing (SSL)"),
 			new CommandParam("--noproxy", "List of hosts which do not use proxy"),
 			new CommandParam("--ntlm", "Use HTTP NTLM authentication (H)"),
-			new CommandParam("--oauth2-bearer", "OAuth 2 Bearer Token (IMAP, POP3, SMTP)", true),
-			new CommandParam("-o", "--output FILE, Write to FILE instead of stdout", true),
-			new CommandParam("--pass", "Pass phrase for the private key (SSL/SSH)", true),
+			new CommandParam("--oauth2-bearer ", "OAuth 2 Bearer Token (IMAP, POP3, SMTP)", true),
+			new CommandParam("-o ", "--output FILE, Write to FILE instead of stdout", true),
+			new CommandParam("--pass ", "Pass phrase for the private key (SSL/SSH)", true),
 			new CommandParam("--path-as-is", "Do not squash .. sequences in URL path"),
-			new CommandParam("--pinnedpubkey", "Public key (PEM/DER) to verify peer against (OpenSSL/GnuTLS/NSS/wolfSSL/CyaSSL/GSKit only)", true),
+			new CommandParam("--pinnedpubkey ", "Public key (PEM/DER) to verify peer against (OpenSSL/GnuTLS/NSS/wolfSSL/CyaSSL/GSKit only)", true),
 			new CommandParam("--post301", "Do not switch to GET after following a 301 redirect (H)"),
 			new CommandParam("--post302", "Do not switch to GET after following a 302 redirect (H)"),
 			new CommandParam("--post303", "Do not switch to GET after following a 303 redirect (H)"),
 			new CommandParam(" -#", "--progress-bar, Display transfer progress as a progress bar"),
-			new CommandParam("--proto", "Enable/disable PROTOCOLS", true),
-			new CommandParam("--proto-redir", "Enable/disable PROTOCOLS on redirect", true),
+			new CommandParam("--proto ", "Enable/disable PROTOCOLS", true),
+			new CommandParam("--proto-redir ", "Enable/disable PROTOCOLS on redirect", true),
 			new CommandParam("-x", "--proxy [PROTOCOL://]HOST[:PORT], Use proxy on given port"),
 			new CommandParam("--proxy-anyauth", "Pick \"any\" proxy authentication method (H)"),
 			new CommandParam("--proxy-basic", "Use Basic authentication on the proxy (H)"),
@@ -375,21 +375,21 @@ public final class CommandBox
 			new CommandParam("-U, ]", "--proxy-user USER[:PASSWORD, Proxy user and password"),
 			new CommandParam("--proxy1.0 HOST[:PORT]", "Use HTTP/1.0 proxy on given port"),
 			new CommandParam("-p", "--proxytunnel, Operate through a HTTP proxy tunnel (using CONNECT)"),
-			new CommandParam("--pubkey", "Public key file name (SSH)", true),
-			new CommandParam("-Q", "--quote CMD, Send command(s) to server before transfer (F/SFTP)", true),
-			new CommandParam("--random-file", "File for reading random data from (SSL)", true),
-			new CommandParam("-r", "--range RANGE, Retrieve only the bytes within RANGE", true),
+			new CommandParam("--pubkey ", "Public key file name (SSH)", true),
+			new CommandParam("-Q ", "--quote CMD, Send command(s) to server before transfer (F/SFTP)", true),
+			new CommandParam("--random-file ", "File for reading random data from (SSL)", true),
+			new CommandParam("-r ", "--range RANGE, Retrieve only the bytes within RANGE", true),
 			new CommandParam("--raw", "Do HTTP \"raw\"; no transfer decoding (H)"),
 			new CommandParam("-e", "--referer, Referer URL (H)"),
 			new CommandParam("-J", "--remote-header-name, Use the header-provided filename (H)"),
 			new CommandParam("-O", "--remote-name, Write output to a file named as the remote file"),
 			new CommandParam("--remote-name-all", "Use the remote file name for all URLs"),
 			new CommandParam("-R", "--remote-time, Set the remote file's time on the local output"),
-			new CommandParam("-X", "--request COMMAND, Specify request command to use", true),
-			new CommandParam("--resolve HOST:PORT:ADDRESS", "Force resolve of HOST:PORT to ADDRESS"),
-			new CommandParam("--retry", "Retry request NUM times if transient problems occur", true),
-			new CommandParam("--retry-delay", "Wait SECONDS between retries", true),
-			new CommandParam("--retry-max-time", "Retry only within this period", true),
+			new CommandParam("-X ", "--request COMMAND, Specify request command to use", true),
+			new CommandParam("--resolve ", "HOST:PORT:ADDRESS, Force resolve of HOST:PORT to ADDRESS", true),
+			new CommandParam("--retry ", "Retry request NUM times if transient problems occur", true),
+			new CommandParam("--retry-delay ", "Wait SECONDS between retries", true),
+			new CommandParam("--retry-max-time ", "Retry only within this period", true),
 			new CommandParam("--sasl-ir", "Enable initial response in SASL authentication"),
 			new CommandParam("-S", "--show-error, Show error. With -s, make curl show errors when they occur"),
 			new CommandParam("-s", "--silent, Silent mode (don't output anything)"),
@@ -397,50 +397,50 @@ public final class CommandBox
 			new CommandParam("--socks4a HOST[:PORT] ", " SOCKS4a proxy on given host + port"),
 			new CommandParam("--socks5 HOST[:PORT]", "SOCKS5 proxy on given host + port"),
 			new CommandParam("--socks5-hostname HOST[:PORT]", "SOCKS5 proxy, pass host name to proxy"),
-			new CommandParam("-Y", "--speed-limit RATE, Stop transfers below RATE for 'speed-time' secs", true),
-			new CommandParam("-y", "--speed-time SECONDS, Trigger 'speed-limit' abort after SECONDS (default: 30)", true),
+			new CommandParam("-Y ", "--speed-limit RATE, Stop transfers below RATE for 'speed-time' secs", true),
+			new CommandParam("-y ", "--speed-time SECONDS, Trigger 'speed-limit' abort after SECONDS (default: 30)", true),
 			new CommandParam("--ssl", "Try SSL/TLS (FTP, IMAP, POP3, SMTP)"),
 			new CommandParam("--ssl-reqd", "Require SSL/TLS (FTP, IMAP, POP3, SMTP)"),
 			new CommandParam("-2", "--sslv2, Use SSLv2 (SSL)"),
 			new CommandParam("-3", "--sslv3, Use SSLv3 (SSL)"),
 			new CommandParam("--ssl-allow-beast", "Allow security flaw to improve interop (SSL)"),
-			new CommandParam("--stderr", "Where to redirect stderr (use \"-\" for stdout)", true),
+			new CommandParam("--stderr ", "Where to redirect stderr (use \"-\" for stdout)", true),
 			new CommandParam("--tcp-nodelay", "Use the TCP_NODELAY option"),
 			new CommandParam("-t", "--telnet-option OPT=VAL, Set telnet option"),
-			new CommandParam("--tftp-blksize", "Set TFTP BLKSIZE option (must be >512)", true),
-			new CommandParam("-z", "--time-cond TIME, Transfer based on a time condition", true),
+			new CommandParam("--tftp-blksize ", "Set TFTP BLKSIZE option (must be >512)", true),
+			new CommandParam("-z ", "--time-cond TIME, Transfer based on a time condition", true),
 			new CommandParam("-1", "--tlsv1, Use => TLSv1 (SSL)"),
 			new CommandParam("--tlsv1.0", "Use TLSv1.0 (SSL)"),
 			new CommandParam("--tlsv1.1", "Use TLSv1.1 (SSL)"),
 			new CommandParam("--tlsv1.2", "Use TLSv1.2 (SSL)"),
-			new CommandParam("--trace", "Write a debug trace to FILE", true),
-			new CommandParam("--trace-ascii", "Like --trace, but without hex output", true),
+			new CommandParam("--trace ", "Write a debug trace to FILE", true),
+			new CommandParam("--trace-ascii ", "Like --trace, but without hex output", true),
 			new CommandParam("--trace-time", "Add time stamps to trace/verbose output"),
 			new CommandParam("--tr-encoding", "Request compressed transfer encoding (H)"),
-			new CommandParam("-T", "--upload-file FILE, Transfer FILE to destination", true),
-			new CommandParam("--url", "URL to work with", true),
+			new CommandParam("-T ", "--upload-file FILE, Transfer FILE to destination", true),
+			new CommandParam("--url ", "URL to work with", true),
 			new CommandParam("-B", "--use-ascii, Use ASCII/text transfer"),
 			new CommandParam("-u", "--user USER[:PASSWORD], user and password"),
-			new CommandParam("--tlsuser", "username", true),
-			new CommandParam("--tlspassword", "TLS password", true),
-			new CommandParam("--tlsauthtype", "TLS authentication type (default: SRP)", true),
-			new CommandParam("--unix-socket", "Connect through this Unix domain socket", true),
-			new CommandParam("-A", "--user-agent STRING, Send User-Agent STRING to server (H)", true),
+			new CommandParam("--tlsuser ", "username", true),
+			new CommandParam("--tlspassword ", "TLS password", true),
+			new CommandParam("--tlsauthtype ", "TLS authentication type (default: SRP)", true),
+			new CommandParam("--unix-socket ", "Connect through this Unix domain socket", true),
+			new CommandParam("-A ", "--user-agent STRING, Send User-Agent STRING to server (H)", true),
 			new CommandParam("-v", "--verbose, Make the operation more talkative"),
 			new CommandParam("-V", "--version, Show version number and quit"),
-			new CommandParam("-w", "--write-out FORMAT, Use output FORMAT after completion", true),
+			new CommandParam("-w ", "--write-out FORMAT, Use output FORMAT after completion", true),
 			new CommandParam("--xattr", "Store metadata in extended file attributes"));
 
 	public static final Command CUT = new Command("cut", "Print selected parts of lines from each FILE to standard output.",
-			new CommandParam("-b", "select only these bytes from LIST.", true),
-			new CommandParam("-c", "select only these characters from LIST.", true),
-			new CommandParam("-f", "select only these fields.", true),
-			new CommandParam("-d", "use DELIM instead of TAB for field delimiter.", true),
+			new CommandParam("-b ", "select only these bytes from LIST.", true),
+			new CommandParam("-c ", "select only these characters from LIST.", true),
+			new CommandParam("-f ", "select only these fields.", true),
+			new CommandParam("-d ", "use DELIM instead of TAB for field delimiter.", true),
 			new CommandParam("-s", "do not print lines not containing delimiters."),
 			new CommandParam("-n", "don't split multibyte characters (Ignored)."));
 
 	public static final Command DALVIKVM = new Command("dalvikvm", "",
-			new CommandParam("-classpath classpath", "(-cp classpath)", true),
+			new CommandParam("-classpath ", "(-cp classpath)", true),
 			new CommandParam("-Dproperty=", "value", true),
 			new CommandParam("-verbose:", "('gc', 'jit', 'jni', or 'class')", true),
 			new CommandParam("-showversion"),
@@ -510,10 +510,10 @@ public final class CommandBox
 			new CommandParam("-X", "[no]dex2oat (Whether to invoke dex2oat on the application)", true),
 			new CommandParam("-X", "[no]image-dex2oat (Whether to create and use a boot image)", true),
 			new CommandParam("-Xno-dex-file-fallback", "(Don't fall back to dex files without oat files)"),
-			new CommandParam("-ea", "[:<package name>... |:<class name>]", true),
-			new CommandParam("-da", "[:<package name>... |:<class name>] (-enableassertions, -disableassertions)", true),
+			new CommandParam("-ea ", "[:<package name>... |:<class name>]", true),
+			new CommandParam("-da ", "[:<package name>... |:<class name>] (-enableassertions, -disableassertions)", true),
 			new CommandParam("-esa"),
-			new CommandParam("-dsa", "(-enablesystemassertions, -disablesystemassertions)", true),
+			new CommandParam("-dsa ", "(-enablesystemassertions, -disablesystemassertions)", true),
 			new CommandParam("-Xverify:", "{none,remote,all}", true),
 			new CommandParam("-Xrs"),
 			new CommandParam("-Xint:", "portable, fast, jit", true),
@@ -581,16 +581,16 @@ public final class CommandBox
 																   "If no files listed copy from stdin, \"-\" is a synonym for stdin.");
 
 	public static final Command DPM = new Command("dpm", "",
-			new CommandParam("set-active-admin", "Sets the given component as active admin for an existing user.", true),
-			new CommandParam("set-device-owner", "Sets the given component as active admin, and its package as device owner.", true),
-			new CommandParam("set-profile-owner", "Sets the given component as active admin and profile  owner for an existing user.", true));
+			new CommandParam("set-active-admin ", "Sets the given component as active admin for an existing user.", true),
+			new CommandParam("set-device-owner ", "Sets the given component as active admin, and its package as device owner.", true),
+			new CommandParam("set-profile-owner ", "Sets the given component as active admin and profile  owner for an existing user.", true));
 
 	public static final Command DU = new Command("du", "",
 			new CommandParam("-H"),
 			new CommandParam("-L"),
 			new CommandParam("-P"),
 			new CommandParam("-a"),
-			new CommandParam("-d", "depth", true),
+			new CommandParam("-d ", "depth", true),
 			new CommandParam("-s"),
 			new CommandParam("-c"),
 			new CommandParam("-g"),
@@ -636,38 +636,38 @@ public final class CommandBox
 																   "\n" +
 																   "Supported chains for the filter table:\n" +
 																   "INPUT FORWARD OUTPUT \n",
-			new CommandParam("-A", "--append chain, append to chain", true),
-			new CommandParam("-D", "--delete chain, delete matching rule from chain\n" +
-								   "--delete chain rulenum, delete rule at position rulenum from chain", true),
-			new CommandParam("-C", "--change-counters chain [rulenum] pcnt bcnt, change counters of existing rule", true),
-			new CommandParam("-I", "--insert chain rulenum, insert rule at position rulenum in chain", true),
-			new CommandParam("-L", "--list [chain], list the rules in a chain or in all chains", true),
-			new CommandParam("-F", "--flush [chain], delete all rules in chain or in all chains", true),
-			new CommandParam("--init-table", "replace the kernel table with the initial table"),
-			new CommandParam("-Z", "--zero [chain], put counters on zero in chain or in all chains", true),
-			new CommandParam("-P", "--policy chain target, change policy on chain to target", true),
-			new CommandParam("-N", "--new-chain chain, create a user defined chain", true),
-			new CommandParam("-E", "--rename-chain old new, rename a chain", true),
-			new CommandParam("-X", "--delete-chain [chain], delete a user defined chain", true),
+			new CommandParam("-A ", "--append chain, append to chain", true),
+			new CommandParam("-D ", "--delete chain, delete matching rule from chain\n" +
+								    "--delete chain rulenum, delete rule at position rulenum from chain", true),
+			new CommandParam("-C ", "--change-counters chain [rulenum] pcnt bcnt, change counters of existing rule", true),
+			new CommandParam("-I ", "--insert chain rulenum, insert rule at position rulenum in chain", true),
+			new CommandParam("-L ", "--list [chain], list the rules in a chain or in all chains", true),
+			new CommandParam("-F ", "--flush [chain], delete all rules in chain or in all chains", true),
+			new CommandParam("--init-table ", "replace the kernel table with the initial table"),
+			new CommandParam("-Z ", "--zero [chain], put counters on zero in chain or in all chains", true),
+			new CommandParam("-P ", "--policy chain target, change policy on chain to target", true),
+			new CommandParam("-N ", "--new-chain chain, create a user defined chain", true),
+			new CommandParam("-E ", "--rename-chain old new, rename a chain", true),
+			new CommandParam("-X ", "--delete-chain [chain], delete a user defined chain", true),
 			new CommandParam("--atomic-commit", "update the kernel w/t table contained in <FILE>"),
 			new CommandParam("--atomic-init", "put the initial kernel table into <FILE>"),
 			new CommandParam("--atomic-save", "put the current kernel table into <FILE>"),
-			new CommandParam("--atomic-file", "set <FILE> to file", true));
+			new CommandParam("--atomic-file ", "set <FILE> to file", true));
 
 	public static final Command ECHO = new Command("echo", "");
 
 	public static final Command EFSKS = new Command("efsks", "Example usage: \n" +
 															 "        sudo ./efsks -p /dev/ttyUSB0 -1 /dev/block/mmcblk0p10/ -2 /dev/block/mmcblk0p11/ -3 /dev/block/mmcblk0p12/ \n" +
 															 "        sudo ./efsks -p /dev/ttyUSB0 -t 120 -w ./",
-			new CommandParam("-p", "--port ttyport, Device name for USB driver, i.e. /dev/ttyUSB0", true),
-			new CommandParam("-t", "--timeout value, in seconds, how long TTY device should wait", true),
-			new CommandParam("-w", "--where path, Where files from MDM are temporarily stored", true));
+			new CommandParam("-p ", "--port ttyport, Device name for USB driver, i.e. /dev/ttyUSB0", true),
+			new CommandParam("-t ", "--timeout value, in seconds, how long TTY device should wait", true),
+			new CommandParam("-w ", "--where path, Where files from MDM are temporarily stored", true));
 
 	public static final Command ENV = new Command("env", "Set the environment for command invocation.",
 			new CommandParam("-i", "Clear existing environment"));
 
 	public static final Command EXPAND = new Command("expand", "Expand tabs to spaces according to tabstops.",
-			new CommandParam("-t", "TABLIST\n" +
+			new CommandParam("-t ", "TABLIST\n" +
 								   "Specify tab stops, either a single number instead of the default 8," +
 								   "or a comma separated list of increasing numbers representing tabstop" +
 								   "positions (absolute, not increments) with each additional tab beyound" +
@@ -698,7 +698,7 @@ public final class CommandBox
 														   "operators require integers.\n");
 
 	public static final Command FALLOCATE = new Command("fallocate", "Tell the filesystem to allocate space for a file.",
-			new CommandParam("-l", "size", true));
+			new CommandParam("-l ", "size", true));
 
 	public static final Command FALSE = new Command("false", "");
 
@@ -737,10 +737,10 @@ public final class CommandBox
 	public static final Command FMCONFIG = new Command("fmconfig", "FM V4L2 device configuration application",
 			new CommandParam("enable", "Open and intialize FM Radio device"),
 			new CommandParam("disable", "CLose FM Radio device"),
-			new CommandParam("setfreq", "Set Frequency ex. setfreq 93500", true),
+			new CommandParam("setfreq ", "Set Frequency ex. setfreq 93500", true),
 			new CommandParam("getconfig", "Get Current Configuration"),
-			new CommandParam("seek", "Seek <dir> ex. seek up", true),
-			new CommandParam("scan", "Scan for list of stations ex. scan up", true),
+			new CommandParam("seek ", "Seek <dir> ex. seek up", true),
+			new CommandParam("scan ", "Scan for list of stations ex. scan up", true),
 			new CommandParam("searchlist", "Search a list of stations"),
 			new CommandParam("quit", "Quit application"));
 
@@ -779,7 +779,7 @@ public final class CommandBox
 
 	public static final Command HEAD = new Command("head", "Copy first lines from files to stdout. If no files listed, copy from" +
 														   "stdin. Filename \"-\" is a synonym for stdin.",
-			new CommandParam("-n", "Number of lines to copy.", true));
+			new CommandParam("-n ", "Number of lines to copy.", true));
 
 	public static final Command HID = new Command("hid", "");
 
@@ -823,8 +823,8 @@ public final class CommandBox
 			new CommandParam("-u", "Show only the effective user ID"));
 
 	public static final Command IFTOP = new Command("iftop", "",
-			new CommandParam("-r", "repeats", true),
-			new CommandParam("-d", "delay", true));
+			new CommandParam("-r ", "repeats", true),
+			new CommandParam("-d ", "delay", true));
 
 	public static final Command IME = new Command("ime", "",
 			new CommandParam("list", "-a | -s, The list command prints all enabled input methods.  Use" +
@@ -833,6 +833,311 @@ public final class CommandBox
 			new CommandParam("enable", "ID, The enable command allows the given input method ID to be used.", true),
 			new CommandParam("disable", "ID, The disable command disallows the given input method ID from use.", true),
 			new CommandParam("set", "ID, The set command switches to the given input method ID.", true));
+
+	public static final Command INOTIFYD = new Command("inofityd", "When a filesystem event matching MASK occurs to a FILE, run PROG as:\n" +
+																   "\n" +
+																   "  PROG EVENTS FILE [DIRFILE]\n" +
+																   "\n" +
+																   "If PROG is \"-\" events are sent to stdout.\n" +
+																   "\n" +
+																   "This file is:\n" +
+																   "  a  accessed    c  modified    e  metadata change  w  closed (writable)\n" +
+																   "  r  opened      D  deleted     M  moved            0  closed (unwritable)\n" +
+																   "  u  unmounted   o  overflow    x  unwatchable\n" +
+																   "\n" +
+																   "A file in this directory is:\n" +
+																   "  m  moved in    y  moved out   n  created          d  deleted\n" +
+																   "\n" +
+																   "When x event happens for all FILEs, inotifyd exits (after waiting for PROG).");
+
+	public static final Command INPUT = new Command("input", "",
+			new CommandParam("mouse"),
+			new CommandParam("keyboard ", "keyevent [--longpress] <key code number or name>"),
+			new CommandParam("joystick"),
+			new CommandParam("touchnavigation"),
+			new CommandParam("touchpad"),
+			new CommandParam("trackball ", "press OR roll <dx> <dy>"),
+			new CommandParam("stylus"),
+			new CommandParam("dpad"),
+			new CommandParam("touchscreen ", "text <string> OR tap <x> <y> OR swipe <x1> <y1> <x2> <y2> [duration(ms)]"),
+			new CommandParam("gamepad"));
+
+	public static final Command INSMOD = new Command("insmod", "");
+
+	public static final Command IOCTL = new Command("ioctl", "",
+			new CommandParam("-l ", "Length of io buffer", true),
+			new CommandParam("-a ", "Size of each argument (1-8)", true),
+			new CommandParam("-r", "Open device in read only mode"),
+			new CommandParam("-d", "Direct argument (no iobuffer)"),
+			new CommandParam("-h", "Print help"));
+
+	public static final Command IONICE = new Command("ionice", "",
+			new CommandParam("none ", "prio", true),
+			new CommandParam("rt ", "prio", true),
+			new CommandParam("be ", "prio", true),
+			new CommandParam("idle ", "prio", true));
+
+	public static final Command IP = new Command("ip", "",
+			new CommandParam("-V", "Version"),
+			new CommandParam("-s", "statistics"),
+			new CommandParam("-d", "details"),
+			new CommandParam("-r", "resolve"),
+			new CommandParam("-f ", "family { inet | inet6 | ipx | dnet | link }", true),
+			new CommandParam("-l ", "loops { maximum-addr-flush-attempts }", true),
+			new CommandParam("-o", "oneline"),
+			new CommandParam("-t", "timestamp"),
+			new CommandParam("-b ", "batch [filename]", true),
+			new CommandParam("-rc ", "vbuf [size]", true));
+
+	public static final Command IP6TABLES = new Command("ip6tables", "Options:\n" +
+																	 "    --ipv4      -4              Error (line is ignored by ip6tables-restore)\n" +
+																	 "    --ipv6      -6              Nothing (line is ignored by iptables-restore)\n" +
+																	 "[!] --protocol  -p proto        protocol: by number or name, eg. `tcp'\n" +
+																	 "[!] --source    -s address[/mask][,...]\n" +
+																	 "                                source specification\n" +
+																	 "[!] --destination -d address[/mask][,...]\n" +
+																	 "                                destination specification\n" +
+																	 "[!] --in-interface -i input name[+]\n" +
+																	 "                                network interface name ([+] for wildcard)\n" +
+																	 "  --jump        -j target\n" +
+																	 "                                target for rule (may load target extension)\n" +
+																	 "  --goto        -g chain\n" +
+																	 "                                jump to chain with no return\n" +
+																	 "  --match       -m match\n" +
+																	 "                                extended match (may load extension)\n" +
+																	 "  --numeric     -n              numeric output of addresses and ports\n" +
+																	 "[!] --out-interface -o output name[+]\n" +
+																	 "                                network interface name ([+] for wildcard)\n" +
+																	 "  --table       -t table        table to manipulate (default: `filter')\n" +
+																	 "  --verbose     -v              verbose mode\n" +
+																	 "  --wait        -w              wait for the xtables lock\n" +
+																	 "  --line-numbers                print line numbers when listing\n" +
+																	 "  --exact       -x              expand numbers (display exact values)\n" +
+																	 "  --modprobe=<command>          try to insert modules using this command\n" +
+																	 "  --set-counters PKTS BYTES     set the counter during insert/append\n" +
+																	 "[!] --version   -V              print package version.\n",
+			new CommandParam("-A ", "--append chain, Append to chain", true),
+			new CommandParam("-C ", "--check chain, Check for the existence of a rule", true),
+			new CommandParam("-D ", "--delete chain, Delete matching rule from chain", true),
+			new CommandParam("-D ", "--delete chain rulenum, Delete rule rulenum (1 = first) from chain", true),
+			new CommandParam("-I ", "--insert chain [rulenum], Insert in chain as rulenum (default 1=first)", true),
+			new CommandParam("-R ", "--replace chain rulenum, Replace rule rulenum (1 = first) in chain", true),
+			new CommandParam("-L ", "--list [chain [rulenum]], List the rules in a chain or all chains", true),
+			new CommandParam("-S ", "--list-rules [chain [rulenum]], Print the rules in a chain or all chains", true),
+			new CommandParam("-F ", "--flush [chain], Delete all rules in chain or all chains", true),
+			new CommandParam("-Z ", "--zero [chain [rulenum]], Zero counters in chain or all chains", true),
+			new CommandParam("-N ", "--new chain, Create a new user-defined chain", true),
+			new CommandParam("-X ", "--delete-chain [chain], Delete a user-defined chain", true),
+			new CommandParam("-P ", "--policy chain target, Change policy on chain to target", true),
+			new CommandParam("-E ", "--rename-chain old-chain new-chain, Change chain name, (moving any references)", true));
+
+	public static final Command IPTABLES = new Command("iptables", IP6TABLES.getDetail(), IP6TABLES.getParams());
+
+	public static final Command KILL = new Command("kill", "",
+			new CommandParam("-s ", "signame", true),
+			new CommandParam("-signum"),
+			new CommandParam("-signame"),
+			new CommandParam("-l ", "exit_status ...", true));
+
+	public static final Command LD_MC = new Command("ld.mc", "MCLinker",
+			new CommandParam("--allow-multiple-definition", "Allow multiple definitions"),
+			new CommandParam("-Bgroup", "Info the dynamic linker to lookup only inside the group", true),
+			new CommandParam("-Bsymbolic", "Bind references within the shared library", true),
+			new CommandParam("--dynamic-linker=", "Set the name of the dynamic linker", true),
+			new CommandParam("--enable-new-dtags", "Enable use of DT_RUNPATH and DT_FLAGS"),
+			new CommandParam("--entry=", "Use the explicit symbol as the entrance of your program", true),
+			new CommandParam("--no-undefined", "Do not allow unresolved references"),
+			new CommandParam("-soname=", "Set internal name of shared library", true),
+			new CommandParam("--spare-dynamic-tags ", "Set the number of spare dynamic tags (DT_NULL)", true),
+			new CommandParam("-z ", "Extensions for GNU ld compatibility", true),
+			new CommandParam("--gc-sections", "Enable garbage collection of unused input sections"),
+			new CommandParam("--icf-iterations ", "Set number of iterations to do ICF", true),
+			new CommandParam("--icf=", "Identical Code Folding", true),
+			new CommandParam("--ld-generated-unwind-info", "Request creation of unwind info for linker generated code sections like PLT"),
+			new CommandParam("--no-gc-sections", "Disable garbage collection of unused input sections"),
+			new CommandParam("--no-ld-generated-unwind-info", "Don't create unwind info for linker generated sections to save size"),
+			new CommandParam("--no-print-gc-sections", "Do not list sections removed by garbage collection"),
+			new CommandParam("--no-print-icf-sections", "Do not list sections folded by ICF"),
+			new CommandParam("--print-gc-sections", "List all sections removed by garbage collection"),
+			new CommandParam("--print-icf-sections", "List all sections folded by ICF"),
+			new CommandParam("-Bdynamic", "Link against dynamic library"),
+			new CommandParam("-Bstatic", "Link against static library"),
+			new CommandParam("--build-id", "Request creation of .note.gnu.build-id ELF note section"),
+			new CommandParam("--discard-all", "Discard all local symbols"),
+			new CommandParam("--discard-debug", "Discard all temporary local symbols"),
+			new CommandParam("--eh-frame-hdr", "Request creation of .eh_frame_hdr section and PT_GNU_EH_FRAME segment"),
+			new CommandParam("--exclude-libs ", "Allow linking together mismatched input files", true),
+			new CommandParam("--export-dynamic", "Export all dynamic symbols"),
+			new CommandParam("--format=", "Specify the binary format for input object files that follow this option on the command line", true),
+			new CommandParam("--hash-style=", "Set the type of linker's hash table(s)", true),
+			new CommandParam("--nmagic", "Do not page align data"),
+			new CommandParam("--no-export-dynamic", "Not export all dynamic symbols"),
+			new CommandParam("--no-warn-mismatch", "Allow linking together mismatched input files"),
+			new CommandParam("--oformat=", "Output format", true),
+			new CommandParam("--omagic", "Do not page align data, do not make text readonly"),
+			new CommandParam("-o ", "Output filename", true),
+			new CommandParam("-pie", "Emit a position-independent executable file"),
+			new CommandParam("--relocatable", "Generate relocatable output"),
+			new CommandParam("-shared", "Create a shared library"),
+			new CommandParam("--strip-all", "Omit all symbol information from the output file"),
+			new CommandParam("--strip-debug", "Omit debugger symbol information from the output file"),
+			new CommandParam("--add-needed", "Deprecated"),
+			new CommandParam("--as-needed", "Add the dynamic libraries mentioned to DT_NEEDED where there is a non-weak undefined symbol reference from"),
+			new CommandParam("--copy-dt-needed-entries", "Add the dynamic libraries mentioned to DT_NEEDED"),
+			new CommandParam("--end-group", "Stop recording a group of archives"),
+			new CommandParam("--library=", "Add the archive or object file specified by namespec to the list of files to link", true),
+			new CommandParam("--no-add-needed", "Deprecated"),
+			new CommandParam("--no-as-needed", "Turn off the effect of the --as-needed"),
+			new CommandParam("--no-copy-dt-needed-entries", "Turn off the effect of the --copy-dt-needed-entries"),
+			new CommandParam("--no-whole-archive", "Turn off the effect of the --whole-archive option"),
+			new CommandParam("--script=", "Use the given file as the linker script", true),
+			new CommandParam("--start-group", "Start to record a group of archives"),
+			new CommandParam("--whole-archive", "Include every object file in the archive in the link"),
+			new CommandParam("--colormc=", "Surround the result strings with the marker", true),
+			new CommandParam("--error-limit=", "Set the maximum limit of errors", true),
+			new CommandParam("--fatal-warnings", "Turn all warnings into errors"),
+			new CommandParam("-help", "Display available options (to standard output)"),
+			new CommandParam("--no-fatal-warnings", "Do not turn all warnings into errors"),
+			new CommandParam("--trace", "Print the names of the input files as ld processes them"),
+			new CommandParam("--verbose=", "Set linker diagnostic output level", true),
+			new CommandParam("--version", "Display MCLinker version"),
+			new CommandParam("--warn-shared-textrel", "Warn if there is a text relocation in the output shared object"),
+			new CommandParam("--warning-limit=", "Set the maximum limit of warnings", true),
+			new CommandParam("--defsym=", "Define a symbol", true),
+			new CommandParam("--portable=", "Use a portable function for the symbol", true),
+			new CommandParam("--section-start=", "Locate a output section at the given absolute address", true),
+			new CommandParam("-Tbss=", "Set the address of the bss segment", true),
+			new CommandParam("-Tdata=", "Set the address of the data segment", true),
+			new CommandParam("-Ttext=", "Set the address of the text segment", true),
+			new CommandParam("--wrap=", "Use a wrap function for the symbol", true),
+			new CommandParam("--library-path=", "Add the given directory to the list of search paths", true),
+			new CommandParam("-nostdlib", "Only search lib dirs explicitly specified on cmdline"),
+			new CommandParam("-rpath-link=", "Add a directory to the link time library search path", true),
+			new CommandParam("-rpath=", "Add a directory to the runtime library search path", true),
+			new CommandParam("--sysroot=", "Use the given directory as the location of the sysroot", true),
+			new CommandParam("-d", "Define common symbol"),
+			new CommandParam("--undefined=", "Force symbol to be undefined in the output file", true),
+			new CommandParam("--gpsize=", " Set the maximum size of objects to be optimized using GP", true),
+			new CommandParam("-march=", "Architecture to generate code for", true),
+			new CommandParam("-mcpu=", "Set a specific cpu type", true),
+			new CommandParam("-mtriple=", "Override target triple for module", true),
+			new CommandParam("-m ", "Set GNU linker emulation", true));
+
+	public static final Command LN = new Command("ln", "Create a link between FROM and TO.\n" +
+													   "With only one argument, create link in current directory.",
+			new CommandParam("-s", "Create a symbolic link"),
+			new CommandParam("-f", "Force the creation of the link, even if TO already exists"),
+			new CommandParam("-n", "Symlink at destination treated as file"),
+			new CommandParam("-v", "Verbose"));
+
+	public static final Command LOAD_POLICY = new Command("load_policy", "Load the specified policy file.");
+
+	public static final Command LOG = new Command("log", "",
+			new CommandParam("-p ", "priorityChar, v,d,i,w,e", true),
+			new CommandParam("-t ", "tag", true));
+
+	public static final Command LOGCAT = new Command("logcat", "filterspecs are a series of \n" +
+															   "  <tag>[:priority]\n" +
+															   "\n" +
+															   "where <tag> is a log component tag (or * for all) and priority is:\n" +
+															   "  V    Verbose (default for <tag>)\n" +
+															   "  D    Debug (default for '*')\n" +
+															   "  I    Info\n" +
+															   "  W    Warn\n" +
+															   "  E    Error\n" +
+															   "  F    Fatal\n" +
+															   "  S    Silent (suppress all output)\n" +
+															   "\n" +
+															   "'*' by itself means '*:D' and <tag> by itself means <tag>:V.\n" +
+															   "If no '*' filterspec or -s on command line, all filter defaults to '*:V'.\n" +
+															   "eg: '*:S <tag>' prints only <tag>, '<tag>:S' suppresses all <tag> log messages.\n" +
+															   "\n" +
+															   "If not specified on the command line, filterspec is set from ANDROID_LOG_TAGS.\n" +
+															   "\n" +
+															   "If not specified with -v on command line, format is set from ANDROID_PRINTF_LOG\n" +
+															   "or defaults to \"threadtime\"",
+			new CommandParam("-s", "Set default filter to silent."),
+			new CommandParam("-f ", "Log to file. Default is stdout", true),
+			new CommandParam("-r <kbytes>", "Rotate log every kbytes. Requires -f", true),
+			new CommandParam("-n <count>", "Sets max number of rotated logs to <count>, default 4", true),
+			new CommandParam("-v <format>", "Sets the log print format, where <format> is:" +
+											"brief color long printable process raw tag thread threadtime time usec", true),
+			new CommandParam("-D", "print dividers between each log buffer"),
+			new CommandParam("-c", "clear (flush) the entire log and exit"),
+			new CommandParam("-d", "dump the log and then exit (don't block)"),
+			new CommandParam("-t <count>", "print only the most recent <count> lines (implies -d)", true),
+			new CommandParam("-t '<time>'", "print most recent lines since specified time (implies -d)", true),
+			new CommandParam("-T <count>", "print only the most recent <count> lines (does not imply -d)", true),
+			new CommandParam("-T '<time>'", "print most recent lines since specified time (not imply -d), " +
+											"count is pure numerical, time is 'MM-DD hh:mm:ss.mmm'", true),
+			new CommandParam("-g", "get the size of the log's ring buffer and exit"),
+			new CommandParam("-L", "dump logs from prior to last reboot"),
+			new CommandParam("-b ", "Request alternate ring buffer, 'main', 'system', 'radio'," +
+									"'events', 'crash' or 'all'. Multiple -b parameters are" +
+									"allowed and results are interleaved. The default is" +
+									"-b main -b system -b crash.", true),
+			new CommandParam("-B", "output the log in binary."),
+			new CommandParam("-S", "output statistics."),
+			new CommandParam("-G ", "set size of log ring buffer, may suffix with K or M.", true),
+			new CommandParam("-p", "print prune white and ~black list. Service is specified as" +
+								   "UID, UID/PID or /PID. Weighed for quicker pruning if prefix" +
+								   "with ~, otherwise weighed for longevity if unadorned. All" +
+								   "other pruning activity is oldest first. Special case ~!" +
+								   "represents an automatic quicker pruning for the noisiest" +
+								   "UID as determined by the current statistics."),
+			new CommandParam("-P ", "set prune white and ~black list, using same format as printed above. Must be quoted.", true));
+
+	public static final Command LOGNAME = new Command("logname", "Print the current user name.");
+
+	public static final Command LOGWRAPPER = new Command("logwrapper", "Forks and executes BINARY ARGS, redirecting stdout and stderr to" +
+																	   "the Android logging system. Tag is set to BINARY, priority is" +
+																	   "always LOG_INFO.",
+
+			new CommandParam("-a", "Causes logwrapper to do abbreviated logging."),
+			new CommandParam("-d", "Causes logwrapper to SIGSEGV when BINARY terminates"),
+			new CommandParam("-k", "Causes logwrapper to log to the kernel log instead of"));
+
+	public static final Command LOSETUP = new Command("losetup", "Associate a loopback device with a file, or show current file (if any)" +
+																 "associated with a loop device.",
+			new CommandParam("-a", "Iterate through all loopback devices"),
+			new CommandParam("-f", "Find first unused loop device (may create one)"),
+			new CommandParam("-j ", "Iterate through all loopback devices associated with FILE", true),
+			new CommandParam("-c", "Check capacity (file size changed)"),
+			new CommandParam("-d ", "Detach loopback device", true),
+			new CommandParam("-s", "Show device name (alias --show)"),
+			new CommandParam("-o ", "Start assocation at OFFSET into FILE", true),
+			new CommandParam("-r", "Read only"),
+			new CommandParam("-S ", "Limit SIZE of loopback association (alias --sizelimit)", true));
+
+	public static final Command LS = new Command("ls", "");
+
+	public static final Command LSMOD = new Command("lsmod", "");
+
+	public static final Command LSOF = new Command("lsof", "");
+
+	public static final Command LSUSB = new Command("lsusb", "");
+
+	public static final Command MAKE_EXT4FS = new Command("make_ext4fs", "",
+			new CommandParam("-l ", "len", true),
+			new CommandParam("-j ", "journal size", true),
+			new CommandParam("-b ", "block size", true),
+			new CommandParam("-g ", "blocks per group", true),
+			new CommandParam("-i ", "inodes", true),
+			new CommandParam("-I ", "inode size", true),
+			new CommandParam("-L ", "label", true),
+			new CommandParam("-f"),
+			new CommandParam("-a ", "android mountpoint", true),
+			new CommandParam("-u"),
+			new CommandParam("-S ", "file_contexts", true),
+			new CommandParam("-C", "fs_config", true),
+			new CommandParam("-T ", "tinestamp", true),
+			new CommandParam("-z"),
+			new CommandParam("-s"),
+			new CommandParam("-w"),
+			new CommandParam("-c"),
+			new CommandParam("-J"),
+			new CommandParam("-v"),
+			new CommandParam("-B ", "block_list_file", true));
 
 	public static final Command UNAME = new Command("uname", "Print system information.",
 			new CommandParam("-s", "System name"),

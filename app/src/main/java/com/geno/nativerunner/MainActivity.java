@@ -1,6 +1,8 @@
 package com.geno.nativerunner;
 
 import android.app.*;
+import android.graphics.Color;
+import android.graphics.drawable.GradientDrawable;
 import android.os.Bundle;
 import android.view.*;
 import android.widget.*;
@@ -105,6 +107,28 @@ public class MainActivity extends Activity
 						"ifconfig",
 						"iftop",
 						"ime",
+						"inotifyd",
+						"input",
+						"insmod", // This should be rewrite.
+						"ioctl",
+						"ionice",
+						"ip",
+						"ifconfig",
+						"ip6tables",
+						"iptables",
+						"kill",
+						"ld_mc",
+						"ln",
+						"load_policy",
+						"log",
+						"logcat",
+						"logname",
+						"logwrapper",
+						"losetup",
+						"ls",
+						"lsof",
+						"lsusb",
+						"make_ext4fs",
 						"uname",
 				};
 		busyboxCommands = new String[]
@@ -453,7 +477,7 @@ public class MainActivity extends Activity
 	
 	public void addCommand(final ViewGroup toAdd, final String command)
 	{
-		Button b = new Button(this);
+		final Button b = new Button(this);
 		try {b.setText(command + ": " + ((Command) Class.forName("com.geno.nativerunner.CommandBox").getField(command.toUpperCase()).get("")).getParams().length);}
 		catch (Exception e){b.setText(command);}
 		b.setAllCaps(false);
