@@ -217,35 +217,35 @@ pm								T S		L
 pmap					F
 port-bridge							H
 pppd								H
-printenv
-printf
-prlimit
-profiler_daemon
-ps
-ptt_socket_app
-pwd
-qcks
+printenv				F
+printf					F
+prlimit					F
+profiler_daemon				U
+ps						F
+ptt_socket_app						H
+pwd						F
+qcks					F P
 qcom-system-daemon					H
 qmuxd								H
 qseecom_sample_client	  P
 qseecomd							H
 racoon								H
-radish
-readlink
-realpath
-reboot
-renice
-requestsync
+radish						U
+readlink				F
+realpath				F
+reboot					I'm not dared to do this! XD
+renice					F
+requestsync				F
 resize2fs							H
-restorecon
+restorecon				F
 rfs_access							H
 rild								H
-rm
-rmdir
-rmmod
-rmnetcli
+rm						F
+rmdir					F
+rmmod						U
+rmnetcli				F
 rmt_storage							H
-route
+route					F
 run-as
 runcon
 schedtest

@@ -1495,6 +1495,99 @@ public final class CommandBox
 	public static final Command PRINTENV = new Command("printenv", "Print environment variables.",
 			new CommandParam("-0", "Use \\0 as delimiter instead of \\n"));
 
+	public static final Command PRINTF = new Command("printf", "Format and print ARGUMENT(s) according to FORMAT, using C printf syntax " +
+															   "(% escapes for cdeEfgGiosuxX, \\ escapes for abefnrtv0 or \\OCTAL or \\xHEX).");
+
+	public static final Command PRLIMIT = new Command("prlimit", "prlimit pid resource cur max");
+
+	public static final Command PS = new Command("ps", "");
+
+	public static final Command PWD = new Command("pwd", "");
+
+	public static final Command QCKS = new Command("qcks", "",
+			new CommandParam("m", "Memory dump"),
+			new CommandParam("p", "Prepend, creates efs1.bin and efs2.bin"),
+			new CommandParam("l", "Prepend + Load ALL Images"),
+			new CommandParam("d", "Load DLOAD images"),
+			new CommandParam("s", "Load SAHARA Images (does not do Prepend)"));
+
+	public static final Command READLINK = new Command("readlink", "With no options, show what symlink points to, return error if not symlink.",
+			new CommandParam("-e", "cannonical path to existing entry (fail if missing)"),
+			new CommandParam("-f", "full path (fail if directory missing)"),
+			new CommandParam("-n", "no trailing newline"),
+			new CommandParam("-q", "quiet (no output, just error code)"));
+
+	public static final Command REALPATH = new Command("realpath", "");
+
+	public static final Command REBOOT = new Command("reboot", "I don't know its' parameters!");
+
+	public static final Command RENICE = new Command("renice", "",
+			new CommandParam("-r"),
+			new CommandParam("-t", "[type] priority pids...", true),
+			new CommandParam("-g", "pid", true));
+
+	public static final Command REQUESTSYNC = new Command("requestsync", "With no options, a sync will be requested for all account and all sync " +
+																		 "authorities with no extras. Options can be:",
+			new CommandParam("-h", "--help: Display this message"),
+			new CommandParam("-n ", "--account-name <ACCOUNT-NAME>", true),
+			new CommandParam("-t ", "--account-type <ACCOUNT-TYPE>", true),
+			new CommandParam("-a ", "--authority <AUTHORITY>", true),
+			new CommandParam("--is ", "--ignore-settings: Add SYNC_EXTRAS_IGNORE_SETTINGS", true),
+			new CommandParam("--ib ", "--ignore-backoff: Add SYNC_EXTRAS_IGNORE_BACKOFF", true),
+			new CommandParam("--dd ", "--discard-deletions: Add SYNC_EXTRAS_DISCARD_LOCAL_DELETIONS", true),
+			new CommandParam("--nr ", "--no-retry: Add SYNC_EXTRAS_DO_NOT_RETRY", true),
+			new CommandParam("--ex ", "--expedited: Add SYNC_EXTRAS_EXPEDITED", true),
+			new CommandParam("--i ", "--initialize: Add SYNC_EXTRAS_INITIALIZE", true),
+			new CommandParam("--m ", "--manual: Add SYNC_EXTRAS_MANUAL", true),
+			new CommandParam("--od ", "--override-deletions: Add SYNC_EXTRAS_OVERRIDE_TOO_MANY_DELETIONS", true),
+			new CommandParam("--u ", "--upload-only: Add SYNC_EXTRAS_UPLOAD", true),
+			new CommandParam("-e ", "--es|--extra-string <KEY> <VALUE>", true),
+			new CommandParam("--esn ", "--extra-string-null <KEY>", true),
+			new CommandParam("--ei ", "--extra-int <KEY> <VALUE>", true),
+			new CommandParam("--el ", "--extra-long <KEY> <VALUE>", true),
+			new CommandParam("--ef ", "--extra-float <KEY> <VALUE>", true),
+			new CommandParam("--ed ", "--extra-double <KEY> <VALUE>", true),
+			new CommandParam("--ez ", "--extra-bool <KEY> <VALUE>", true));
+
+	public static final Command RESTORECON = new Command("restorecon", "Restores the default security contexts for the given files.",
+			new CommandParam("-D", "apply to /data/data too"),
+			new CommandParam("-F", "force reset"),
+			new CommandParam("-R", "recurse into directories"),
+			new CommandParam("-n", "don't make any changes; useful with -v to see what would change"),
+			new CommandParam("-v", "verbose: show any changes"));
+
+	public static final Command RM = new Command("rm", "Remove each argument from the filesystem.",
+			new CommandParam("-f", "force: remove without confirmation, no error if it doesn't exist"),
+			new CommandParam("-i", "interactive: prompt for confirmation"),
+			new CommandParam("-rR", "recursive: remove directory contents"));
+
+	public static final Command RMDIR = new Command("rmdir", "Remove one or more directories.",
+			new CommandParam("-p", "Remove path."));
+
+	public static final Command RMNETCLI = new Command("rmnetcli", "",
+			new CommandParam("help", "Displays this help", true),
+			new CommandParam("assocnetdev ", "Registers the RmNet data driver on a particular device.dev_name cannot be larger than 15 characters. Returns the status code.", true),
+			new CommandParam("unassocnetdev ", "Unregisters the RmNet data driver on a particular device. dev_name cannot be larger than 15 characters. Returns the status code.", true),
+			new CommandParam("getnetdevassoc ", "Get if the RmNet data driver is registered on a particular device. dev_name cannot be larger than 15 characters. Returns 1 if is registered and 0 if it is not registered", true),
+			new CommandParam("setledf ", "Sets the egress data format for a particular link. dev_name cannot be larger than 15 characters. Returns the status code", true),
+			new CommandParam("getledf ", "Gets the egress data format for a particular link. dev_name cannot be larger than 15. Returns the 4 byte unsigned integer egress_flags ", true),
+			new CommandParam("setlidf ", "Sets the ingress data format for a particular link. ingress_flags is 4 byte unsigned integer. tail_spacing is a one. byte unsigned integer. dev_name cannot be larger than 15. characters. Returns the status code", true),
+			new CommandParam("getlidf ", "Gets the ingress data format for a particular link. dev_name cannot be larger than 15. Returns the 4 byte unsigned integer ingress_flags", true),
+			new CommandParam("setlepc ", "Sets the logicalendpoint configuration for a particular link. logical_ep_id are 32bit integers from -1 to 31. rmnet_mode is a 1 byte unsigned integer of value none, vnd or bridged. dev_name and egress_dev_name cannot be larger than 15 characters Returns the status code", true),
+			new CommandParam("unsetlepc ", "Un-sets the logical endpoint configuration for a particular link. integers from -1 to 31. dev_name cannot be larger than 15 characters Returns the status code", true),
+			new CommandParam("getlepc ", "Sets the logical endpoint configuration for a particular link. logical_ep_id are 32bit integers from -1 to 31. Returns the rmnet_mode and egress_dev_name. rmnet_mode is a 1 byte unsigned integer of value none, vnd or bridged. dev_name and egress_dev_name cannot be larger than 15 characters. Returns the status code", true),
+			new CommandParam("newvnd ", "Creates a new virtual network device node. dev_id is an int less than 32. Returns the status code", true),
+			new CommandParam("newvndprefix ", "Creates virtual network device node. dev_id is an int less than 32. Prefix must be less than 15 chars. Returnsthe status code", true),
+			new CommandParam("getvndname ", "Get name of network device node from id", true),
+			new CommandParam("freevnd ", "Removes virtual network device node. dev_name cannot be larger than 15. Returns the status code ", true),
+			new CommandParam("addvnctcflow ", "Add a modem flow handle - tc flow handle mapping for a virtual network device node", true),
+			new CommandParam("delvnctcflow ", "Delete a modem flow handle - tc flow handle mapping for a virtual network device node", true));
+
+	public static final Command ROUTE = new Command("route", "Display/Edit kernel routing tables.",
+			new CommandParam("-n", "Don't resolve names"),
+			new CommandParam("-e", "Display other/more information"),
+			new CommandParam("-A", "inet{6} Select Address Family"));
+
 	public static final Command YES = new Command("yes", "");
 
 	public static final Command NULL = new Command("", "", new CommandParam("", ""));
