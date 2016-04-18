@@ -1139,6 +1139,284 @@ public final class CommandBox
 			new CommandParam("-v"),
 			new CommandParam("-B ", "block_list_file", true));
 
+	public static final Command MAKE_F2FS = new Command("make_f2fs", "",
+			new CommandParam("-a", "heap-based alocation [default:1]", true),
+			new CommandParam("-d", "debug level [default:0]", true),
+			new CommandParam("-e", "[extension list] e.g. \"mp3,gif,mov\"", true),
+			new CommandParam("-l", "label", true),
+			new CommandParam("-o", "overprovision ratio [default:5]", true),
+			new CommandParam("-s", "# of segments per section [default:1]", true),
+			new CommandParam("-z", "# of sections per zone [default:1]", true),
+			new CommandParam("-t", "0: nodiscard, 1: discard [default:1]", true));
+
+	public static final Command MD5SUM = new Command("md5sum", "Calculate md5 hash for each input file, reading from stdin if none." +
+															   "Output one hash (16 hex digits) for each input file, followed by filename.",
+			new CommandParam("-b", "brief (hash only, no filename"));
+
+	public static final Command MEDIA = new Command("media", "",
+			new CommandParam("dispatch ", "dispatch a media key to the system.\n" +
+										  "KEY may be: play, pause, play-pause, mute, headsethook," +
+										  "stop, next, previous, rewind, record, fast-forword.", true),
+			new CommandParam("list-sesstions", "print a list of the current sessions."),
+			new CommandParam("monitor ", "monitor updates to the specified session. Use the tag from list-sessions.", true));
+
+	public static final Command MKDIR = new Command("mkdir", "Create one or more directories",
+			new CommandParam("-m ", "set permissions of directory to mode.", true),
+			new CommandParam("-p", "make parent directories as needed."),
+			new CommandParam("-v", "verbose"));
+
+	public static final Command MKE2FS = new Command("mke2fs", "",
+			new CommandParam("-c ", "filename", true),
+			new CommandParam("-l ", "filename", true),
+			new CommandParam("-b ", "block-size", true),
+			new CommandParam("-C ", "cluster-size", true),
+			new CommandParam("-i ", "bytes-per-inode", true),
+			new CommandParam("-I ", "inode-size", true),
+			new CommandParam("-J ", "journal-options", true),
+			new CommandParam("-G ", "flex-group-size"),
+			new CommandParam("-N ", "number-of-inodes", true),
+			new CommandParam("-m ", "reserved-blocks-percentage", true),
+			new CommandParam("-o ", "creator-os", true),
+			new CommandParam("-g ", "blocks-per-group", true),
+			new CommandParam("-L ", "volume-label", true),
+			new CommandParam("-M ", "last-mounted-directory", true),
+			new CommandParam("-O ", "feature[,...]", true),
+			new CommandParam("-r ", "fs-revision", true),
+			new CommandParam("-E ", "extended-option[,...]", true),
+			new CommandParam("-t ", "fs-type", true),
+			new CommandParam("-T ", "usage-type", true),
+			new CommandParam("-U ", "UUID", true),
+			new CommandParam("-j"),
+			new CommandParam("-n"),
+			new CommandParam("-q"),
+			new CommandParam("-v"),
+			new CommandParam("-D"),
+			new CommandParam("-F"),
+			new CommandParam("-K"),
+			new CommandParam("-S"),
+			new CommandParam("-V"));
+
+	public static final Command MKNOD = new Command("mknod", "Create a special file NAME with a given type. TYPE is b for block device," +
+															 "c or u for character device, p for named pipe (which ignores MAJOR/MINOR).",
+			new CommandParam("-m", "Mode (file permissions) of new device, in octal or u+x format"));
+
+	public static final Command MKSWAP = new Command("mkswap", "Sets up a Linux swap area on a device or file.");
+
+	public static final Command MKTEMP = new Command("mktemp", "Safely create a new file \"DIR/TEMPLATE\" and print its name." +
+															   "Each X in TEMPLATE is replaced with a random printable character. The" +
+															   "default TEMPLATE is tmp.XXXXXX, and the default DIR is $TMPDIR if set," +
+															   "else \"/tmp\".",
+			new CommandParam("-d", "Create directory instead of file (--directory)"),
+			new CommandParam("-p ", "Put new file in DIR", true),
+			new CommandParam("-q", "Quiet, no error messages"));
+
+	public static final Command MM_QJPEG_DEC_TEST = new Command("mm-qjpeg-dec-test", "Qualcomm Decoder test",
+			new CommandParam("", "options", true),
+			new CommandParam("-I ", "Path to the input file.", true),
+			new CommandParam("-O ", "Path for the output file.", true),
+			new CommandParam("-W ", "width", true),
+			new CommandParam("-H ", "height", true),
+			new CommandParam("-f ", "Output format: YCRCBLP_H2V2 (0 - Default), YCBCRLP_H2V2 (1), YCRCBLP_H2V1 (2), YCBCRLP_H2V1 (3), " +
+									"YCRCBLP_H1V2 (4), YCBCRLP_H1V2 (5), YCRCBLP_H1V1 (6), YCBCRLP_H1V1 (7), MONOCHROME(8), " +
+									"IYUV_H2V2 (9), YUV2_H2V2 (10), IYUV_H2V1 (11), YUV2_H2V1 (12), IYUV_H1V2 (13), YUV2_H1V2 (14), IYUV_H1V1 (15), YUV2_H1V1 (16)", true));
+
+	public static final Command MM_QJPEG_ENC_TEST = new Command("mm-qjpeg-enc-test", "Qualcomm Encoder test",
+			new CommandParam("", "options", true),
+			new CommandParam("-I ", "Path to the input file.", true),
+			new CommandParam("-O ", "Path for the output file.", true),
+			new CommandParam("-W ", "Input image width.", true),
+			new CommandParam("-H ", "Input image height.", true),
+			new CommandParam("-Q ", "Image quality for compression.", true));
+
+	public static final Command MM_QOMX_IDEC_TEST = new Command("mm-qomx-idec-test", "Decoder test",
+			new CommandParam("-I ", "Path to the input file.", true),
+			new CommandParam("-O ", "Path for the output file.", true),
+			new CommandParam("-W ", "Default image width.", true),
+			new CommandParam("-H ", "Default image height.", true),
+			new CommandParam("-F ", "Default image format: YCRCBLP_H2V2 (0), YCBCRLP_H2V2 (1), YCRCBLP_H2V1 (2) YCBCRLP_H2V1 (3) " +
+									"YCRCBLP_H1V2 (4), YCBCRLP_H1V2 (5), YCRCBLP_H1V1 (6) YCBCRLP_H1V1 (7) " +
+									"IYUV_H2V2 (8), YUV2_H2V2 (9), IYUV_H2V1 (10) YUV2_H2V1 (11) " +
+									"IYUV_H1V2 (12), YUV2_H1V2 (13), IYUV_H1V1 (14) YUV2_H1V1 (15) MONOCHROME (16)", true),
+			new CommandParam("-r ", "Rotation (clockwise) in degrees", true),
+			new CommandParam("-P ", "[0/1] Use PMEM buffers", true),
+			new CommandParam("-u ", "Enable scale for Image. Make sure the scale parameters are supplied. Scale will not be applied if scale input dimensions dont match the actual image dimensions", true),
+			new CommandParam("-m ", "Main input width.", true),
+			new CommandParam("-n ", "Main input height.", true),
+			new CommandParam("-x ", "Main horizontal offset.", true),
+			new CommandParam("-y ", "Main vertical offset.", true),
+			new CommandParam("-M ", "Main output width.", true),
+			new CommandParam("-N ", "Main output height.", true),
+			new CommandParam("-S ", "Scale factor used as a replacement for other scale parameters if the input size is unknown. 1)1/8 2)1/4 3)3/8 4)1/2 5)5/8 6)3/4 7)7/8", true),
+			new CommandParam("-a ", "The duration before an abort is issued (i milliseconds).", true),
+			new CommandParam("-c ", "Number of decoder instances", true),
+			new CommandParam("-b ", "Number of back to back captures", true));
+
+	public static final Command MM_QOMX_IENC_TEST = new Command("mm-qomx-ienc-test", "Encoder test",
+			new CommandParam("-I ", "Path to the input file.", true),
+			new CommandParam("-O ", "Path for the output file.", true),
+			new CommandParam("-W ", "Input image width.", true),
+			new CommandParam("-H ", "Input image height.", true),
+			new CommandParam("-F ", "Input image format: \n" +
+									"YCRCBLP_H2V2 (0), YCBCRLP_H2V2 (1), YCRCBLP_H2V1 (2) YCBCRLP_H2V1 (3)\n" +
+									"YCRCBLP_H1V2 (4), YCBCRLP_H1V2 (5), YCRCBLP_H1V1 (6) YCBCRLP_H1V1 (7)\n" +
+									"IYUV_H2V2 (8), YUV2_H2V2 (9), IYUV_H2V1 (10) YUV2_H2V1 (11),\n" +
+									"IYUV_H1V2 (12), YUV2_H1V2 (13), IYUV_H1V1 (14), YUV2_H1V1 (15), MONOCHROME (16).", true),
+			new CommandParam("-r ", "Rotation (clockwise) in degrees", true),
+			new CommandParam("-t", "Encode thumbnail image as well. If turned on, the four arguments below should be supplied as well as thumbnail scale params."),
+			new CommandParam("-i ", "Path to the input file for thumbnail.", true),
+			new CommandParam("-w ", "Thumbnail image width.", true),
+			new CommandParam("-h ", "Thumbnail image height.", true),
+			new CommandParam("-f ", "Thumbnail image format: (same as main)", true),
+			new CommandParam("-Q ", "Quality factor for main image (1-100).", true),
+			new CommandParam("-p ", "Preference on which encoder to use(Software-ased or Hardware-accelerated).\n" +
+									"HW preferred (0-default), HW only(1), SW peferred (2), SW only (3)", true),
+			new CommandParam("-P ", "[0/1] Use PMEM buffers", true),
+			new CommandParam("-u ", "Enable scale for Image. Make sure the scale parameters are supplied. Scale will not be applied if scale input dimensions dont match the actual image dimensions", true),
+			new CommandParam("-m ", "Main input width.", true),
+			new CommandParam("-n ", "Main input height.", true),
+			new CommandParam("-x ", "Main horizontal offset.", true),
+			new CommandParam("-y ", "Main vertical offset.", true),
+			new CommandParam("-M ", "Main output width.", true),
+			new CommandParam("-N ", "Main output height.", true),
+			new CommandParam("-U", "Enable scale for Thumbnail. Make sure the scale parameters are supplied."),
+			new CommandParam("-j ", "Thumbnail input width.", true),
+			new CommandParam("-k ", "Thumbnail input height.", true),
+			new CommandParam("-X ", "Thumbnail horizontal offset.", true),
+			new CommandParam("-Y ", "Thumbnail vertical offset.", true),
+			new CommandParam("-J ", "Thumbnail output width.", true),
+			new CommandParam("-K ", "Thumbnail output height.", true),
+			new CommandParam("-a ", "The duration before an abort is issued (i milliseconds).", true),
+			new CommandParam("-R ", "Restart Inverval in number of MCUs"),
+			new CommandParam("-c ", "Number of decoder instances", true),
+			new CommandParam("-b ", "Number of burst mode captures", true));
+
+	public static final Command MM_VDEC_OMX_TEST = new Command("mm-vdec-omx-test", "",
+			new CommandParam("", "clip location", true),
+			new CommandParam("", "codec_type", true),
+			new CommandParam("", "input_type: 1. per AU(.dat), 2. arbitrary, 3.per NAL/frame", true),
+			new CommandParam("", "output_type", true),
+			new CommandParam("", "test_case, 1--> H264\n" +
+								 " 2--> MP4\n" +
+								 " 3--> H263\n" +
+								 " 4--> VC1\n" +
+								 " 5--> DivX\n" +
+								 " 6--> MPEG2\n" +
+								 " 7--> VP8\n" +
+								 " 8--> HEVC\n" +
+								 " 9--> HYBRID\n", true));
+
+	public static final Command MODINFO = new Command("modinfo", "Display module fields for all specified modules, looking in" +
+																 "<basedir>/lib/modules/<kernrelease>/ (kernrelease defaults to uname -r).",
+			new CommandParam("-0"),
+			new CommandParam("-b ", "basedir", true),
+			new CommandParam("-k ", "kernelease", true),
+			new CommandParam("-F ", "field", true));
+
+	public static final Command MORE = new Command("more", "View FILE (or stdin) one screenful at a time.");
+
+	public static final Command MOUNT = new Command("mount", "");
+
+	public static final Command MOUNTPOINT = new Command("mountpoint", "",
+			new CommandParam("-q", "Be quiet, return zero if directory is a mountpoint"),
+			new CommandParam("-d", "Print major/minor device number of the directory"),
+			new CommandParam("-x", "Print major/minor device number of the block device"));
+
+	public static final Command MV = new Command("mv", "",
+			new CommandParam("-f", "force copy by deleting destination file"),
+			new CommandParam("-i", "interactive, prompt before overwriting existing DEST"),
+			new CommandParam("-n", "no clobber (don't overwrite DEST)"),
+			new CommandParam("-v", "verbose"));
+
+	public static final Command N_SMUX = new Command("n_smux", "");
+
+	public static final Command NANDREAD = new Command("nandread", "",
+			new CommandParam("-d ", "Read from <dev>", true),
+			new CommandParam("-f ", "Write to <file>", true),
+			new CommandParam("-s ", "Number of spare bytes in file (default 64)", true),
+			new CommandParam("-R", "Raw mode"),
+			new CommandParam("-S ", "Start offset (default 0)", true),
+			new CommandParam("-L ", "Length (default 0)", true),
+			new CommandParam("-v", "Print info"),
+			new CommandParam("-h", "Print help"));
+
+	public static final Command NETSTAT = new Command("netstat", "Display networking information",
+			new CommandParam("-r", "Display routing table."),
+			new CommandParam("-a", "Display all sockets (Default: Connected)."),
+			new CommandParam("-l", "Display listening server sockets."),
+			new CommandParam("-t", "Display TCP sockets."),
+			new CommandParam("-u", "Display UDP sockets."),
+			new CommandParam("-w", "Display Raw sockets."),
+			new CommandParam("-x", "Display Unix sockets."),
+			new CommandParam("-e", "Display other/more information."),
+			new CommandParam("-n", "Don't resolve names."),
+			new CommandParam("-W", "Wide Display."),
+			new CommandParam("-p", "Display PID/Program name for sockets."));
+
+	public static final Command NEWFS_MSDOS = new Command("newfs_msdos", "",
+			new CommandParam("-@", "create file system at specified offset", true),
+			new CommandParam("-A", "Attempt to cluster align root directory", true),
+			new CommandParam("-B", "get bootstrap from file", true),
+			new CommandParam("-C", "create image file with specified size", true),
+			new CommandParam("-F", "FAT type (12, 16, or 32)", true),
+			new CommandParam("-I", "volume ID", true),
+			new CommandParam("-L", "volume label", true),
+			new CommandParam("-N", "don't create file system: just print out parameters", true),
+			new CommandParam("-O", "OEM string", true),
+			new CommandParam("-S", "bytes/sector", true),
+			new CommandParam("-a", "sectors/FAT", true),
+			new CommandParam("-b", "block size", true),
+			new CommandParam("-c", "sectors/cluster", true),
+			new CommandParam("-e", "root directory entries", true),
+			new CommandParam("-f", "standard format", true),
+			new CommandParam("-h", "drive heads", true),
+			new CommandParam("-i", "file system info sector", true),
+			new CommandParam("-k", "backup boot sector", true),
+			new CommandParam("-m", "media descriptor", true),
+			new CommandParam("-n", "number of FATs", true),
+			new CommandParam("-o", "hidden sectors", true),
+			new CommandParam("-r", "reserved sectors", true),
+			new CommandParam("-s", "file system size (sectors)", true),
+			new CommandParam("-u", "sectors/track", true));
+
+	public static final Command NICE = new Command("nice", "Run a command line at an increased or decreased scheduling priority." +
+														   "\n" +
+														   "Higher numbers make a program yield more CPU time, from -20 (highest " +
+														   "priority) to 19 (lowest).  By default processes inherit their parent's " +
+														   "niceness (usually 0).  By default this command adds 10 to the parent's " +
+														   "priority.  Only root can set a negative niceness level.",
+			new CommandParam("-n ", "PRIORITY", true));
+
+	public static final Command NL = new Command("nl", "Number lines of input.",
+			new CommandParam("-E ", "Use extended regex syntax (when doing -b pREGEX)"),
+			new CommandParam("-b ", "which lines to number: a (all) t (non-empty, default) pREGEX (pattern)", true),
+			new CommandParam("-l ", "Only count last of this many consecutive blank lines", true),
+			new CommandParam("-n ", "number STYLE: ln (left justified) rn (right justified) rz (zero pad)", true),
+			new CommandParam("-s ", "Separator to use between number and line (instead of TAB)", true),
+			new CommandParam("-w ", "Width of line numbers (default 6)", true));
+
+	public static final Command NOHUP = new Command("nohup", "Run a command that survives the end of its terminal.\n" +
+															 "Redirect tty on stdin to /dev/null, tty on stdout to \"nohup.out\".");
+
+	public static final Command	OD = new Command("od", "",
+			new CommandParam("-b"),
+			new CommandParam("-c"),
+			new CommandParam("-d"),
+			new CommandParam("-o"),
+			new CommandParam("-s"),
+			new CommandParam("-x"),
+			new CommandParam("-v"),
+			new CommandParam("-A ", "Address base (decimal, octal, hexadecimal, none)", true),
+			new CommandParam("-j ", "Skip this many bytes of input", true),
+			new CommandParam("-N ", "Stop dumping after this many bytes", true),
+			new CommandParam("-t ", "output type a(scii) c(har) d(ecimal) f(loat) o(ctal) u(nsigned) (he)x" +
+									"plus optional size in bytes\n" +
+									"aliases: -b=-t o1, -c=-t c, -d=-t u2, -o=-t o2, -s=-t d2, -x=-t x2\n", true),
+			new CommandParam("-v", "Don't collapse repeated lines together"));
+
+	public static final Command PASTE = new Command("paste", "Replace newlines in files.",
+			new CommandParam("-d ", "list of delimiters to separate lines", true),
+			new CommandParam("-s", "process files sequentially instead of in parallel"));
+
 	public static final Command UNAME = new Command("uname", "Print system information.",
 			new CommandParam("-s", "System name"),
 			new CommandParam("-n", "Network (domain) name"),
@@ -1146,6 +1424,69 @@ public final class CommandBox
 			new CommandParam("-v", "Kernel Version"),
 			new CommandParam("-m", "Machine (hardware) name"),
 			new CommandParam("-a", "All of the above"));
+
+	public static final Command PATCH = new Command("patch", "Apply a unified diff to one or more files.",
+			new CommandParam("-i ", "Input file (defaults=stdin)", true),
+			new CommandParam("-l", "Loose match (ignore whitespace)"),
+			new CommandParam("-p ", "Number of '/' to strip from start of file paths (default=all)", true),
+			new CommandParam("-R", "Reverse patch."),
+			new CommandParam("-u", "Ignored (only handles \"unified\" diffs)"));
+
+	public static final Command PATCHOAT = new Command("patchoat", "");
+
+	public static final Command PERFD = new Command("perfd", "");
+
+	public static final Command PGREP = new Command("pgrep", "",
+			new CommandParam("-l", "Show command name too / List all signals"),
+			new CommandParam("-f", "Match against entire command line"),
+			new CommandParam("-n", "Show/Signal the newest process only"),
+			new CommandParam("-o", "Show/Signal the oldest process only"),
+			new CommandParam("-v", "Negate the match"),
+			new CommandParam("-x", "Match whole name (not substring)"),
+			new CommandParam("-s", "Match session ID (0 for current)", true),
+			new CommandParam("-P", "Match parent process ID", true));
+
+	public static final Command PIDOF = new Command("pidof", "Print the PIDs of all processes with the given names.",
+			new CommandParam("-s", "single shot, only return one pid."),
+			new CommandParam("-o", "omit PID(s)"));
+
+	public static final Command PING = new Command("ping", "",
+			new CommandParam("-a"),
+			new CommandParam("-A"),
+			new CommandParam("-b"),
+			new CommandParam("-B"),
+			new CommandParam("-d"),
+			new CommandParam("-D"),
+			new CommandParam("-f"),
+			new CommandParam("-h"),
+			new CommandParam("-L"),
+			new CommandParam("-n"),
+			new CommandParam("-O"),
+			new CommandParam("-q"),
+			new CommandParam("-r"),
+			new CommandParam("-R"),
+			new CommandParam("-U"),
+			new CommandParam("-v"),
+			new CommandParam("-V"),
+			new CommandParam("-c ", "count", true),
+			new CommandParam("-i ", "interval", true),
+			new CommandParam("-I ", "interface", true),
+			new CommandParam("-m ", "mark", true),
+			new CommandParam("-M ", "pmtudisc_option", true),
+			new CommandParam("-l ", "preload", true),
+			new CommandParam("-p ", "pattern", true),
+			new CommandParam("-Q ", "tos", true),
+			new CommandParam("-s ", "packetsize", true),
+			new CommandParam("-S ", "sndbuf", true),
+			new CommandParam("-t ", "ttl", true),
+			new CommandParam("-T ", "timestamp_option", true),
+			new CommandParam("-w ", "deadline", true),
+			new CommandParam("-W ", "timeout", true),
+			new CommandParam("", "hop1 ...", true));
+
+	public static final Command PING6 = new Command("ping6", PING.getDetail(), PING.getParams());
+
+	public static final Command YES = new Command("yes", "");
 
 	public static final Command NULL = new Command("", "", new CommandParam("", ""));
 }

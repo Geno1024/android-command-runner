@@ -159,59 +159,59 @@ lsmod						U
 lsof						U
 lsusb						U
 make_ext4fs				F
-make_f2fs
+make_f2fs				F
 mcd									H
-md5sum
+md5sum					F
 mdnsd								H
-media
+media					F
 mediaserver							H
-mkdir
-mke2fs
-mknod
-mkswap
-mktemp
+mkdir					F
+mke2fs					F
+mknod					F
+mkswap					F
+mktemp					F
 mm-pp-daemon						H
-mm-qcamera-app
+mm-qcamera-app				U
 mm-qcamera-daemon					H
-mm-qjpeg-dec-test
-mm-qjpeg-enc-test
-mm-qomx-idec-test
-mm-qomx-ienc-test
-mm-vdec-omx-test
+mm-qjpeg-dec-test		F
+mm-qjpeg-enc-test		F
+mm-qomx-idec-test		F
+mm-qomx-ienc-test		F
+mm-vdec-omx-test		F
 mm-venc-omx-test720p
 mm-vidc-omx-test
 mm-video-driver-test
 mm-video-encdrv-test
 mmbn-daemon							H
-modinfo
+modinfo					F
 monkey							T S
-more
-mount
-mountpoint
+more					F
+mount					F
+mountpoint				F
 mpdecision							H
 mtpd								H
-mv
-n_smux
-nandread
+mv						F
+n_smux					F
+nandread				F
 ndc									H
 netd								H
 netmgrd								H
-netstat
-newfs_msdos
-nice
-nl
-nl_listener
-nohup
-oatdump
-od
-paste
-patch
-patchoat
-perfd
-pgrep
-pidof
-ping
-ping6
+netstat					F
+newfs_msdos				F
+nice					F
+nl						F
+nl_listener					U
+nohup					F
+oatdump							T S		L
+od						F
+paste					F
+patch					F
+patchoat				F
+perfd					F
+pgrep					F
+pidof					F
+ping					F
+ping6					F
 pkill
 pm
 pmap
@@ -332,4 +332,4 @@ wpa_supplicant						H
 xargs
 xtwifi-client			  P
 xtwifi-inet-agent		  P
-yes
+yes						F
