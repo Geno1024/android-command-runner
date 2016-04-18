@@ -1486,6 +1486,15 @@ public final class CommandBox
 
 	public static final Command PING6 = new Command("ping6", PING.getDetail(), PING.getParams());
 
+	public static final Command PKILL = new Command("pkill", PGREP.getDetail(), PGREP.getParams());
+
+	public static final Command PMAP = new Command("pmap", "Reports the memory map of a process or processes.",
+			new CommandParam("-x", "Show the extended format."),
+			new CommandParam("-q", "Do not display some header/footer lines."));
+
+	public static final Command PRINTENV = new Command("printenv", "Print environment variables.",
+			new CommandParam("-0", "Use \\0 as delimiter instead of \\n"));
+
 	public static final Command YES = new Command("yes", "");
 
 	public static final Command NULL = new Command("", "", new CommandParam("", ""));

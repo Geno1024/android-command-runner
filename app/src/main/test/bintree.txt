@@ -212,9 +212,9 @@ pgrep					F
 pidof					F
 ping					F
 ping6					F
-pkill
-pm
-pmap
+pkill					F
+pm								T S		L
+pmap					F
 port-bridge							H
 pppd								H
 printenv

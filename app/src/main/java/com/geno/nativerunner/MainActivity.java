@@ -161,6 +161,9 @@ public class MainActivity extends Activity
 						"pidof",
 						"ping",
 						"ping6",
+						"pkill",
+						"pmap",
+						"printenv",
 						"uname",
 						"yes",
 				};
