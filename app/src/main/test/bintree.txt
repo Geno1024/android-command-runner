@@ -40,13 +40,13 @@ clear					F
 cmp						F
 cnd						  P
 comm					F
-content					F		T S
+content					F	  T S
 cp						F
 cpio					F
 cplay					F
-curl					F		T S
+curl					F	  T S
 cut						F
-dalvikvm				F		T S
+dalvikvm				F	  T S
 dalvikvm32				F
 date					F
 dd							U
@@ -65,7 +65,7 @@ displayfeature						H
 dmesg					F
 dnsmasq					  P
 dos2unix				F
-dpm						F		  S
+dpm						F		S
 dpmd					  P
 drmdiagapp							H
 drmserver				  P
@@ -75,7 +75,7 @@ dumpstate				  P
 dumpsys					F
 dun-server				  P
 e2fsck					  P
-ebtables				F		T S
+ebtables				F	  T S
 echo					F
 efsks					F
 egrep						U			L
@@ -114,7 +114,7 @@ hostname				F
 hvdcp					  P
 hwclock					  P
 id						F
-idmap							T S		L
+idmap						  T S		L
 ifconfig				F
 iftop					F
 ime						F
@@ -184,7 +184,7 @@ mm-video-driver-test
 mm-video-encdrv-test
 mmbn-daemon							H
 modinfo					F
-monkey							T S
+monkey						  T S
 more					F
 mount					F
 mountpoint				F
@@ -202,7 +202,7 @@ nice					F
 nl						F
 nl_listener					U
 nohup					F
-oatdump							T S		L
+oatdump						  T S		L
 od						F
 paste					F
 patch					F
@@ -213,7 +213,7 @@ pidof					F
 ping					F
 ping6					F
 pkill					F
-pm								T S		L
+pm							  T S		L
 pmap					F
 port-bridge							H
 pppd								H
@@ -246,39 +246,39 @@ rmmod						U
 rmnetcli				F
 rmt_storage							H
 route					F
-run-as
-runcon
-schedtest
-screencap
-screenrecord
+run-as					F
+runcon					F
+schedtest				F
+screencap				F
+screenrecord			F
 sdcard								H
-secdiscard
-sed
-sendevent
+secdiscard				F
+sed							  T S		L
+sendevent				F
 sensors.qcom						H
-sensorservice
-seq
-service
+sensorservice			F
+seq						F
+service					F
 servicemanager						H
-set_sensorprop.sh
-setenforce
-setprop
-setsid
-settings
-setup_fs
+set_sensorprop.sh			U
+setenforce				F
+setprop					F
+setsid					F
+settings				F
+setup_fs				F
 sgdisk								H
-sh
-sha1sum
-sleep
-sm
-sort
-split
-ssr_diag
-ssr_setup
-start
-stat
-stop
-strings
+sh						F
+sha1sum					F
+sleep					F
+sm						F
+sort					F
+split					F
+ssr_diag							H
+ssr_setup							H
+start					F
+stat					F
+stop					F
+strings					F
 subsystem_ramdump					H
 surfaceflinger						H
 svc

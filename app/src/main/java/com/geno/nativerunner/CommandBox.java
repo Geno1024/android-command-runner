@@ -1588,6 +1588,147 @@ public final class CommandBox
 			new CommandParam("-e", "Display other/more information"),
 			new CommandParam("-A", "inet{6} Select Address Family"));
 
+	public static final Command	RUN_AS = new Command("run-as", "");
+
+	public static final Command RUNCON = new Command("runcon", "Run a command in a specified security context.");
+
+	public static final Command SCHEDTEST = new Command("schedtest", "");
+
+	public static final Command SCREENCAP = new Command("screencap", "If FILENAME ends with .png it will be saved as a png.\n" +
+																	 "If FILENAME is not given, the results will be printed to stdout.",
+			new CommandParam("-h", "this message"),
+			new CommandParam("-p", "save the file as a png."),
+			new CommandParam("-d ", "specify the display id to capture, default 0.", true));
+
+	public static final Command SCREENRECORD = new Command("screenrecord", "Records the device's display to a .mp4 file.",
+			new CommandParam("--size ", "Set the video size, e.g. \"1280x720\".  Default is the device's main " +
+										"display resolution (if supported), 1280x720 if not.  For best results, " +
+										"use a size supported by the AVC encoder.", true),
+			new CommandParam("--bit-rate ", "Set the video bit rate, in bits per second.  Value may be specified as " +
+											"bits or megabits, e.g. '4000000' is equivalent to '4M'.  Default 4Mbps.", true),
+			new CommandParam("--bugreport", "Add additional information, such as a timestamp overlay, that is helpful " +
+											"in videos captured to illustrate bugs."),
+			new CommandParam("--time-limit ", "Set the maximum recording time, in seconds. Default / maximum is 180.", true),
+			new CommandParam("--verbose", "Display interesting information on stdout."),
+			new CommandParam("--help", "Show this message."));
+
+	public static final Command SECDISCARD = new Command("secdiscard", "");
+
+	public static final Command SED = new Command("sed", "");
+
+	public static final Command SENDEVENT = new Command("sendevent", "");
+
+	public static final Command SENSORSERVICE = new Command("sensorservice", "");
+
+	public static final Command SEQ = new Command("seq", "Count from first to last, by increment. Omitted arguments default " +
+														 "to 1. Two arguments are used as first and last. Arguments can be " +
+														 "negative or floating point.",
+			new CommandParam("-f", "Use fmt_str as a floating point format string", true),
+			new CommandParam("-s", "Use sep_str as separator, default is a newline character", true),
+			new CommandParam("", "first", true),
+			new CommandParam("", "increment", true));
+
+	public static final Command SERVICE = new Command("service", "",
+			new CommandParam("list"),
+			new CommandParam("check ", "SERVICE", true),
+			new CommandParam("call ", "SERVICE CODE [i32 N | i64 N | f N | d N | s16 STR ] ...\n" +
+									  "Options:\n" +
+									  "   i32: Write the 32-bit integer N into the send parcel.\n" +
+									  "   i64: Write the 64-bit integer N into the send parcel.\n" +
+									  "   f:   Write the 32-bit single-precision number N into the send parcel.\n" +
+									  "   d:   Write the 64-bit double-precision number N into the send parcel.\n" +
+									  "   s16: Write the UTF-16 string STR into the send parcel.\n", true));
+
+	public static final Command SETENFORCE = new Command("setenforce", "Sets whether SELinux is enforcing (1) or permissive (0).");
+
+	public static final Command SETPROP = new Command("setprop", "Sets an Android system property.");
+
+	public static final Command SETSID = new Command("setsid", "Run process in a new session.",
+			new CommandParam("-t", "Grab tty (become foreground process, receiving keyboard signals)"));
+
+	public static final Command SETTINGS = new Command("settings", "'namespace' is one of {system, secure, global}, case-insensitive\n" +
+																   "If '--user NUM' is not given, the operations are performed on the owner user.\n",
+			new CommandParam("--user ", "NUM", true),
+			new CommandParam("get ", "namespace key", true),
+			new CommandParam("put ", "namespace key value", true),
+			new CommandParam("delete ", "namespace key", true),
+			new CommandParam("list ", "namesapce", true));
+
+	public static final Command SETUP_FS = new Command("setup_fs", "");
+
+	public static final Command SH = new Command("sh", "");
+
+	public static final Command SHA1SUM = new Command("sha1sum", "calculate sha1 hash for each input file, reading from stdin if none.\n" +
+																 "Output one hash (20 hex digits) for each input file, followed by filename.\n",
+			MD5SUM.getParams());
+
+	public static final Command SLEEP = new Command("sleep", "");
+
+	public static final Command SM = new Command("sm", "",
+			new CommandParam("list-disks ", "adoptable", true),
+			new CommandParam("list-volumes ", "[public|private|emulated|all]", true),
+			new CommandParam("has-adoptable"),
+			new CommandParam("get-primary-storage-uuid"),
+			new CommandParam("set-force-adoptable ", "[true|false]", true));
+
+	public static final Command SORT = new Command("sort", "",
+			new CommandParam("-M", "month sort (jan, feb, etc)."),
+			new CommandParam("-b", "ignore leading blanks (or trailing blanks in second part of key)"),
+			new CommandParam("-c", "check whether input is sorted"),
+			new CommandParam("-d", "dictionary order (use alphanumeric and whitespace chars only)"),
+			new CommandParam("-f", "force uppercase (case insensitive sort)"),
+			new CommandParam("-g", "general numeric sort (double precision with nan and inf)"),
+			new CommandParam("-i", "ignore nonprinting characters"),
+			new CommandParam("-k", "sort by \"key\" (see below)"),
+			new CommandParam("-n", "numeric order (instead of alphabetical)"),
+			new CommandParam("-o", "output to FILE instead of stdout"),
+			new CommandParam("-r", "reverse"),
+			new CommandParam("-s", "skip fallback sort (only sort with keys)"),
+			new CommandParam("-t", "use a key separator other than whitespace"),
+			new CommandParam("-u", "unique lines only"),
+			new CommandParam("-x", "Hexadecimal numerical sort"),
+			new CommandParam("-z", "zero (null) terminated input"),
+			new CommandParam("-k ", "Sorting by key looks at a subset of the words on each line.  -k2 " +
+									"uses the second word to the end of the line, -k2,2 looks at only " +
+									"the second word, -k2,4 looks from the start of the second to the end " +
+									"of the fourth word.  Specifying multiple keys uses the later keys as " +
+									"tie breakers, in order.  A type specifier appended to a sort key " +
+									"(such as -2,2n) applies only to sorting that key. ", true));
+
+	public static final Command SPLIT = new Command("split", "Copy INPUT (or stdin) data to a series of OUTPUT (or \"x\") files with" +
+															 "alphabetically increasing suffix (aa, ab, ac... az, ba, bb...).",
+			new CommandParam("-a ", "Suffix length (default 2)", true),
+			new CommandParam("-b ", "BYTES/file (10, 10k, 10m, 10g...)", true),
+			new CommandParam("-l ", "LINES/file (default 1000)", true));
+
+	public static final Command START = new Command("start", "");
+
+	public static final Command STAT = new Command("stat", "Display status of files or filesystems.",
+			new CommandParam("-f", "Display filesystem status instead of file status"),
+			new CommandParam("-c ", "Output specified FORMAT string instead of default\n" +
+									"The valid format escape sequences for files:\n" +
+									"%a  Access bits (octal) |%A  Access bits (flags)|%b  Blocks allocated\n" +
+									"%B  Bytes per block     |%d  Device ID (dec)    |%D  Device ID (hex)\n" +
+									"%f  All mode bits (hex) |%F  File type          |%g  Group ID\n" +
+									"%G  Group name          |%h  Hard links         |%i  Inode\n" +
+									"%n  Filename            |%N  Long filename      |%o  I/O block size\n" +
+									"%s  Size (bytes)        |%u  User ID            |%U  User name\n" +
+									"%x  Access time         |%X  Access unix time   |%y  File write time\n" +
+									"%Y  File write unix time|%z  Dir change time    |%Z  Dir change unix time\n" +
+									"\n" +
+									"The valid format escape sequences for filesystems:\n" +
+									"%a  Available blocks    |%b  Total blocks       |%c  Total inodes\n" +
+									"%d  Free inodes         |%f  Free blocks        |%i  File system ID\n" +
+									"%l  Max filename length |%n  File name          |%s  Fragment size\n" +
+									"%S  Best transfer size  |%t  File system type\n", true));
+
+	public static final Command STOP = new Command("stop", "");
+
+	public static final Command STRINGS = new Command("strings", "Display printable strings in a binary file",
+			new CommandParam("-f", "Precede strings with filenames"),
+			new CommandParam("-n ", "At least LEN characters form a string (default 4)", true),
+			new CommandParam("-o", "Precede strings with decimal offsets"));
+
 	public static final Command YES = new Command("yes", "");
 
 	public static final Command NULL = new Command("", "", new CommandParam("", ""));
