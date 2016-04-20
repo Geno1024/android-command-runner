@@ -1417,14 +1417,6 @@ public final class CommandBox
 			new CommandParam("-d ", "list of delimiters to separate lines", true),
 			new CommandParam("-s", "process files sequentially instead of in parallel"));
 
-	public static final Command UNAME = new Command("uname", "Print system information.",
-			new CommandParam("-s", "System name"),
-			new CommandParam("-n", "Network (domain) name"),
-			new CommandParam("-r", "Kernel Release number"),
-			new CommandParam("-v", "Kernel Version"),
-			new CommandParam("-m", "Machine (hardware) name"),
-			new CommandParam("-a", "All of the above"));
-
 	public static final Command PATCH = new Command("patch", "Apply a unified diff to one or more files.",
 			new CommandParam("-i ", "Input file (defaults=stdin)", true),
 			new CommandParam("-l", "Loose match (ignore whitespace)"),
@@ -1728,6 +1720,219 @@ public final class CommandBox
 			new CommandParam("-f", "Precede strings with filenames"),
 			new CommandParam("-n ", "At least LEN characters form a string (default 4)", true),
 			new CommandParam("-o", "Precede strings with decimal offsets"));
+
+	public static final Command SVC = new Command("svc", "",
+			new CommandParam("help", "Show information about the subcommands"),
+			new CommandParam("power ", "Control the power manager", true),
+			new CommandParam("data ", "Control the mobile data connectivity", true),
+			new CommandParam("wifi ", "Control the Wi-Fi manager", true),
+			new CommandParam("usb ", "Control Usb state", true),
+			new CommandParam("nfc ", "Control NFC functions", true));
+
+	public static final Command SYNC = new Command("sync", "Write pending cached data to disk (synchronize), blocking until done.");
+
+	public static final Command SYSCTL = new Command("sysctl", "Read/write system control data (under /proc/sys).",
+			new CommandParam("-a", "-A, Show all values"),
+			new CommandParam("-e", "Don't warn about unknown keys"),
+			new CommandParam("-N", "Don't print key values"),
+			new CommandParam("-n", "Don't print key names"),
+			new CommandParam("-p ", "Read values from FILE (default /etc/sysctl.conf)", true),
+			new CommandParam("-q", "Don't show value after write"),
+			new CommandParam("-w", "Only write values (object to reading)"));
+
+	public static final Command TAC = new Command("tac", "Output lines in reverse order.");
+
+	public static final Command TAIL = new Command("tail", "Copy last lines from files to stdout. If no files listed, copy from " +
+														   "stdin. Filename \"-\" is a synonym for stdin.",
+			new CommandParam("-n", "output the last NUMBER lines (default 10), +X counts from start.", true),
+			new CommandParam("-c", "output the last NUMBER bytes, +NUMBER counts from start", true),
+			new CommandParam("-f", "follow FILE(s), waiting for more data to be appended [TODO]", true));
+
+	public static final Command TAR = new Command("tar", "Create, extract, or list files from a tar file",
+			new CommandParam("c", "Create"),
+			new CommandParam("x", "Extract"),
+			new CommandParam("t", "List"),
+			new CommandParam("z", "(De)compress using gzip"),
+			new CommandParam("h", "Follow symlinks"),
+			new CommandParam("m", "Don't restore mtime"),
+			new CommandParam("v", "Verbose"),
+			new CommandParam("0", "Extract to stdout"),
+			new CommandParam("-X ", "File with names to exclude", true),
+			new CommandParam("-T ", "File with names to include", true),
+			new CommandParam("-f", "TARFILE"));
+
+	public static final Command TASKSET = new Command("taskset", "Launch a new task which may only run on certain processors, or change " +
+																 "the processor affinity of an exisitng PID.\n" +
+																 "Mask is a hex string where each bit represents a processor the process " +
+																 "is allowed to run on. PID without a mask displays existing affinity.",
+			new CommandParam("-p", "Set/get the affinity of given PID instead of a new command."),
+			new CommandParam("-a", "Set/get the affinity of all threads of the PID."));
+
+	public static final Command TC = new Command("tc", "OBJECT := { qdisc | class | filter | action | monitor }",
+			new CommandParam("-s", "statistics"),
+			new CommandParam("-d", "details"),
+			new CommandParam("-r", "raw"),
+			new CommandParam("-p", "pretty"),
+			new CommandParam("-b ", "batch filename", true));
+
+	public static final Command TEE = new Command("tee", "Copy stdin to each listed file, and also to stdout.\n" +
+														 "Filename \"-\" is a synonym for stdout.",
+			new CommandParam("-a", "append to files."),
+			new CommandParam("-i", "ignore SIGINT."));
+
+	public static final Command TELECOM = new Command("telecom", "",
+			new CommandParam("set-phone-account-enabled ", "Enables the given phone account, if it has already been registered with Telecom.", true),
+			new CommandParam("set-phone-account-disabled ", "Disables the given phone account, if it has already been registered with telecom.", true),
+			new CommandParam("register-phone-account ", "", true),
+			new CommandParam("register-sim-phone-account ", "", true),
+			new CommandParam("unregister-phone-account ", "", true),
+			new CommandParam("set-default-dialer ", "Sets the default dialer to the given component.", true),
+			new CommandParam("get-default-dialer", "Displays the current default dialer."),
+			new CommandParam("get-system-dialer", "Displays the current system dialer."));
+
+	public static final Command TEST_NUSENSORS = new Command("test-nusensors", "");
+
+	public static final Command TIME = new Command("time", "");
+
+	public static final Command TIMEOUT = new Command("timeout", "Run command line as a child process, sending child a signal if the " +
+																 "command doesn't exit soon enough.\n" +
+																 "\n" +
+																 "Length can be a decimal fraction. An optional suffix can be \"m\" " +
+																 "(minutes), \"h\" (hours), \"d\" (days), or \"s\" (seconds, the default).",
+			new CommandParam("-s ", "Send specified signal (default TERM)", true),
+			new CommandParam("-k ", "Send KILL signal if child still running this long after first signal.", true),
+			new CommandParam("-v", "Verbose"));
+
+	public static final Command TINYCAP = new Command("tinycap", "",
+			new CommandParam("-D ", "card", true),
+			new CommandParam("-d ", "device", true),
+			new CommandParam("-c ", "channels", true),
+			new CommandParam("-r ", "rate", true),
+			new CommandParam("-b ", "bits", true),
+			new CommandParam("-p ", "period_size", true),
+			new CommandParam("-n ", "n_periods", true));
+
+	public static final Command TINYMIX = new Command("tinymix", "");
+
+	public static final Command TINYPCMINFO = new Command("tinypcminfo", "",
+			new CommandParam("-D ", "card", true),
+			new CommandParam("-d ", "device", true));
+
+	public static final Command TINYPLAY = new Command("tinyplay", "",
+			new CommandParam("-D ", "card", true),
+			new CommandParam("-d ", "device", true),
+			new CommandParam("-p ", "period_size", true),
+			new CommandParam("-n ", "n_periods", true));
+
+	public static final Command TOP = new Command("top", "",
+			new CommandParam("-m", "Maximum number of processes to display.", true),
+			new CommandParam("-n", "Updates to show before exiting.", true),
+			new CommandParam("-d", "Seconds to wait between updates.", true),
+			new CommandParam("-s", "Column to sort by (cpu,vss,rss,thr).", true),
+			new CommandParam("-t", "Show threads instead of processes."),
+			new CommandParam("-h", "Display this help screen."));
+
+	public static final Command TOUCH = new Command("touch", "Update the access and modification times of each FILE to the current time.",
+			new CommandParam("-a", "change access time"),
+			new CommandParam("-m", "change modification time"),
+			new CommandParam("-c", "don't create file"),
+			new CommandParam("-h", "change symlink"),
+			new CommandParam("-d", "set time to DATE (in YYYY-MM-DDThh:mm:SS[.frac][tz] format)", true),
+			new CommandParam("-t", "set time to TIME (in [[CC]YY]MMDDhhmm[.ss][frac] format)", true),
+			new CommandParam("-r", "set time same as reference FILE", true));
+
+	public static final Command TR = new Command("tr", "Translate, squeeze, or delete characters from stdin, writing to stdout",
+			new CommandParam("-c", "-C, Take complement of SET1"),
+			new CommandParam("-d", "Delete input characters coded SET1"),
+			new CommandParam("-s", "Squeeze multiple output characters of SET2 into one character"));
+
+	public static final Command TRUE = new Command("true", "");
+
+	public static final Command TRUNCATE = new Command("truncate", "Set length of file(s), extending sparsely if necessary\n" +
+																   "SIZE prefix: + add, - subtract, < shrink to, > expand to, " +
+																   "/ multiple rounding down, % multiple rounding up\n" +
+																   "SIZE suffix: k=1024, m=1024^2, g=1024^3, t=1024^4, p=1024^5, e=1024^6",
+			new CommandParam("-c", "Don't create file if it doesn't exist."),
+			new CommandParam("-s", "New size (with optional prefix and suffix)"));
+
+	public static final Command UMOUNT = new Command("umount", "Unmount the listed filesystems.",
+			new CommandParam("-a", "Unmount all mounts in /proc/mounts instead of command line list"),
+			new CommandParam("-D", "Don't free loopback device(s)."),
+			new CommandParam("-f", "Force unmount."),
+			new CommandParam("-l", "Lazy unmount (detach from filesystem now, close when last user does)."),
+			new CommandParam("-n", "Don't use /proc/mounts"),
+			new CommandParam("-r  Remount read only if unmounting fails.", ""),
+			new CommandParam("-t", "Restrict \"all\" to mounts of TYPE (or use \"noTYPE\" to skip)"),
+			new CommandParam("-v", "Verbose"));
+
+	public static final Command UNAME = new Command("uname", "Print system information.",
+			new CommandParam("-s", "System name"),
+			new CommandParam("-n", "Network (domain) name"),
+			new CommandParam("-r", "Kernel Release number"),
+			new CommandParam("-v", "Kernel Version"),
+			new CommandParam("-m", "Machine (hardware) name"),
+			new CommandParam("-a", "All of the above"));
+
+	public static final Command UNIQ = new Command("uniq", "Report or filter out repeated lines in a file",
+			new CommandParam("-c", "show counts before each line"),
+			new CommandParam("-d", "show only lines that are repeated"),
+			new CommandParam("-u", "show only lines that are unique"),
+			new CommandParam("-i", "ignore case when comparing lines"),
+			new CommandParam("-z", "lines end with \0 not \n"),
+			new CommandParam("-w", "compare maximum X chars per line", true),
+			new CommandParam("-f", "ignore first X fields", true),
+			new CommandParam("-s", "ignore first X chars", true));
+
+	public static final Command UNIX2DOS = new Command("unix2dos", "Convert newline format from unix \"\\n\" to dos \"\\r\\n\".\n" +
+																   "If no files listed copy from stdin, \"-\" is a synonym for stdin.");
+
+	public static final Command UPTIME = new Command("uptime", "");
+
+	public static final Command USLEEP = new Command("usleep", "Pause for MICROSECONDS microseconds.");
+
+	public static final Command VMSTAT = new Command("vmstat", "Print virtual memory statistics, repeating each DELAY seconds, COUNT times.\n" +
+															   "(With no DELAY, prints one line. With no COUNT, repeats until killed.)\n" +
+															   "\n" +
+															   "Show processes running and blocked, kilobytes swapped, free, buffered, and " +
+															   "cached, kilobytes swapped in and out per second, file disk blocks input and " +
+															   "output per second, interrupts and context switches per second, percent " +
+															   "of CPU time spent running user code, system code, idle, and awaiting I/O.\n" +
+															   "First line is since system started, later lines are since last line.",
+			new CommandParam("-n", "Display the header only once"));
+
+	public static final Command WATCHPROPS = new Command("watchprops", "");
+
+	public static final Command	WC = new Command("wc", "Count lines, words, and characters in input.\n" +
+														  "\n" +
+														  "By default outputs lines, words, bytes, and filename for each " +
+														  "argument (or from stdin if none). Displays only either bytes " +
+														  "or characters.",
+			new CommandParam("-l", "show lines"),
+			new CommandParam("-w", "show words"),
+			new CommandParam("-c", "show bytes"),
+			new CommandParam("-m", "show characters"));
+
+	public static final Command WDSDAEMON = new Command("wdsdaemon", "",
+			new CommandParam("-a", "opening only ANT Channels"),
+			new CommandParam("-b", "opening only BT Channels"),
+			new CommandParam("-f", "opening only FM Channels"));
+
+	public static final Command WHICH = new Command("which", "Search $PATH for executable files matching filename(s).",
+			new CommandParam("-a", "Show all matches"));
+
+	public static final Command WHOAMI = new Command("whoami", "Print the current user name.");
+
+	public static final Command XARGS = new Command("xargs", "Run command line one or more times, appending arguments from stdin.\n" +
+															 "If command exits with 255, don't launch another even if arguments remain.\n",
+			new CommandParam("-s", "Size in bytes per command line"),
+			new CommandParam("-n", "Max number of arguments per command"),
+			new CommandParam("-0", "Each argument is NULL terminated, no whitespace or quote processing"),
+			new CommandParam("#-p", "Prompt for y/n from tty before running each command"),
+			new CommandParam("#-t", "Trace, print command line to stderr"),
+			new CommandParam("#-x", "Exit if can't fit everything in one command"),
+			new CommandParam("#-r", "Don't run command with empty input"),
+			new CommandParam("#-L", "Max number of lines of input per command"),
+			new CommandParam("-E", "stop at line matching string"));
 
 	public static final Command YES = new Command("yes", "");
 

@@ -281,55 +281,55 @@ stop					F
 strings					F
 subsystem_ramdump					H
 surfaceflinger						H
-svc
+svc						F
 swapoff
 swapon
-sync
-sysctl
-tac
-tail
-tar
-taskset
-tc
-tee
-telecom
-test-nusensors
+sync					F
+sysctl					F
+tac						F
+tail					F
+tar						F
+taskset					F
+tc						F
+tee						F
+telecom					F
+test-nusensors			F
 test_diag							H
-time
+time					F
 time_daemon							H
-timeout
-tinycap
-tinymix
-tinypcminfo
-tinyplay
-toolbox
-top
-touch
-toybox
-tr
-true
-truncate
+timeout					F
+tinycap					F
+tinymix					F
+tinypcminfo				F
+tinyplay				F
+toolbox				---------------------
+top						F
+touch					F
+toybox				---------------------
+tr						F
+true					F
+truncate				F
 tzdatacheck							H
-uiautomator
-umount
+uiautomator						T L		S
+umount					F
 uname					F
 uncrypt								H
-uniq
-unix2dos
-uptime
-usleep
+uniq					F
+unix2dos				F
+uptime					F
+usleep					F
 vdc									H
-vmstat
+vmstat					F
 vold								H
-watchprops
-wc
+watchprops				F
+wc						F
 wcnss_service						H
-wdsdaemon
-which
-whoami
-wm
+wdsdaemon				F
+which					F
+whoami					F
+wm								T L		S
 wpa_supplicant						H
-xargs
+xargs					F
 xtwifi-client			  P
 xtwifi-inet-agent		  P
 yes						F

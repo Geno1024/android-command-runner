@@ -1,7 +1,0 @@
-	new CommandParam("Available commands:", ""),
-	new CommandParam("    help     Show information about the subcommands", ""),
-	new CommandParam("    power    Control the power manager", ""),
-	new CommandParam("    data     Control mobile data connectivity", ""),
-	new CommandParam("    wifi     Control the Wi-Fi manager", ""),
-	new CommandParam("    usb      Control Usb state", ""),
-	new CommandParam("    nfc      Control NFC functions", ""),
